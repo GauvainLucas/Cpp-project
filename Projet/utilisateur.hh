@@ -11,9 +11,9 @@ class Utilisateur{
         Utilisateur();
         Utilisateur(std::string nom, std::string prenom, std::string mail, std::string telephone, std::string login, std::string mdp, std::string type);
 
-        virtual void acheterTicket() = 0;
-        virtual void annulerTicket() = 0;
-        virtual void consulterTicket() = 0;
+        virtual void acheterTicket(std::string nomEvenement) = 0;
+        virtual void annulerTicket(std::string nomEvenement) = 0;
+        virtual void consulterTicket(std::string nomEvenement) = 0;
         virtual void consulterListeTickets() = 0;
         virtual void consulterListeTicketsEvenement() = 0;
         virtual void consulterListeTicketsDate() = 0;

@@ -10,9 +10,9 @@ class UtilisateurVIP : public Utilisateur{
         UtilisateurVIP();
         UtilisateurVIP(std::string nom, std::string prenom, std::string mail, std::string telephone, std::string login, std::string mdp, std::string type):Utilisateur(nom, prenom, mail, telephone, login, mdp, type){};
 
-        void acheterTicket();
-        void annulerTicket();
-        void consulterTicket();
+        void acheterTicket(std::string nomEvenement);
+        void annulerTicket(std::string nomEvenement);
+        void consulterTicket(std::string nomEvenement);
         void consulterListeTickets();
         void consulterListeTicketsVIP();
         void consulterListeTicketsEvenement();
@@ -20,5 +20,6 @@ class UtilisateurVIP : public Utilisateur{
         void consulterListeTicketsLieu();
         void consulterListeTicketsType();
         void consulterListeTicketsPrix();
-
+    protected:
+        std::vector<Evenement> listeTicketsVIP;
 };
