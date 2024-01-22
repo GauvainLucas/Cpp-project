@@ -12,17 +12,4 @@ class UtilisateurPublic : public Utilisateur{
 
         void acheterTicket(std::string nomEvenement);
         void annulerTicket(std::string nomEvenement);
-        void consulterTicket(std::string nomEvenement);
-        void consulterListeTickets();
-        void consulterListeTicketsEvenement(std::string nomEvenement);
-        void consulterListeTicketsDate(std::string dateEvenement);
-        void consulterListeTicketsLieu(std::string lieuEvenement);
-        void consulterListeTicketsType(std::string typeEvenement);
-
-        void modifierNom(std::string nom){this->nom = nom;};
-        void modifierPrenom(std::string prenom){this->prenom = prenom;};
-        void modifierMail(std::string mail){this->mail = mail;};
-        void modifierTelephone(std::string telephone){this->telephone = telephone;};
-        void modifierLogin(std::string login){this->login = login;};
-        void modifierMdp(std::string mdp){this->mdp = mdp;};
 };

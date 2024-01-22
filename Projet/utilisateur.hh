@@ -13,19 +13,19 @@ class Utilisateur{
 
         virtual void acheterTicket(std::string nomEvenement) = 0;
         virtual void annulerTicket(std::string nomEvenement) = 0;
-        virtual void consulterTicket(std::string nomEvenement) = 0;
-        virtual void consulterListeTickets() = 0;
-        virtual void consulterListeTicketsEvenement(std::string nomEvenement) = 0;
-        virtual void consulterListeTicketsDate(std::string dateEvenement) = 0;
-        virtual void consulterListeTicketsLieu(std::string lieuEvenement) = 0;
-        virtual void consulterListeTicketsType(std::string typeEvenement) = 0;
+        void consulterTicket(std::string nomEvenement);
+        void consulterListeTickets();
+        void consulterListeTicketsEvenement(std::string nomEvenement);
+        void consulterListeTicketsDate(std::string dateEvenement);
+        void consulterListeTicketsLieu(std::string lieuEvenement);
+        void consulterListeTicketsType(std::string typeEvenement);
 
-        virtual void modifierNom(std::string nom) = 0;
-        virtual void modifierPrenom(std::string prenom) = 0;
-        virtual void modifierMail(std::string mail) = 0;
-        virtual void modifierTelephone(std::string telephone) = 0;
-        virtual void modifierLogin(std::string login) = 0;
-        virtual void modifierMdp(std::string mdp) = 0;
+        void modifierNom(std::string nom){this->nom = nom;};
+        void modifierPrenom(std::string prenom){this->prenom = prenom;};
+        void modifierMail(std::string mail){this->mail = mail;};
+        void modifierTelephone(std::string telephone){this->telephone = telephone;};
+        void modifierLogin(std::string login){this->login = login;};
+        void modifierMdp(std::string mdp){this->mdp = mdp;};
 
     protected:
         std::string nom;

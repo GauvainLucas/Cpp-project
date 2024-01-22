@@ -12,20 +12,8 @@ class UtilisateurVIP : public Utilisateur{
 
         void acheterTicket(std::string nomEvenement);
         void annulerTicket(std::string nomEvenement);
-        void consulterTicket(std::string nomEvenement);
-        void consulterListeTickets();
         void consulterListeTicketsVIP();
-        void consulterListeTicketsEvenement(std::string nomEvenement);
-        void consulterListeTicketsDate(std::string dateEvenement);
-        void consulterListeTicketsLieu(std::string lieuEvenement);
-        void consulterListeTicketsType(std::string typeEvenement);
 
-        void modifierNom(std::string nom);
-        void modifierPrenom(std::string prenom);
-        void modifierMail(std::string mail);
-        void modifierTelephone(std::string telephone);
-        void modifierLogin(std::string login);
-        void modifierMdp(std::string mdp);
     protected:
         std::vector<Evenement> listeTicketsVIP;
 };

@@ -5,9 +5,14 @@
 #include <fstream>
 #include "utilisateurPublic.hh"
 
-void UtilisateurPublic::consulterListeTickets(){
-    std::cout << "Liste des tickets : " << std::endl;
+void UtilisateurPublic::acheterTicket(std::string nomEvenement){
+
+}
+
+void UtilisateurPublic::annulerTicket(std::string nomEvenement){
     for (int i = 0; i < listeTickets.size(); i++){
-        std::cout << listeTickets[i].getNom() << "\n" << listeTickets[i].getDate() << "\n" << listeTickets[i].getLieu() << "\n" << listeTickets[i].getDescription() << "\n" << listeTickets[i].getType() << std::endl;
+        if (listeTickets[i].getNom() == nomEvenement){
+            listeTickets.erase(listeTickets.begin() + i);
+        }
     }
 }
