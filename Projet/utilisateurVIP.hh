@@ -20,6 +20,13 @@ class UtilisateurVIP : public Utilisateur{
         void consulterListeTicketsLieu();
         void consulterListeTicketsType();
         void consulterListeTicketsPrix();
+
+        void modifierNom(std::string nom);
+        void modifierPrenom(std::string prenom);
+        void modifierMail(std::string mail);
+        void modifierTelephone(std::string telephone);
+        void modifierLogin(std::string login);
+        void modifierMdp(std::string mdp);
     protected:
         std::vector<Evenement> listeTicketsVIP;
 };

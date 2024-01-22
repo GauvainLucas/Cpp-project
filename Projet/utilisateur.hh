@@ -21,6 +21,13 @@ class Utilisateur{
         virtual void consulterListeTicketsType() = 0;
         virtual void consulterListeTicketsPrix() = 0;
 
+        virtual void modifierNom(std::string nom) = 0;
+        virtual void modifierPrenom(std::string prenom) = 0;
+        virtual void modifierMail(std::string mail) = 0;
+        virtual void modifierTelephone(std::string telephone) = 0;
+        virtual void modifierLogin(std::string login) = 0;
+        virtual void modifierMdp(std::string mdp) = 0;
+
     protected:
         std::string nom;
         std::string prenom;

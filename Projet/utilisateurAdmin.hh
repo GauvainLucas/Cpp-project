@@ -23,4 +23,19 @@ class UtilisateurAdmin : public UtilisateurVIP{
         void consulterListeTicketsType();
         void consulterListeTicketsPrix();
 
+        void modifierNom(std::string nom);
+        void modifierPrenom(std::string prenom);
+        void modifierMail(std::string mail);
+        void modifierTelephone(std::string telephone);
+        void modifierLogin(std::string login);
+        void modifierMdp(std::string mdp);
+
+        void modifierNomAutre(std::string nom, std::string loginUser);
+        void modifierPrenomAutre(std::string prenom, std::string loginUser);
+        void modifierMailAutre(std::string mail, std::string loginUser);
+        void modifierTelephoneAutre(std::string telephone, std::string loginUser);
+        void modifierLoginAutre(std::string login, std::string loginUser);
+        void modifierMdpAutre(std::string mdp, std::string loginUser);
+        void modifierTypeAutre(std::string type, std::string loginUser);
+
 };
