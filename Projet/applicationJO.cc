@@ -4,7 +4,7 @@
 
 
 int main() {
-    sf::RenderWindow window(sf::VideoMode(1000, 800), "Application JO");
+    sf::RenderWindow mainWindow(sf::VideoMode(1000, 800), "Application JO");
 
     // Create texture from PNG file
     sf::Texture texture;
@@ -26,6 +26,7 @@ int main() {
     sf::Text textVoirEvenements;
     sf::Text textAcheterTicket;
     sf::Text textVoirActualites;
+    sf::Text textFooter;
     sf::Font font;
     if (!font.loadFromFile("../fonts/SF-Compact-Display-Black.ttf"))
     {
@@ -38,64 +39,73 @@ int main() {
     textVoirEvenements.setFont(font); // font is a sf::Font
     textAcheterTicket.setFont(font); // font is a sf::Font
     textVoirActualites.setFont(font); // font is a sf::Font
+    textFooter.setFont(font); // font is a sf::Font
+
     // set the string to display
     textBienvenue.setString("Bienvenue sur l'application des JO de Paris 2024 !");
     textUtilisateur.setString("Nom\nPrenom\n");
     textVoirEvenements.setString("Voir les evenements");
     textAcheterTicket.setString("Acceder a la billeterie");
     textVoirActualites.setString("Dernieres actualites");
+    textFooter.setString("Paris 2024 - Designed by Lucas Gauvain & Jacky Chui - All rights reserved");
     // set the character size
     textBienvenue.setCharacterSize(24);
     textUtilisateur.setCharacterSize(15);
     textVoirEvenements.setCharacterSize(20);
     textAcheterTicket.setCharacterSize(20);
     textVoirActualites.setCharacterSize(20);
+    textFooter.setCharacterSize(15);
     // set the color #585858
     textBienvenue.setFillColor(sf::Color(88, 88, 88));
     textUtilisateur.setFillColor(sf::Color(88, 88, 88));
     textVoirEvenements.setFillColor(sf::Color(88, 88, 88));
     textAcheterTicket.setFillColor(sf::Color(88, 88, 88));
     textVoirActualites.setFillColor(sf::Color(88, 88, 88));
+    textFooter.setFillColor(sf::Color(88, 88, 88));
 
     // center the textBienvenue on the screen
-    textBienvenue.setPosition(sf::Vector2f(static_cast<float>(window.getSize().x / 2. - textBienvenue.getGlobalBounds().width / 2.),
-                                           static_cast<float>(window.getSize().y / 2.)));
+    textBienvenue.setPosition(sf::Vector2f(static_cast<float>(mainWindow.getSize().x / 2. - textBienvenue.getGlobalBounds().width / 2.),
+                                           static_cast<float>(mainWindow.getSize().y / 2.)));
     // textUtilisteur in the top right corner
-    textUtilisateur.setPosition(sf::Vector2f(window.getSize().x - textUtilisateur.getGlobalBounds().width - 20,
+    textUtilisateur.setPosition(sf::Vector2f(mainWindow.getSize().x - textUtilisateur.getGlobalBounds().width - 20,
                                              20));
 
     // textVoirEvenements in the left below textBienvenue
-    textVoirEvenements.setPosition(sf::Vector2f(window.getSize().x / 2. - 4*textVoirEvenements.getGlobalBounds().width / 2.,
-                                                window.getSize().y / 2. + textBienvenue.getGlobalBounds().height + 100));
+    textVoirEvenements.setPosition(sf::Vector2f(mainWindow.getSize().x / 2. - 4 * textVoirEvenements.getGlobalBounds().width / 2.,
+                                                mainWindow.getSize().y / 2. + textBienvenue.getGlobalBounds().height + 100));
     // textAcheterTicket in the right below textBienvenue
-    textAcheterTicket.setPosition(sf::Vector2f(window.getSize().x / 2. + 1.5*textAcheterTicket.getGlobalBounds().width / 2.,
-                                               window.getSize().y / 2. + textBienvenue.getGlobalBounds().height + 100));
+    textAcheterTicket.setPosition(sf::Vector2f(mainWindow.getSize().x / 2. + 1.5 * textAcheterTicket.getGlobalBounds().width / 2.,
+                                               mainWindow.getSize().y / 2. + textBienvenue.getGlobalBounds().height + 100));
     // textVoirActualites in the middle below textBienvenue
-    textVoirActualites.setPosition(sf::Vector2f(window.getSize().x / 2. - textVoirActualites.getGlobalBounds().width / 2.,
-                                                window.getSize().y / 2. + textBienvenue.getGlobalBounds().height + 150));
+    textVoirActualites.setPosition(sf::Vector2f(mainWindow.getSize().x / 2. - textVoirActualites.getGlobalBounds().width / 2.,
+                                                mainWindow.getSize().y / 2. + textBienvenue.getGlobalBounds().height + 150));
+
+    // textFooter in the bottom center
+    textFooter.setPosition(sf::Vector2f(mainWindow.getSize().x / 2. - textFooter.getGlobalBounds().width / 2.,
+                                        mainWindow.getSize().y - textFooter.getGlobalBounds().height - 20));
     // button
     sf::RectangleShape buttonVoirEvenements(sf::Vector2f(textVoirEvenements.getGlobalBounds().width + 20, textVoirEvenements.getGlobalBounds().height + 20));
     buttonVoirEvenements.setFillColor(sf::Color(250, 250, 250));
-    buttonVoirEvenements.setPosition(sf::Vector2f(window.getSize().x / 2. - 4*textVoirEvenements.getGlobalBounds().width / 2. - 10,
-                                                   window.getSize().y / 2. + textBienvenue.getGlobalBounds().height + 90));
+    buttonVoirEvenements.setPosition(sf::Vector2f(mainWindow.getSize().x / 2. - 4 * textVoirEvenements.getGlobalBounds().width / 2. - 10,
+                                                  mainWindow.getSize().y / 2. + textBienvenue.getGlobalBounds().height + 90));
 
     sf::RectangleShape buttonAcheterTicket(sf::Vector2f(textAcheterTicket.getGlobalBounds().width + 20, textAcheterTicket.getGlobalBounds().height + 20));
     buttonAcheterTicket.setFillColor(sf::Color(250, 250, 250));
-    buttonAcheterTicket.setPosition(sf::Vector2f(window.getSize().x / 2. + 1.5*textAcheterTicket.getGlobalBounds().width / 2. - 10,
-                                                  window.getSize().y / 2. + textBienvenue.getGlobalBounds().height + 90));
+    buttonAcheterTicket.setPosition(sf::Vector2f(mainWindow.getSize().x / 2. + 1.5 * textAcheterTicket.getGlobalBounds().width / 2. - 10,
+                                                 mainWindow.getSize().y / 2. + textBienvenue.getGlobalBounds().height + 90));
 
     sf::RectangleShape buttonVoirActualites(sf::Vector2f(textVoirActualites.getGlobalBounds().width + 20, textVoirActualites.getGlobalBounds().height + 20));
     buttonVoirActualites.setFillColor(sf::Color(250, 250, 250));
-    buttonVoirActualites.setPosition(sf::Vector2f(window.getSize().x / 2. - textVoirActualites.getGlobalBounds().width / 2. - 10,
-                                                   window.getSize().y / 2. + textBienvenue.getGlobalBounds().height + 140));
+    buttonVoirActualites.setPosition(sf::Vector2f(mainWindow.getSize().x / 2. - textVoirActualites.getGlobalBounds().width / 2. - 10,
+                                                  mainWindow.getSize().y / 2. + textBienvenue.getGlobalBounds().height + 140));
 
-    while (window.isOpen()) {
+    while (mainWindow.isOpen()) {
         sf::Event event;
-        while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed) window.close();
+        while (mainWindow.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) mainWindow.close();
             if (event.type == sf::Event::MouseButtonPressed) {
                 if (event.mouseButton.button == sf::Mouse::Left) {
-                    sf::Vector2f mousePos = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+                    sf::Vector2f mousePos = mainWindow.mapPixelToCoords(sf::Mouse::getPosition(mainWindow));
                     if (buttonVoirEvenements.getGlobalBounds().contains(mousePos)) {
                         // Le bouton evenement a été cliqué
                         buttonVoirEvenements.setFillColor(sf::Color::White);
@@ -121,23 +131,24 @@ int main() {
                 }
             }
         }
-        window.clear(sf::Color(250, 250, 250));
-        // Draw the logoJO in the middle top of the window
-        logoJO.setPosition(window.getSize().x / 2., window.getSize().y / 6.);
-        window.draw(logoJO);
-        window.draw(textBienvenue);
-        window.draw(textUtilisateur);
+        mainWindow.clear(sf::Color(250, 250, 250));
+        // Draw the logoJO in the middle top of the mainWindow
+        logoJO.setPosition(mainWindow.getSize().x / 2., mainWindow.getSize().y / 6.);
+        mainWindow.draw(logoJO);
+        mainWindow.draw(textBienvenue);
+        mainWindow.draw(textUtilisateur);
 
-        window.draw(buttonVoirEvenements);
-        window.draw(textVoirEvenements);
+        mainWindow.draw(buttonVoirEvenements);
+        mainWindow.draw(textVoirEvenements);
 
-        window.draw(buttonAcheterTicket);
-        window.draw(textAcheterTicket);
+        mainWindow.draw(buttonAcheterTicket);
+        mainWindow.draw(textAcheterTicket);
 
-        window.draw(buttonVoirActualites);
-        window.draw(textVoirActualites);
+        mainWindow.draw(buttonVoirActualites);
+        mainWindow.draw(textVoirActualites);
 
-        window.display();
+        mainWindow.draw(textFooter);
+        mainWindow.display();
     }
     return 0;
 }
