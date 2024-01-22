@@ -20,3 +20,14 @@ Evenement::Evenement(std::string nom, std::string date, std::string lieu, std::s
     this->description = description;
     this->type = type;
 }
+
+Evenement::~Evenement(){
+}
+
+void Evenement::afficherEvenement(){
+    std::cout << nom << std::endl;
+    std::cout << date << std::endl;
+    std::cout << lieu << std::endl;
+    std::cout << description << std::endl;
+    std::cout << type << std::endl;
+}

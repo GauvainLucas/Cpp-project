@@ -10,4 +10,6 @@ class EvenementSportif : public Evenement{
         EvenementSportif();
         EvenementSportif(std::string nom, std::string date, std::string lieu, std::string description, std::string type, std::string sport):Evenement(nom, date, lieu, description, sport){};  
         ~EvenementSportif();
+
+        void afficherEvenement();
 };
