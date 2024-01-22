@@ -28,5 +28,4 @@ class Utilisateur /*: public IBilleterie*/{
         std::string login;
         std::string mdp;
         std::string type;
-
 };
