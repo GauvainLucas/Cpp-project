@@ -12,7 +12,7 @@ class Utilisateur{
         Utilisateur(std::string nom, std::string prenom, std::string mail, std::string telephone, std::string login, std::string mdp, std::string type);
 
         virtual void acheterTicket(std::string nomEvenement) = 0;
-        virtual void annulerTicket(std::string nomEvenement) = 0;
+        void annulerTicket(std::string nomEvenement);
         void consulterTicket(std::string nomEvenement);
         void consulterListeTickets();
         void consulterListeTicketsEvenement(std::string nomEvenement);

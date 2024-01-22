@@ -10,9 +10,7 @@ class UtilisateurAdmin : public UtilisateurVIP{
         UtilisateurAdmin();
         UtilisateurAdmin(std::string nom, std::string prenom, std::string mail, std::string telephone, std::string login, std::string mdp, std::string type):UtilisateurVIP(nom, prenom, mail, telephone, login, mdp, type){};
 
-        void acheterTicket(std::string nomEvenement);
         void vendreTicket(std::string nomEvenement);
-        void annulerTicket(std::string nomEvenement);
         void modifierTicket(std::string nomEvenement);
 
         void modifierNomAutre(std::string nom, std::string loginUser);

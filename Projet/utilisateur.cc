@@ -24,6 +24,14 @@ Utilisateur::Utilisateur(std::string nom, std::string prenom, std::string mail, 
     this->type = type;
 }
 
+void Utilisateur::annulerTicket(std::string nomEvenement){
+    for (int i = 0; i < listeTickets.size(); i++){
+        if (listeTickets[i].getNom() == nomEvenement){
+            listeTickets.erase(listeTickets.begin() + i);
+        }
+    }
+}
+
 void Utilisateur::consulterTicket(std::string nomEvenement){
     for (int i = 0; i < listeTickets.size(); i++){
         if (listeTickets[i].getNom() == nomEvenement){
