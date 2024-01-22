@@ -10,9 +10,9 @@ class UtilisateurPublic : public Utilisateur{
         UtilisateurPublic();
         UtilisateurPublic(std::string nom, std::string prenom, std::string mail, std::string telephone, std::string login, std::string mdp, std::string type);
 
-        void acheterTicket();
-        void annulerTicket();
-        void consulterTicket();
+        void acheterTicket(std::string nomEvenement);
+        void annulerTicket(std::string nomEvenement);
+        void consulterTicket(std::string nomEvenement);
         void consulterListeTickets();
         void consulterListeTicketsEvenement();
         void consulterListeTicketsDate();
