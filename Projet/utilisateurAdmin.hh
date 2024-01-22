@@ -17,11 +17,10 @@ class UtilisateurAdmin : public UtilisateurVIP{
         void consulterTicket(std::string nomEvenement);
         void consulterListeTickets();
         void consulterListeTicketsVIP();
-        void consulterListeTicketsEvenement();
-        void consulterListeTicketsDate();
-        void consulterListeTicketsLieu();
-        void consulterListeTicketsType();
-        void consulterListeTicketsPrix();
+        void consulterListeTicketsEvenement(std::string nomEvenement);
+        void consulterListeTicketsDate(std::string dateEvenement);
+        void consulterListeTicketsLieu(std::string lieuEvenement);
+        void consulterListeTicketsType(std::string typeEvenement);
 
         void modifierNom(std::string nom);
         void modifierPrenom(std::string prenom);

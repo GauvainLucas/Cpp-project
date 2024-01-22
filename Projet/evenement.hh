@@ -11,6 +11,12 @@ class Evenement{
         ~Evenement();
 
         virtual void afficherEvenement();
+
+        std::string getNom(){return nom;};
+        std::string getDate(){return date;};
+        std::string getLieu(){return lieu;};
+        std::string getDescription(){return description;};
+        std::string getType(){return type;};
     protected:
         std::string nom;
         std::string date;

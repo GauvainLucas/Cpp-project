@@ -15,11 +15,10 @@ class Utilisateur{
         virtual void annulerTicket(std::string nomEvenement) = 0;
         virtual void consulterTicket(std::string nomEvenement) = 0;
         virtual void consulterListeTickets() = 0;
-        virtual void consulterListeTicketsEvenement() = 0;
-        virtual void consulterListeTicketsDate() = 0;
-        virtual void consulterListeTicketsLieu() = 0;
-        virtual void consulterListeTicketsType() = 0;
-        virtual void consulterListeTicketsPrix() = 0;
+        virtual void consulterListeTicketsEvenement(std::string nomEvenement) = 0;
+        virtual void consulterListeTicketsDate(std::string dateEvenement) = 0;
+        virtual void consulterListeTicketsLieu(std::string lieuEvenement) = 0;
+        virtual void consulterListeTicketsType(std::string typeEvenement) = 0;
 
         virtual void modifierNom(std::string nom) = 0;
         virtual void modifierPrenom(std::string prenom) = 0;
