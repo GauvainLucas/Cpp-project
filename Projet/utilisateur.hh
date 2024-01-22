@@ -3,22 +3,23 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include "IBilleterie.hh"
+#include <vector>
+#include "evenement.hh"
 
-class Utilisateur /*: public IBilleterie*/{
+class Utilisateur{
     public:
         Utilisateur();
         Utilisateur(std::string nom, std::string prenom, std::string mail, std::string telephone, std::string login, std::string mdp, std::string type);
 
-        void acheterTicket();
-        void annulerTicket();
-        void consulterTicket();
-        void consulterListeTickets();
-        void consulterListeTicketsEvenement();
-        void consulterListeTicketsDate();
-        void consulterListeTicketsLieu();
-        void consulterListeTicketsType();
-        void consulterListeTicketsPrix();
+        virtual void acheterTicket() = 0;
+        virtual void annulerTicket() = 0;
+        virtual void consulterTicket() = 0;
+        virtual void consulterListeTickets() = 0;
+        virtual void consulterListeTicketsEvenement() = 0;
+        virtual void consulterListeTicketsDate() = 0;
+        virtual void consulterListeTicketsLieu() = 0;
+        virtual void consulterListeTicketsType() = 0;
+        virtual void consulterListeTicketsPrix() = 0;
 
     protected:
         std::string nom;
@@ -28,5 +29,5 @@ class Utilisateur /*: public IBilleterie*/{
         std::string login;
         std::string mdp;
         std::string type;
-
+        std::vector<Evenement> listeTickets;
 };
