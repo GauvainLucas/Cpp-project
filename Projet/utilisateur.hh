@@ -3,9 +3,9 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include "billeterie.hh"
+#include "IBilleterie.hh"
 
-class Utilisateur : public IBilleterie{
+class Utilisateur /*: public IBilleterie*/{
     public:
         Utilisateur();
         Utilisateur(std::string nom, std::string prenom, std::string mail, std::string telephone, std::string login, std::string mdp, std::string type);

@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/Projet.dir/evenement.cc.o CMakeFiles/Projet.dir/utilisateur.cc.o CMakeFiles/Projet.dir/applicationJO.cc.o -o Projet  -lsfml-graphics -lsfml-window -lsfml-system 

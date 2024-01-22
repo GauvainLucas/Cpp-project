@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Projet",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Projet::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Projet-Debug-d5bc7a213df6d172f38f.json",
+					"name" : "Projet",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/mnt/c/Users/Lucas/OneDrive - etu.sorbonne-universite.fr/EI-SE/Semesre 7/C++/PROJET/Projet/Cpp-project/Projet/cmake-build-debug",
+		"source" : "/mnt/c/Users/Lucas/OneDrive - etu.sorbonne-universite.fr/EI-SE/Semesre 7/C++/PROJET/Projet/Cpp-project/Projet"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 5
+	}
+}
