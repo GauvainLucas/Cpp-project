@@ -10,7 +10,7 @@ class UtilisateurVIP : public Utilisateur{
         UtilisateurVIP();
         UtilisateurVIP(std::string nom, std::string prenom, std::string mail, std::string telephone, std::string login, std::string mdp, std::string type):Utilisateur(nom, prenom, mail, telephone, login, mdp, type){};
 
-        void acheterTicket(std::string nomEvenement);
+        void acheterTicket(Evenement evenement);
         void consulterListeTicketsVIP();
 
     protected:
