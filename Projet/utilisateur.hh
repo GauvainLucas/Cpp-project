@@ -5,13 +5,18 @@
 #include <fstream>
 #include <vector>
 #include "evenement.hh"
+#include "IBilleterie.hh"
+
 
 class Utilisateur{
     public:
         Utilisateur();
         Utilisateur(std::string nom, std::string prenom, std::string mail, std::string telephone, std::string login, std::string mdp, std::string type);
 
-        virtual void acheterTicket(std::string nomEvenement) = 0;
+        // getters
+        virtual std::string getNom(){return nom;};
+        virtual std::string getPrenom(){return prenom;};
+       /* virtual void acheterTicket(std::string nomEvenement) = 0;
         virtual void annulerTicket(std::string nomEvenement) = 0;
         virtual void consulterTicket(std::string nomEvenement) = 0;
         virtual void consulterListeTickets() = 0;
@@ -19,7 +24,7 @@ class Utilisateur{
         virtual void consulterListeTicketsDate(std::string dateEvenement) = 0;
         virtual void consulterListeTicketsLieu(std::string lieuEvenement) = 0;
         virtual void consulterListeTicketsType(std::string typeEvenement) = 0;
-
+        */
         virtual void modifierNom(std::string nom) = 0;
         virtual void modifierPrenom(std::string prenom) = 0;
         virtual void modifierMail(std::string mail) = 0;

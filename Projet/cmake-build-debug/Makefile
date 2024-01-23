@@ -177,6 +177,54 @@ evenement.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/evenement.cc.s
 .PHONY : evenement.cc.s
 
+evenementSportif.o: evenementSportif.cc.o
+.PHONY : evenementSportif.o
+
+# target to build an object file
+evenementSportif.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/evenementSportif.cc.o
+.PHONY : evenementSportif.cc.o
+
+evenementSportif.i: evenementSportif.cc.i
+.PHONY : evenementSportif.i
+
+# target to preprocess a source file
+evenementSportif.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/evenementSportif.cc.i
+.PHONY : evenementSportif.cc.i
+
+evenementSportif.s: evenementSportif.cc.s
+.PHONY : evenementSportif.s
+
+# target to generate assembly for a file
+evenementSportif.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/evenementSportif.cc.s
+.PHONY : evenementSportif.cc.s
+
+pageEvenements.o: pageEvenements.cc.o
+.PHONY : pageEvenements.o
+
+# target to build an object file
+pageEvenements.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/pageEvenements.cc.o
+.PHONY : pageEvenements.cc.o
+
+pageEvenements.i: pageEvenements.cc.i
+.PHONY : pageEvenements.i
+
+# target to preprocess a source file
+pageEvenements.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/pageEvenements.cc.i
+.PHONY : pageEvenements.cc.i
+
+pageEvenements.s: pageEvenements.cc.s
+.PHONY : pageEvenements.s
+
+# target to generate assembly for a file
+pageEvenements.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/pageEvenements.cc.s
+.PHONY : pageEvenements.cc.s
+
 utilisateur.o: utilisateur.cc.o
 .PHONY : utilisateur.o
 
@@ -201,6 +249,30 @@ utilisateur.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/utilisateur.cc.s
 .PHONY : utilisateur.cc.s
 
+utilisateurPublic.o: utilisateurPublic.cc.o
+.PHONY : utilisateurPublic.o
+
+# target to build an object file
+utilisateurPublic.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/utilisateurPublic.cc.o
+.PHONY : utilisateurPublic.cc.o
+
+utilisateurPublic.i: utilisateurPublic.cc.i
+.PHONY : utilisateurPublic.i
+
+# target to preprocess a source file
+utilisateurPublic.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/utilisateurPublic.cc.i
+.PHONY : utilisateurPublic.cc.i
+
+utilisateurPublic.s: utilisateurPublic.cc.s
+.PHONY : utilisateurPublic.s
+
+# target to generate assembly for a file
+utilisateurPublic.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/utilisateurPublic.cc.s
+.PHONY : utilisateurPublic.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -216,9 +288,18 @@ help:
 	@echo "... evenement.o"
 	@echo "... evenement.i"
 	@echo "... evenement.s"
+	@echo "... evenementSportif.o"
+	@echo "... evenementSportif.i"
+	@echo "... evenementSportif.s"
+	@echo "... pageEvenements.o"
+	@echo "... pageEvenements.i"
+	@echo "... pageEvenements.s"
 	@echo "... utilisateur.o"
 	@echo "... utilisateur.i"
 	@echo "... utilisateur.s"
+	@echo "... utilisateurPublic.o"
+	@echo "... utilisateurPublic.i"
+	@echo "... utilisateurPublic.s"
 .PHONY : help
 
 

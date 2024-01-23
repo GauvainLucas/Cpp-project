@@ -1,11 +1,15 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
-
+#include "utilisateur.hh"
+#include "utilisateurPublic.hh"
+#include "pageEvenements.hpp"
 
 
 int main() {
+    // Create user John Doe
+    UtilisateurPublic johnDoe("Doe", "John", "mail", "telephone", "login", "mdp", "type");
     sf::RenderWindow mainWindow(sf::VideoMode(1000, 800), "Application JO");
-
+    mainWindow.setPosition(sf::Vector2i(500, 100));
     // Create texture from PNG file
     sf::Texture texture;
     if (!texture.loadFromFile("../images/logoJO.png")) {
@@ -28,8 +32,7 @@ int main() {
     sf::Text textVoirActualites;
     sf::Text textFooter;
     sf::Font font;
-    if (!font.loadFromFile("../fonts/SF-Compact-Display-Black.ttf"))
-    {
+    if (!font.loadFromFile("../fonts/SF-Compact-Display-Black.ttf")) {
         std::cerr << "Error while loading font" << std::endl;
         return -1;
     }
@@ -43,7 +46,7 @@ int main() {
 
     // set the string to display
     textBienvenue.setString("Bienvenue sur l'application des JO de Paris 2024 !");
-    textUtilisateur.setString("Nom\nPrenom\n");
+    textUtilisateur.setString(johnDoe.getNom() + "\n" + johnDoe.getPrenom());
     textVoirEvenements.setString("Voir les evenements");
     textAcheterTicket.setString("Acceder a la billeterie");
     textVoirActualites.setString("Dernieres actualites");
@@ -64,40 +67,50 @@ int main() {
     textFooter.setFillColor(sf::Color(88, 88, 88));
 
     // center the textBienvenue on the screen
-    textBienvenue.setPosition(sf::Vector2f(static_cast<float>(mainWindow.getSize().x / 2. - textBienvenue.getGlobalBounds().width / 2.),
-                                           static_cast<float>(mainWindow.getSize().y / 2.)));
+    textBienvenue.setPosition(
+            sf::Vector2f(static_cast<float>(mainWindow.getSize().x / 2. - textBienvenue.getGlobalBounds().width / 2.),
+                         static_cast<float>(mainWindow.getSize().y / 2.)));
     // textUtilisteur in the top right corner
     textUtilisateur.setPosition(sf::Vector2f(mainWindow.getSize().x - textUtilisateur.getGlobalBounds().width - 20,
                                              20));
 
     // textVoirEvenements in the left below textBienvenue
-    textVoirEvenements.setPosition(sf::Vector2f(mainWindow.getSize().x / 2. - 4 * textVoirEvenements.getGlobalBounds().width / 2.,
-                                                mainWindow.getSize().y / 2. + textBienvenue.getGlobalBounds().height + 100));
+    textVoirEvenements.setPosition(
+            sf::Vector2f(mainWindow.getSize().x / 2. - 4 * textVoirEvenements.getGlobalBounds().width / 2.,
+                         mainWindow.getSize().y / 2. + textBienvenue.getGlobalBounds().height + 100));
     // textAcheterTicket in the right below textBienvenue
-    textAcheterTicket.setPosition(sf::Vector2f(mainWindow.getSize().x / 2. + 1.5 * textAcheterTicket.getGlobalBounds().width / 2.,
-                                               mainWindow.getSize().y / 2. + textBienvenue.getGlobalBounds().height + 100));
+    textAcheterTicket.setPosition(
+            sf::Vector2f(mainWindow.getSize().x / 2. + 1.5 * textAcheterTicket.getGlobalBounds().width / 2.,
+                         mainWindow.getSize().y / 2. + textBienvenue.getGlobalBounds().height + 100));
     // textVoirActualites in the middle below textBienvenue
-    textVoirActualites.setPosition(sf::Vector2f(mainWindow.getSize().x / 2. - textVoirActualites.getGlobalBounds().width / 2.,
-                                                mainWindow.getSize().y / 2. + textBienvenue.getGlobalBounds().height + 150));
+    textVoirActualites.setPosition(
+            sf::Vector2f(mainWindow.getSize().x / 2. - textVoirActualites.getGlobalBounds().width / 2.,
+                         mainWindow.getSize().y / 2. + textBienvenue.getGlobalBounds().height + 150));
 
     // textFooter in the bottom center
     textFooter.setPosition(sf::Vector2f(mainWindow.getSize().x / 2. - textFooter.getGlobalBounds().width / 2.,
                                         mainWindow.getSize().y - textFooter.getGlobalBounds().height - 20));
     // button
-    sf::RectangleShape buttonVoirEvenements(sf::Vector2f(textVoirEvenements.getGlobalBounds().width + 20, textVoirEvenements.getGlobalBounds().height + 20));
+    sf::RectangleShape buttonVoirEvenements(sf::Vector2f(textVoirEvenements.getGlobalBounds().width + 20,
+                                                         textVoirEvenements.getGlobalBounds().height + 20));
     buttonVoirEvenements.setFillColor(sf::Color(250, 250, 250));
-    buttonVoirEvenements.setPosition(sf::Vector2f(mainWindow.getSize().x / 2. - 4 * textVoirEvenements.getGlobalBounds().width / 2. - 10,
-                                                  mainWindow.getSize().y / 2. + textBienvenue.getGlobalBounds().height + 90));
+    buttonVoirEvenements.setPosition(
+            sf::Vector2f(mainWindow.getSize().x / 2. - 4 * textVoirEvenements.getGlobalBounds().width / 2. - 10,
+                         mainWindow.getSize().y / 2. + textBienvenue.getGlobalBounds().height + 90));
 
-    sf::RectangleShape buttonAcheterTicket(sf::Vector2f(textAcheterTicket.getGlobalBounds().width + 20, textAcheterTicket.getGlobalBounds().height + 20));
+    sf::RectangleShape buttonAcheterTicket(sf::Vector2f(textAcheterTicket.getGlobalBounds().width + 20,
+                                                        textAcheterTicket.getGlobalBounds().height + 20));
     buttonAcheterTicket.setFillColor(sf::Color(250, 250, 250));
-    buttonAcheterTicket.setPosition(sf::Vector2f(mainWindow.getSize().x / 2. + 1.5 * textAcheterTicket.getGlobalBounds().width / 2. - 10,
-                                                 mainWindow.getSize().y / 2. + textBienvenue.getGlobalBounds().height + 90));
+    buttonAcheterTicket.setPosition(
+            sf::Vector2f(mainWindow.getSize().x / 2. + 1.5 * textAcheterTicket.getGlobalBounds().width / 2. - 10,
+                         mainWindow.getSize().y / 2. + textBienvenue.getGlobalBounds().height + 90));
 
-    sf::RectangleShape buttonVoirActualites(sf::Vector2f(textVoirActualites.getGlobalBounds().width + 20, textVoirActualites.getGlobalBounds().height + 20));
+    sf::RectangleShape buttonVoirActualites(sf::Vector2f(textVoirActualites.getGlobalBounds().width + 20,
+                                                         textVoirActualites.getGlobalBounds().height + 20));
     buttonVoirActualites.setFillColor(sf::Color(250, 250, 250));
-    buttonVoirActualites.setPosition(sf::Vector2f(mainWindow.getSize().x / 2. - textVoirActualites.getGlobalBounds().width / 2. - 10,
-                                                  mainWindow.getSize().y / 2. + textBienvenue.getGlobalBounds().height + 140));
+    buttonVoirActualites.setPosition(
+            sf::Vector2f(mainWindow.getSize().x / 2. - textVoirActualites.getGlobalBounds().width / 2. - 10,
+                         mainWindow.getSize().y / 2. + textBienvenue.getGlobalBounds().height + 140));
 
     while (mainWindow.isOpen()) {
         sf::Event event;
@@ -109,7 +122,9 @@ int main() {
                     if (buttonVoirEvenements.getGlobalBounds().contains(mousePos)) {
                         // Le bouton evenement a été cliqué
                         buttonVoirEvenements.setFillColor(sf::Color::White);
-                        // Ajoutez ici le code à exécuter lorsque le bouton est cliqué
+                        // ouvrir l'onglet evenement
+                        pageEvenements();
+
                     } else if (buttonAcheterTicket.getGlobalBounds().contains(mousePos)) {
                         // Le bouton tickets a été cliqué
                         buttonAcheterTicket.setFillColor(sf::Color::White);
