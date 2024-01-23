@@ -236,4 +236,5 @@ CMakeFiles/Projet.dir/applicationJO.cc.o: \
  /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/evenement.hh \
  /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/IBilleterie.hh \
  /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/utilisateurPublic.hh \
+ /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/utilisateurVIP.hh \
  /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/pageEvenements.hpp

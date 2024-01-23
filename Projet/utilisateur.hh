@@ -31,7 +31,7 @@ class Utilisateur{
         virtual void modifierTelephone(std::string telephone) = 0;
         virtual void modifierLogin(std::string login) = 0;
         virtual void modifierMdp(std::string mdp) = 0;
-
+        /*
         virtual void acheterTicket(Evenement event) = 0;
         void annulerTicket(std::string nomEvenement);
         void consulterTicket(std::string nomEvenement);
@@ -47,6 +47,7 @@ class Utilisateur{
         void modifierTelephone(std::string telephone){this->telephone = telephone;};
         void modifierLogin(std::string login){this->login = login;};
         void modifierMdp(std::string mdp){this->mdp = mdp;};
+         */
 
     protected:
         std::string nom;
