@@ -25,10 +25,22 @@ UtilisateurPublic::UtilisateurPublic(std::string nom, std::string prenom, std::s
     this->mdp = mdp;
     this->type = type;
 }
-/*
-void UtilisateurPublic::consulterListeTickets(){
+
+void UtilisateurPublic::consulterListeTickets() {
     std::cout << "Liste des tickets : " << std::endl;
-    for (int i = 0; i < listeTickets.size(); i++){
-        std::cout << listeTickets[i].getNom() << "\n" << listeTickets[i].getDate() << "\n" << listeTickets[i].getLieu() << "\n" << listeTickets[i].getDescription() << "\n" << listeTickets[i].getType() << std::endl;
+    for (int i = 0; i < listeTickets.size(); i++) {
+        std::cout << listeTickets[i].getNom() << "\n" << listeTickets[i].getDate() << "\n" << listeTickets[i].getLieu()
+                  << "\n" << listeTickets[i].getDescription() << "\n" << listeTickets[i].getType() << std::endl;
     }
-}*/
+}
+void UtilisateurPublic::acheterTicket(Evenement evenement){
+    if (evenement.getType() == "VIP"){
+        std::cout << "Vous ne pouvez pas acheter de ticket pour un evenement VIP" << std::endl;
+        return;
+    }
+    else{
+        listeTickets.push_back(evenement);
+        std::cout << "Ticket achete" << std::endl;
+        return;
+    }
+}
