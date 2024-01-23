@@ -31,6 +31,7 @@ class Utilisateur{
         virtual void modifierTelephone(std::string telephone) = 0;
         virtual void modifierLogin(std::string login) = 0;
         virtual void modifierMdp(std::string mdp) = 0;
+        virtual void modifierType(std::string type) = 0;
         /*
         virtual void acheterTicket(Evenement event) = 0;
         void annulerTicket(std::string nomEvenement);

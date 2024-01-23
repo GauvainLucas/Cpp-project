@@ -83,4 +83,32 @@ void Utilisateur::consulterListeTicketsType(std::string typeEvenement){
     }
 }
 
+void Utilisateur::modifierNom(std::string nom){
+    this->nom = nom;
+}
+
+void Utilisateur::modifierPrenom(std::string prenom){
+    this->prenom = prenom;
+}
+
+void Utilisateur::modifierMail(std::string mail){
+    this->mail = mail;
+}
+
+void Utilisateur::modifierTelephone(std::string telephone){
+    this->telephone = telephone;
+}
+
+void Utilisateur::modifierLogin(std::string login){
+    this->login = login;
+}
+
+void Utilisateur::modifierMdp(std::string mdp){
+    this->mdp = mdp;
+}
+
+void Utilisateur::modifierType(std::string type){
+    this->type = type;
+}
+
 

@@ -36,14 +36,17 @@ public:
     }
 
     std::string getNom() { return nom; };
-
     std::string getDate() { return date; };
-
     std::string getLieu() { return lieu; };
-
     std::string getDescription() { return description; };
-
     std::string getType() { return type; };
+
+    void modifierNom(std::string nom) { this->nom = nom; };
+    void modifierDate(std::string date) { this->date = date; };
+    void modifierLieu(std::string lieu) { this->lieu = lieu; };
+    void modifierDescription(std::string description) { this->description = description; };
+    void modifierType(std::string type) { this->type = type; };
+
 protected:
     std::string nom;
     std::string date;
