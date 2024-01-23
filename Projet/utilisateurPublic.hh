@@ -14,9 +14,9 @@ class UtilisateurPublic : public Utilisateur{
         // getters
         std::string getNom(){return nom;};
         std::string getPrenom(){return prenom;};
-        void acheterTicket(std::string nomEvenement)=0;
-        void annulerTicket(std::string nomEvenement)=0;
-        void consulterTicket(std::string nomEvenement)=0;
+        void acheterTicket(Evenement evenement);
+        void annulerTicket(Evenement evenement);
+        void consulterTicket(Evenement evenement);
         void consulterListeTickets()=0;
         void consulterListeTicketsEvenement(std::string nomEvenement)=0;
         void consulterListeTicketsDate(std::string dateEvenement)=0;
@@ -32,6 +32,5 @@ class UtilisateurPublic : public Utilisateur{
 
        // UtilisateurPublic(std::string nom, std::string prenom, std::string mail, std::string telephone, std::string login, std::string mdp, std::string type):Utilisateur(nom, prenom, mail, telephone, login, mdp, type){};
 
-        void acheterTicket(Evenement evenement);
 
 };

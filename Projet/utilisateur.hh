@@ -14,11 +14,11 @@ class Utilisateur{
         Utilisateur(std::string nom, std::string prenom, std::string mail, std::string telephone, std::string login, std::string mdp, std::string type);
 
         // getters
-        virtual std::string getNom(){return nom;};
-        virtual std::string getPrenom(){return prenom;};
-        virtual void acheterTicket(std::string nomEvenement) = 0;
-        virtual void annulerTicket(std::string nomEvenement) = 0;
-        virtual void consulterTicket(std::string nomEvenement) = 0;
+        std::string getNom(){return nom;};
+        std::string getPrenom(){return prenom;};
+        virtual void acheterTicket(Evenement evenement) = 0;
+        virtual void annulerTicket(Evenement evenement) = 0;
+        virtual void consulterTicket(Evenement evenement) = 0;
         virtual void consulterListeTickets() = 0;
         virtual void consulterListeTicketsEvenement(std::string nomEvenement) = 0;
         virtual void consulterListeTicketsDate(std::string dateEvenement) = 0;

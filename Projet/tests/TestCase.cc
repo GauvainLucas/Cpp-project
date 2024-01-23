@@ -4,7 +4,9 @@
 #include "doctest.h"
 #include "utilisateur.hh"
 #include "evenement.hh"
-#include "IBilleterie.hh"
+#include "utilisateurAdmin.hh"
+#include "utilisateurVIP.hh"
+#include "utilisateurPublic.hh"
 
 TEST_CASE("Test de evenement.hh")
 {
