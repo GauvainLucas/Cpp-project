@@ -6,58 +6,79 @@
 #include "evenementCeremonie.hh"
 #include <vector>
 
-void pageEvenements(){
+void pageEvenements() {
 
     sf::RenderWindow pageEvenements(sf::VideoMode(1000, 800), "Les evenements");
     pageEvenements.setPosition(sf::Vector2i(500, 100));
 
+    // image
+    sf::Texture texture;
+    if (!texture.loadFromFile("../images/imagePageEvenement.png")) {
+        std::cerr << "Error while loading texture" << std::endl;
+        exit(-1);
+    }
+    sf::Sprite imagePageEvenement;
+    imagePageEvenement.setTexture(texture);
+    sf::FloatRect spriteSize = imagePageEvenement.getGlobalBounds();
+    texture.setSmooth(true);
+    sf::Color couleur = imagePageEvenement.getColor();
+    couleur.a = 128; // 50% transparent
+    imagePageEvenement.setColor(couleur);
+    // centre l'image
+
+    imagePageEvenement.setOrigin(static_cast<float>(spriteSize.width / 2.), static_cast<float>(spriteSize.height / 2.));
+    imagePageEvenement.setPosition(pageEvenements.getSize().x / 2, pageEvenements.getSize().y / 2);
+    imagePageEvenement.setScale(0.2, 0.2);
+
+
+
     // Evenements
-    std::vector<Evenement*> listEvenementsEnCours;
-    std::vector<Evenement*> listEvenementsFuturs;
-    EvenementSportif* premierDirect = new EvenementSportif("Finale 400m Homme",
+    std::vector<Evenement *> listEvenementsEnCours;
+    std::vector<Evenement *> listEvenementsFuturs;
+    EvenementSportif *premierDirect = new EvenementSportif("Finale 400m Homme",
                                                            "Aujourd'hui - 14h",
                                                            "Stade Charlety",
                                                            "Places disponibles : 43",
                                                            "Public", "Athletisme");
-    EvenementSportif* deuxiemeDirect = new EvenementSportif("Finale 100m Homme",
+    EvenementSportif *deuxiemeDirect = new EvenementSportif("Finale 100m Homme",
                                                             "Aujourd'hui - 14h30",
                                                             "Stade Montreuil",
                                                             "Aller Daviiiiiid !",
                                                             "Public", "Athletisme");
-    EvenementCeremonie* troisiemeDirect = new EvenementCeremonie("Remise medailles 400m Femme",
+    EvenementCeremonie *troisiemeDirect = new EvenementCeremonie("Remise medailles 400m Femme",
                                                                  "Aujourd'hui - 14h",
                                                                  "Tour Eiffel",
                                                                  "Annonce du podium",
                                                                  "VIP", "Ceremonie");
-    EvenementCeremonie* quatriemeDirect = new EvenementCeremonie("Remise medailles 100m Femme",
+    EvenementCeremonie *quatriemeDirect = new EvenementCeremonie("Remise medailles 100m Femme",
                                                                  "Aujourd'hui - 14h30",
                                                                  "Tour Eiffel",
                                                                  "Annonce du podium",
                                                                  "VIP", "Ceremonie");
 
-    EvenementSportif* premierFutur = new EvenementSportif("Quart de finale - France vs USA",
-                                                     "Demain - 9h",
-                                                     "Saint-Denis",
-                                                     "Places disponibles : 1",
-                                                     "Public", "Basketball");
+    EvenementSportif *premierFutur = new EvenementSportif("Quart de finale - France vs USA",
+                                                          "Demain - 9h",
+                                                          "Saint-Denis",
+                                                          "Places disponibles : 1",
+                                                          "Public", "Basketball");
 
     EvenementSportif *deuxiemeFutur = new EvenementSportif("Demi finale - Allemagne vs Espagne",
-                                                      "Demain - 10h30",
-                                                      "Parc des Princes",
-                                                      "Places disponibles : 97",
-                                                      "Public", "Football");
+                                                           "Demain - 10h30",
+                                                           "Parc des Princes",
+                                                           "Places disponibles : 97",
+                                                           "Public", "Football");
 
-    EvenementCeremonie * troisiemeFutur = new EvenementCeremonie("Remise medailles 400m Homme",
-                                                           "Demain - 14h",
-                                                           "Tour Eiffel",
-                                                           "Annonce du podium",
-                                                           "VIP", "Ceremonie");
+    EvenementCeremonie *troisiemeFutur = new EvenementCeremonie("Remise medailles 400m Homme",
+                                                                "Demain - 14h",
+                                                                "Tour Eiffel",
+                                                                "Annonce du podium",
+                                                                "VIP", "Ceremonie");
 
-    EvenementCeremonie * quatriemeFutur = new EvenementCeremonie("Remise medailles 100m Homme",
-                                                                 "Demain - 15h",
-                                                                 "Arc de Triomphe",
-                                                                 "Annonce du podium",
-                                                                 "VIP", "Ceremonie");
+    EvenementCeremonie *quatriemeFutur = new EvenementCeremonie("Remise medailles 100m Homme",
+                                                                "Demain - 15h",
+                                                                "Arc de Triomphe",
+                                                                "Annonce du podium",
+                                                                "VIP", "Ceremonie");
 
 
     // ajouter les evenements a la liste
@@ -98,7 +119,7 @@ void pageEvenements(){
     textEvenementsFuturs.setCharacterSize(20);
     textEvenementsFuturs.setFillColor(sf::Color(88, 88, 88));
     textEvenementsFuturs.setPosition(
-            pageEvenements.getSize().x / 2 + 2*textEvenementsFuturs.getGlobalBounds().width / 2, 100);
+            pageEvenements.getSize().x / 2 + 2 * textEvenementsFuturs.getGlobalBounds().width / 2, 100);
 
     sf::Text textDirect;
     textDirect.setFont(font); // font is a sf::Font
@@ -128,6 +149,7 @@ void pageEvenements(){
         pageEvenements.draw(textEvenementsFuturs);
         pageEvenements.draw(textDirect);
         pageEvenements.draw(textFutur);
+        pageEvenements.draw(imagePageEvenement);
         pageEvenements.display();
     }
 }
