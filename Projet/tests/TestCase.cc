@@ -8,19 +8,40 @@
 #include "utilisateurVIP.hh"
 #include "utilisateurPublic.hh"
 
-TEST_CASE("Test de evenement.hh")
+TEST_CASE("Test de utilisateurPublic.hh")
 {
-    CHECK(1 == 1);
+    UtilisateurPublic test1("nom1", "prenom1", "mail1", "telephone1", "login1", "mdp1", "type1");
+    CHECK(test1.getNom() == "nom1");
+    CHECK(test1.getPrenom() == "prenom1");
+    CHECK(test1.getMail() == "mail1");
+    CHECK(test1.getTelephone() == "telephone1");
+    CHECK(test1.getLogin() == "login1");
+    CHECK(test1.getMdp() == "mdp1");
+    CHECK(test1.getType() == "type1");
 }
 
-TEST_CASE("Test de billeterie.hh")
+TEST_CASE("Test de utilisateurVIP.hh")
 {
-    CHECK(1 == 1);
+    UtilisateurVIP test2("nom2", "prenom2", "mail2", "telephone2", "login2", "mdp2", "type2");
+    CHECK(test2.getNom() == "nom2");
+    CHECK(test2.getPrenom() == "prenom2");
+    CHECK(test2.getMail() == "mail2");
+    CHECK(test2.getTelephone() == "telephone2");
+    CHECK(test2.getLogin() == "login2");
+    CHECK(test2.getMdp() == "mdp2");
+    CHECK(test2.getType() == "type2");
 }
 
-TEST_CASE("Test de utilisateur.hh")
+TEST_CASE("Test de utilisateurAdmin.hh")
 {
-    CHECK(1 == 1);
+    UtilisateurAdmin test3("nom3", "prenom3", "mail3", "telephone3", "login3", "mdp3", "type3");
+    CHECK(test3.getNom() == "nom3");
+    CHECK(test3.getPrenom() == "prenom3");
+    CHECK(test3.getMail() == "mail3");
+    CHECK(test3.getTelephone() == "telephone3");
+    CHECK(test3.getLogin() == "login3");
+    CHECK(test3.getMdp() == "mdp3");
+    CHECK(test3.getType() == "type3");
 }
 
 

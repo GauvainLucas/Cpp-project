@@ -24,17 +24,17 @@ Utilisateur::Utilisateur(std::string nom, std::string prenom, std::string mail, 
     this->type = type;
 }
 
-void Utilisateur::annulerTicket(std::string nomEvenement){
+void Utilisateur::annulerTicket(Evenement evenement){
     for (int i = 0; i < listeTickets.size(); i++){
-        if (listeTickets[i].getNom() == nomEvenement){
+        if (listeTickets[i].getNom() == evenement.getNom()){
             listeTickets.erase(listeTickets.begin() + i);
         }
     }
 }
 
-void Utilisateur::consulterTicket(std::string nomEvenement){
+void Utilisateur::consulterTicket(Evenement evenement){
     for (int i = 0; i < listeTickets.size(); i++){
-        if (listeTickets[i].getNom() == nomEvenement){
+        if (listeTickets[i].getNom() == evenement.getNom()){
             std::cout << listeTickets[i].getNom() << "\n" << listeTickets[i].getDate() << "\n" << listeTickets[i].getLieu() << "\n" << listeTickets[i].getDescription() << "\n" << listeTickets[i].getType() << "------------------------------" << std::endl;
         }
     }

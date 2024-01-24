@@ -10,7 +10,7 @@ class UtilisateurPublic : public Utilisateur{
     public:
         UtilisateurPublic();
 
-        UtilisateurPublic(std::string nom, std::string prenom, std::string mail, std::string telephone, std::string login, std::string mdp, std::string type);
+        //UtilisateurPublic(std::string nom, std::string prenom, std::string mail, std::string telephone, std::string login, std::string mdp, std::string type);
         // getters
         std::string getNom(){return nom;};
         std::string getPrenom(){return prenom;};
@@ -30,7 +30,7 @@ class UtilisateurPublic : public Utilisateur{
         void modifierLogin(std::string login){this->login = login;};
         void modifierMdp(std::string mdp){this->mdp = mdp;};
 
-       // UtilisateurPublic(std::string nom, std::string prenom, std::string mail, std::string telephone, std::string login, std::string mdp, std::string type):Utilisateur(nom, prenom, mail, telephone, login, mdp, type){};
+       UtilisateurPublic(std::string nom, std::string prenom, std::string mail, std::string telephone, std::string login, std::string mdp, std::string type):Utilisateur(nom, prenom, mail, telephone, login, mdp, type){};
 
 
 };

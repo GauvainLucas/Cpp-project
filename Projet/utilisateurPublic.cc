@@ -16,7 +16,7 @@ UtilisateurPublic::UtilisateurPublic(){
     type = "";
 }
 
-UtilisateurPublic::UtilisateurPublic(std::string nom, std::string prenom, std::string mail, std::string telephone, std::string login, std::string mdp, std::string type){
+/*UtilisateurPublic::UtilisateurPublic(std::string nom, std::string prenom, std::string mail, std::string telephone, std::string login, std::string mdp, std::string type){
     this->nom = nom;
     this->prenom = prenom;
     this->mail = mail;
@@ -24,7 +24,7 @@ UtilisateurPublic::UtilisateurPublic(std::string nom, std::string prenom, std::s
     this->login = login;
     this->mdp = mdp;
     this->type = type;
-}
+}*/
 
 void UtilisateurPublic::consulterListeTickets() {
     std::cout << "Liste des tickets : " << std::endl;

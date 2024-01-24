@@ -44,7 +44,7 @@ class UtilisateurVIP : public Utilisateur{
         // Implementation for consulterListeTicketsType goes here
     }
 
-    void modifierNom(std::string nom) override {
+    /*void modifierNom(std::string nom) override {
         // Implementation for modifierNom goes here
     }
 
@@ -70,7 +70,7 @@ class UtilisateurVIP : public Utilisateur{
 
     void modifierType(std::string type) override {
         // Implementation for modifierType goes here
-    }
+    }*/
 
     protected:
         std::vector<Evenement> listeTicketsVIP;

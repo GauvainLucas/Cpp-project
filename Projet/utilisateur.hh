@@ -5,7 +5,6 @@
 #include <fstream>
 #include <vector>
 #include "evenement.hh"
-#include "IBilleterie.hh"
 
 
 class Utilisateur{
@@ -16,6 +15,12 @@ class Utilisateur{
         // getters
         std::string getNom(){return nom;};
         std::string getPrenom(){return prenom;};
+        std::string getMail(){return mail;};
+        std::string getTelephone(){return telephone;};
+        std::string getLogin(){return login;};
+        std::string getMdp(){return mdp;};
+        std::string getType(){return type;};
+
         virtual void acheterTicket(Evenement evenement) = 0;
         virtual void annulerTicket(Evenement evenement) = 0;
         virtual void consulterTicket(Evenement evenement) = 0;
@@ -25,13 +30,13 @@ class Utilisateur{
         virtual void consulterListeTicketsLieu(std::string lieuEvenement) = 0;
         virtual void consulterListeTicketsType(std::string typeEvenement) = 0;
         
-        virtual void modifierNom(std::string nom) = 0;
-        virtual void modifierPrenom(std::string prenom) = 0;
-        virtual void modifierMail(std::string mail) = 0;
-        virtual void modifierTelephone(std::string telephone) = 0;
-        virtual void modifierLogin(std::string login) = 0;
-        virtual void modifierMdp(std::string mdp) = 0;
-        virtual void modifierType(std::string type) = 0;
+        void modifierNom(std::string nom);
+        void modifierPrenom(std::string prenom);
+        void modifierMail(std::string mail);
+        void modifierTelephone(std::string telephone);
+        void modifierLogin(std::string login);
+        void modifierMdp(std::string mdp);
+        void modifierType(std::string type);
         /*
         virtual void acheterTicket(Evenement event) = 0;
         void annulerTicket(std::string nomEvenement);
