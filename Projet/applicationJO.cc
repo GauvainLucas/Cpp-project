@@ -4,6 +4,7 @@
 #include "utilisateurPublic.hh"
 #include "utilisateurVIP.hh"
 #include "pageEvenements.hpp"
+#include "pageBilleterie.hpp"
 
 
 int main() {
@@ -15,7 +16,7 @@ int main() {
     sf::Texture texture;
     if (!texture.loadFromFile("../images/logoJO.png")) {
         std::cerr << "Error while loading texture" << std::endl;
-        return -1;
+        exit (-1);
     }
     // Enable the smooth filter. The texture appears smoother so that pixels are less noticeable.
     texture.setSmooth(true);
@@ -35,7 +36,7 @@ int main() {
     sf::Font font;
     if (!font.loadFromFile("../fonts/SF-Compact-Display-Black.ttf")) {
         std::cerr << "Error while loading font" << std::endl;
-        return -1;
+        exit (-1);
     }
     // select the font
     textBienvenue.setFont(font); // font is a sf::Font
@@ -47,7 +48,7 @@ int main() {
 
     // set the string to display
     textBienvenue.setString("Bienvenue sur l'application des JO de Paris 2024 !");
-    textUtilisateur.setString(johnDoe.getNom() + "\n" + johnDoe.getPrenom());
+    textUtilisateur.setString(johnDoe.getPrenom() + " " + johnDoe.getNom() + "\n" + johnDoe.getType());
     textVoirEvenements.setString("Voir les evenements");
     textAcheterTicket.setString("Acceder a la billeterie");
     textVoirActualites.setString("Dernieres actualites");
@@ -121,19 +122,13 @@ int main() {
                 if (event.mouseButton.button == sf::Mouse::Left) {
                     sf::Vector2f mousePos = mainWindow.mapPixelToCoords(sf::Mouse::getPosition(mainWindow));
                     if (buttonVoirEvenements.getGlobalBounds().contains(mousePos)) {
-                        // Le bouton evenement a été cliqué
                         buttonVoirEvenements.setFillColor(sf::Color::White);
-                        // ouvrir l'onglet evenement
                         pageEvenements();
-
                     } else if (buttonAcheterTicket.getGlobalBounds().contains(mousePos)) {
-                        // Le bouton tickets a été cliqué
                         buttonAcheterTicket.setFillColor(sf::Color::White);
-                        // Ajoutez ici le code à exécuter lorsque le bouton est cliqué
+                        pageBilleterie();
                     } else if (buttonVoirActualites.getGlobalBounds().contains(mousePos)) {
-                        // Le bouton actualites a été cliqué
                         buttonVoirActualites.setFillColor(sf::Color::White);
-                        // Ajoutez ici le code à exécuter lorsque le bouton est cliqué
                     }
                 }
             }

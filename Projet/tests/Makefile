@@ -1,12 +1,14 @@
 CC=g++
 CCFLAGS= -Wall -std=c++11 -g
-SRC= $(wildcard ../*.cc)
+SRC:= $(wildcard ../*.cc )
+SRC:= $(filter-out ../applicationJO.cc ../pageEvenements.cc ../pageBilleterie.cc, $(SRC))
 OBJ= $(SRC:.cc=.o)
 TST= $(wildcard *.cc)
 OBJ_TEST = $(filter-out ../main.o, $(OBJ)) $(TST:.cc=.o)
 
+
 testcase.out : $(OBJ_TEST) 
-	$(CC) $(CCFLAGS)  -o $@ $^
+	$(CC) $(CCFLAGS)  -o $@ $^ -lsfml-graphics -lsfml-window -lsfml-system
 
 %.o: %.cc
 	$(CC) $(CCFLAGS) -I../ -o $@ -c $<

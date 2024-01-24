@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Projet.dir/evenement.cc.o.d"
   "CMakeFiles/Projet.dir/evenementSportif.cc.o"
   "CMakeFiles/Projet.dir/evenementSportif.cc.o.d"
+  "CMakeFiles/Projet.dir/pageBilleterie.cc.o"
+  "CMakeFiles/Projet.dir/pageBilleterie.cc.o.d"
   "CMakeFiles/Projet.dir/pageEvenements.cc.o"
   "CMakeFiles/Projet.dir/pageEvenements.cc.o.d"
   "CMakeFiles/Projet.dir/utilisateur.cc.o"

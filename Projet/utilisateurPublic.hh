@@ -18,10 +18,10 @@ class UtilisateurPublic : public Utilisateur{
         void annulerTicket(Evenement evenement);
         void consulterTicket(Evenement evenement);
         void consulterListeTickets();
-        void consulterListeTicketsEvenement(std::string nomEvenement);
-        void consulterListeTicketsDate(std::string dateEvenement);
-        void consulterListeTicketsLieu(std::string lieuEvenement);
-        void consulterListeTicketsType(std::string typeEvenement);
+     //   void consulterListeTicketsEvenement(std::string nomEvenement);
+       // void consulterListeTicketsDate(std::string dateEvenement);
+        //void consulterListeTicketsLieu(std::string lieuEvenement);
+       // void consulterListeTicketsType(std::string typeEvenement);
 
         void modifierNom(std::string nom){this->nom = nom;};
         void modifierPrenom(std::string prenom){this->prenom = prenom;};

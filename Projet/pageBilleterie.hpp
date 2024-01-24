@@ -1,0 +1,8 @@
+
+
+#ifndef PROJET_PAGEBILLETERIE_HPP
+#define PROJET_PAGEBILLETERIE_HPP
+
+void pageBilleterie();
+
+#endif //PROJET_PAGEBILLETERIE_HPP

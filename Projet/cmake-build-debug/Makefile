@@ -201,6 +201,30 @@ evenementSportif.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/evenementSportif.cc.s
 .PHONY : evenementSportif.cc.s
 
+pageBilleterie.o: pageBilleterie.cc.o
+.PHONY : pageBilleterie.o
+
+# target to build an object file
+pageBilleterie.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/pageBilleterie.cc.o
+.PHONY : pageBilleterie.cc.o
+
+pageBilleterie.i: pageBilleterie.cc.i
+.PHONY : pageBilleterie.i
+
+# target to preprocess a source file
+pageBilleterie.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/pageBilleterie.cc.i
+.PHONY : pageBilleterie.cc.i
+
+pageBilleterie.s: pageBilleterie.cc.s
+.PHONY : pageBilleterie.s
+
+# target to generate assembly for a file
+pageBilleterie.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/pageBilleterie.cc.s
+.PHONY : pageBilleterie.cc.s
+
 pageEvenements.o: pageEvenements.cc.o
 .PHONY : pageEvenements.o
 
@@ -339,6 +363,9 @@ help:
 	@echo "... evenementSportif.o"
 	@echo "... evenementSportif.i"
 	@echo "... evenementSportif.s"
+	@echo "... pageBilleterie.o"
+	@echo "... pageBilleterie.i"
+	@echo "... pageBilleterie.s"
 	@echo "... pageEvenements.o"
 	@echo "... pageEvenements.i"
 	@echo "... pageEvenements.s"

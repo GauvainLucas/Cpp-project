@@ -108,6 +108,12 @@
 		<Unit filename="/mnt/c/Users/Lucas/OneDrive - etu.sorbonne-universite.fr/EI-SE/Semesre 7/C++/PROJET/Projet/Cpp-project/Projet/evenementSportif.hh">
 			<Option target="Projet"/>
 		</Unit>
+		<Unit filename="/mnt/c/Users/Lucas/OneDrive - etu.sorbonne-universite.fr/EI-SE/Semesre 7/C++/PROJET/Projet/Cpp-project/Projet/pageBilleterie.cc">
+			<Option target="Projet"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Lucas/OneDrive - etu.sorbonne-universite.fr/EI-SE/Semesre 7/C++/PROJET/Projet/Cpp-project/Projet/pageBilleterie.hpp">
+			<Option target="Projet"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/Lucas/OneDrive - etu.sorbonne-universite.fr/EI-SE/Semesre 7/C++/PROJET/Projet/Cpp-project/Projet/pageEvenements.cc">
 			<Option target="Projet"/>
 		</Unit>
