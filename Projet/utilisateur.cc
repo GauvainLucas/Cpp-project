@@ -32,13 +32,13 @@ void Utilisateur::annulerTicket(Evenement evenement){
     }
 }
 
-void Utilisateur::consulterTicket(Evenement evenement){
+/*void Utilisateur::consulterTicket(Evenement evenement){
     for (int i = 0; i < listeTickets.size(); i++){
         if (listeTickets[i].getNom() == evenement.getNom()){
             std::cout << listeTickets[i].getNom() << "\n" << listeTickets[i].getDate() << "\n" << listeTickets[i].getLieu() << "\n" << listeTickets[i].getDescription() << "\n" << listeTickets[i].getType() << "------------------------------" << std::endl;
         }
     }
-}
+}*/
 
 void Utilisateur::consulterTicket(Evenement evenement) {
     std::cout << "Nom : " << evenement.getNom() << "\n" << "Date : " << evenement.getDate() << "\n" << "Lieu : "

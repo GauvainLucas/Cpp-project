@@ -18,6 +18,14 @@ TEST_CASE("Test de utilisateurPublic.hh")
     CHECK(test1.getLogin() == "login1");
     CHECK(test1.getMdp() == "mdp1");
     CHECK(test1.getType() == "type1");
+    Evenement event1("nom1", "date1", "lieu1", "type1", "description1");
+    Evenement event2("nom2", "date2", "lieu2", "type2", "description2");
+    test1.acheterTicket(event1);
+    test1.consulterTicket(event1);
+    test1.acheterTicket(event2);
+    test1.consulterListeTickets();
+    test1.annulerTicket(event1);
+    test1.consulterListeTickets();
 }
 
 TEST_CASE("Test de utilisateurVIP.hh")
@@ -30,6 +38,15 @@ TEST_CASE("Test de utilisateurVIP.hh")
     CHECK(test2.getLogin() == "login2");
     CHECK(test2.getMdp() == "mdp2");
     CHECK(test2.getType() == "type2");
+    Evenement event1("nom1", "date1", "lieu1", "type1", "description1");
+    Evenement event2("nom2", "date2", "lieu2", "VIP", "description2");
+    test2.acheterTicket(event1);
+    test2.consulterTicket(event1);
+    test2.acheterTicket(event2);
+    test2.consulterListeTickets();
+    test2.consulterListeTicketsVIP();
+    test2.annulerTicket(event1);
+    test2.consulterListeTickets();
 }
 
 TEST_CASE("Test de utilisateurAdmin.hh")
@@ -42,6 +59,35 @@ TEST_CASE("Test de utilisateurAdmin.hh")
     CHECK(test3.getLogin() == "login3");
     CHECK(test3.getMdp() == "mdp3");
     CHECK(test3.getType() == "type3");
+    Evenement event1("nom1", "date1", "lieu1", "type1", "description1");
+    Evenement event2("nom2", "date2", "lieu2", "VIP", "description2");
+    test3.acheterTicket(event1);
+    test3.consulterTicket(event1);
+    test3.acheterTicket(event2);
+    test3.consulterListeTickets();
+    test3.consulterListeTicketsVIP();
+    test3.annulerTicket(event1);
+    test3.modifierTicketType(event1, "VIP");
+    test3.modifierTicketNom(event1, "nom1-2");
+    test3.modifierTicketDate(event1, "date1-2");
+    test3.modifierTicketLieu(event1, "lieu1-2");
+    test3.modifierTicketDescription(event1, "description1-2");
+    test3.acheterTicket(event1);
+    test3.consulterListeTicketsVIP();
+    test3.modifierNomAutre("nom3-2", test3);
+    test3.modifierPrenomAutre("prenom3-2", test3);
+    test3.modifierMailAutre("mail3-2", test3);
+    test3.modifierTelephoneAutre("telephone3-2", test3);
+    test3.modifierLoginAutre("login3-2", test3);
+    test3.modifierMdpAutre("mdp3-2", test3);
+    test3.modifierTypeAutre("type3-2", test3);
+    CHECK(test3.getNom() == "nom3-2");
+    CHECK(test3.getPrenom() == "prenom3-2");
+    CHECK(test3.getMail() == "mail3-2");
+    CHECK(test3.getTelephone() == "telephone3-2");
+    CHECK(test3.getLogin() == "login3-2");
+    CHECK(test3.getMdp() == "mdp3-2");
+    CHECK(test3.getType() == "type3-2");
 }
 
 
