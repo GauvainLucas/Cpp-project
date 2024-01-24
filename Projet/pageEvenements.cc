@@ -13,33 +13,62 @@ void pageEvenements(){
 
     // Evenements
     std::vector<Evenement*> listEvenementsEnCours;
+    std::vector<Evenement*> listEvenementsFuturs;
     EvenementSportif* premierDirect = new EvenementSportif("Finale 400m Homme",
                                                            "Aujourd'hui - 14h",
                                                            "Stade Charlety",
                                                            "Places disponibles : 43",
-                                                           "", "Athletisme");
+                                                           "Public", "Athletisme");
     EvenementSportif* deuxiemeDirect = new EvenementSportif("Finale 100m Homme",
                                                             "Aujourd'hui - 14h30",
                                                             "Stade Montreuil",
                                                             "Aller Daviiiiiid !",
-                                                            "", "Athletisme");
-    EvenementCeremonie* premiereCeremonie = new EvenementCeremonie("Remise medailles 400m Femme",
-                                                                   "Aujourd'hui - 14h",
-                                                                   "Tour Eiffel",
-                                                                   "Annonce du podium",
-                                                                   "", "Ceremonie");
-    EvenementCeremonie* deuxiemeCeremonie = new EvenementCeremonie("Remise medailles 100m Femme",
-                                                                   "Aujourd'hui - 14h30",
-                                                                   "Tour Eiffel",
-                                                                   "Annonce du podium",
-                                                                   "", "Ceremonie");
+                                                            "Public", "Athletisme");
+    EvenementCeremonie* troisiemeDirect = new EvenementCeremonie("Remise medailles 400m Femme",
+                                                                 "Aujourd'hui - 14h",
+                                                                 "Tour Eiffel",
+                                                                 "Annonce du podium",
+                                                                 "VIP", "Ceremonie");
+    EvenementCeremonie* quatriemeDirect = new EvenementCeremonie("Remise medailles 100m Femme",
+                                                                 "Aujourd'hui - 14h30",
+                                                                 "Tour Eiffel",
+                                                                 "Annonce du podium",
+                                                                 "VIP", "Ceremonie");
+
+    EvenementSportif* premierFutur = new EvenementSportif("Quart de finale - France vs USA",
+                                                     "Demain - 9h",
+                                                     "Saint-Denis",
+                                                     "Places disponibles : 1",
+                                                     "Public", "Basketball");
+
+    EvenementSportif *deuxiemeFutur = new EvenementSportif("Demi finale - Allemagne vs Espagne",
+                                                      "Demain - 10h30",
+                                                      "Parc des Princes",
+                                                      "Places disponibles : 97",
+                                                      "Public", "Football");
+
+    EvenementCeremonie * troisiemeFutur = new EvenementCeremonie("Remise medailles 400m Homme",
+                                                           "Demain - 14h",
+                                                           "Tour Eiffel",
+                                                           "Annonce du podium",
+                                                           "VIP", "Ceremonie");
+
+    EvenementCeremonie * quatriemeFutur = new EvenementCeremonie("Remise medailles 100m Homme",
+                                                                 "Demain - 15h",
+                                                                 "Arc de Triomphe",
+                                                                 "Annonce du podium",
+                                                                 "VIP", "Ceremonie");
 
 
     // ajouter les evenements a la liste
     listEvenementsEnCours.push_back(premierDirect);
     listEvenementsEnCours.push_back(deuxiemeDirect);
-    listEvenementsEnCours.push_back(premiereCeremonie);
-    listEvenementsEnCours.push_back(deuxiemeCeremonie);
+    listEvenementsEnCours.push_back(troisiemeDirect);
+    listEvenementsEnCours.push_back(quatriemeDirect);
+    listEvenementsFuturs.push_back(premierFutur);
+    listEvenementsFuturs.push_back(deuxiemeFutur);
+    listEvenementsFuturs.push_back(troisiemeFutur);
+    listEvenementsFuturs.push_back(quatriemeFutur);
     sf::Font font;
     if (!font.loadFromFile("../fonts/SF-Compact-Display-Black.ttf")) {
         std::cerr << "Error while loading font" << std::endl;
@@ -79,6 +108,14 @@ void pageEvenements(){
     textDirect.setPosition(
             pageEvenements.getSize().x / 6 - textDirect.getGlobalBounds().width / 2, 150);
 
+    sf::Text textFutur;
+    textFutur.setFont(font); // font is a sf::Font
+    textFutur.setString(listEvenementsFuturs[0]->afficherEvenements(listEvenementsFuturs));
+    textFutur.setCharacterSize(18);
+    textFutur.setFillColor(sf::Color(88, 88, 88));
+    textFutur.setPosition(
+            pageEvenements.getSize().x / 2 + textFutur.getGlobalBounds().width / 2, 150);
+
     while (pageEvenements.isOpen()) {
         sf::Event event;
         while (pageEvenements.pollEvent(event)) {
@@ -90,6 +127,7 @@ void pageEvenements(){
         pageEvenements.draw(textEvenementsEnCours);
         pageEvenements.draw(textEvenementsFuturs);
         pageEvenements.draw(textDirect);
+        pageEvenements.draw(textFutur);
         pageEvenements.display();
     }
 }

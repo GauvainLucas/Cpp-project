@@ -29,7 +29,7 @@ public:
             affichage += evenement->getDate() + "\n";
             affichage += evenement->getLieu() + "\n";
             affichage += evenement->getDescription() + "\n";
-            affichage += evenement->getType() + "\n";
+            affichage += evenement->getType() + " - "+ evenement->getSport()+"\n";
             affichage += "--------------------------\n\n";
         }
         return affichage;
@@ -40,6 +40,9 @@ public:
     std::string getLieu() { return lieu; };
     std::string getDescription() { return description; };
     std::string getType() { return type; };
+
+    virtual std::string getSport() { return ""; };
+    virtual std::string getCeremonie() { return ""; };
 
     void modifierNom(std::string nom) { this->nom = nom; };
     void modifierDate(std::string date) { this->date = date; };
