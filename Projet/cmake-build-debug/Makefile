@@ -249,6 +249,30 @@ utilisateur.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/utilisateur.cc.s
 .PHONY : utilisateur.cc.s
 
+utilisateurAdmin.o: utilisateurAdmin.cc.o
+.PHONY : utilisateurAdmin.o
+
+# target to build an object file
+utilisateurAdmin.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/utilisateurAdmin.cc.o
+.PHONY : utilisateurAdmin.cc.o
+
+utilisateurAdmin.i: utilisateurAdmin.cc.i
+.PHONY : utilisateurAdmin.i
+
+# target to preprocess a source file
+utilisateurAdmin.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/utilisateurAdmin.cc.i
+.PHONY : utilisateurAdmin.cc.i
+
+utilisateurAdmin.s: utilisateurAdmin.cc.s
+.PHONY : utilisateurAdmin.s
+
+# target to generate assembly for a file
+utilisateurAdmin.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/utilisateurAdmin.cc.s
+.PHONY : utilisateurAdmin.cc.s
+
 utilisateurPublic.o: utilisateurPublic.cc.o
 .PHONY : utilisateurPublic.o
 
@@ -272,6 +296,30 @@ utilisateurPublic.s: utilisateurPublic.cc.s
 utilisateurPublic.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/utilisateurPublic.cc.s
 .PHONY : utilisateurPublic.cc.s
+
+utilisateurVIP.o: utilisateurVIP.cc.o
+.PHONY : utilisateurVIP.o
+
+# target to build an object file
+utilisateurVIP.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/utilisateurVIP.cc.o
+.PHONY : utilisateurVIP.cc.o
+
+utilisateurVIP.i: utilisateurVIP.cc.i
+.PHONY : utilisateurVIP.i
+
+# target to preprocess a source file
+utilisateurVIP.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/utilisateurVIP.cc.i
+.PHONY : utilisateurVIP.cc.i
+
+utilisateurVIP.s: utilisateurVIP.cc.s
+.PHONY : utilisateurVIP.s
+
+# target to generate assembly for a file
+utilisateurVIP.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/utilisateurVIP.cc.s
+.PHONY : utilisateurVIP.cc.s
 
 # Help Target
 help:
@@ -297,9 +345,15 @@ help:
 	@echo "... utilisateur.o"
 	@echo "... utilisateur.i"
 	@echo "... utilisateur.s"
+	@echo "... utilisateurAdmin.o"
+	@echo "... utilisateurAdmin.i"
+	@echo "... utilisateurAdmin.s"
 	@echo "... utilisateurPublic.o"
 	@echo "... utilisateurPublic.i"
 	@echo "... utilisateurPublic.s"
+	@echo "... utilisateurVIP.o"
+	@echo "... utilisateurVIP.i"
+	@echo "... utilisateurVIP.s"
 .PHONY : help
 
 

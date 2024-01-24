@@ -25,6 +25,7 @@ std::string EvenementSportif::afficherEvenements(const std::vector<Evenement*>& 
         affichage += evenement->getLieu() + "\n";
         affichage += evenement->getDescription() + "\n";
         affichage += evenement->getType() + "\n";
+        affichage += evenement->getSport() + "\n";
         affichage += "--------------------------\n\n";
     }
     return affichage;

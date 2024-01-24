@@ -40,6 +40,11 @@ void Utilisateur::consulterTicket(Evenement evenement){
     }
 }
 
+void Utilisateur::consulterTicket(Evenement evenement) {
+    std::cout << "Nom : " << evenement.getNom() << "\n" << "Date : " << evenement.getDate() << "\n" << "Lieu : "
+              << evenement.getLieu() << "\n" << "Description : " << evenement.getDescription() << "\n" << "Type : "
+              << evenement.getType() << std::endl;
+}
 void Utilisateur::consulterListeTickets(){
     std::cout << "Liste de vos tickets : " << std::endl;
     for (int i = 0; i < listeTickets.size(); i++){

@@ -7,8 +7,10 @@
 
 class UtilisateurVIP : public Utilisateur{
     public:
-        UtilisateurVIP();
-        UtilisateurVIP(std::string nom, std::string prenom, std::string mail, std::string telephone, std::string login, std::string mdp, std::string type):Utilisateur(nom, prenom, mail, telephone, login, mdp, type){};
+        UtilisateurVIP() = default;
+        UtilisateurVIP(std::string nom, std::string prenom, std::string mail,
+                       std::string telephone, std::string login, std::string mdp,
+                       std::string type):Utilisateur(nom, prenom, mail, telephone, login, mdp, type){};
 
     std::string getNom(){return nom;};
     std::string getPrenom(){return prenom;};

@@ -10,7 +10,8 @@
 class Utilisateur{
     public:
         Utilisateur();
-        Utilisateur(std::string nom, std::string prenom, std::string mail, std::string telephone, std::string login, std::string mdp, std::string type);
+        Utilisateur(std::string nom, std::string prenom, std::string mail,
+                    std::string telephone, std::string login, std::string mdp, std::string type);
 
         // getters
         std::string getNom(){return nom;};
