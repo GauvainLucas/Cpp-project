@@ -24,22 +24,23 @@ Utilisateur::Utilisateur(std::string nom, std::string prenom, std::string mail, 
     this->type = type;
 }
 
-void Utilisateur::annulerTicket(std::string nomEvenement){
+void Utilisateur::acheterTicket(Evenement evenement){
+    listeTickets.push_back(evenement);
+}
+
+void Utilisateur::annulerTicket(Evenement evenement){
     for (int i = 0; i < listeTickets.size(); i++){
-        if (listeTickets[i].getNom() == nomEvenement){
-            listeTickets.erase(listeTickets.begin() + i);
+        if (listeTickets[i].getNom() == evenement.getNom()){
+            listeTickets.erase(listeTickets.begin()+i);
         }
     }
 }
 
-void Utilisateur::consulterTicket(std::string nomEvenement){
-    for (int i = 0; i < listeTickets.size(); i++){
-        if (listeTickets[i].getNom() == nomEvenement){
-            std::cout << listeTickets[i].getNom() << "\n" << listeTickets[i].getDate() << "\n" << listeTickets[i].getLieu() << "\n" << listeTickets[i].getDescription() << "\n" << listeTickets[i].getType() << "------------------------------" << std::endl;
-        }
-    }
+void Utilisateur::consulterTicket(Evenement evenement) {
+    std::cout << "Nom : " << evenement.getNom() << "\n" << "Date : " << evenement.getDate() << "\n" << "Lieu : "
+              << evenement.getLieu() << "\n" << "Description : " << evenement.getDescription() << "\n" << "Type : "
+              << evenement.getType() << std::endl;
 }
-
 void Utilisateur::consulterListeTickets(){
     std::cout << "Liste de vos tickets : " << std::endl;
     for (int i = 0; i < listeTickets.size(); i++){

@@ -3,6 +3,7 @@
 #include "pageEvenements.hpp"
 #include "evenement.hh"
 #include "evenementSportif.hh"
+#include "evenementCeremonie.hh"
 #include <vector>
 
 void pageEvenements(){
@@ -11,20 +12,34 @@ void pageEvenements(){
     pageEvenements.setPosition(sf::Vector2i(500, 100));
 
     // Evenements
-    std::vector<Evenement*> listEvenements;
+    std::vector<Evenement*> listEvenementsEnCours;
     EvenementSportif* premierDirect = new EvenementSportif("Finale 400m Homme",
-                                                           "23/01/2024 - 14h",
+                                                           "Aujourd'hui - 14h",
                                                            "Stade Charlety",
                                                            "Places disponibles : 43",
                                                            "", "Athletisme");
     EvenementSportif* deuxiemeDirect = new EvenementSportif("Finale 100m Homme",
-                                                            "23/01/2024 - 14h30",
+                                                            "Aujourd'hui - 14h30",
                                                             "Stade Montreuil",
                                                             "Aller Daviiiiiid !",
                                                             "", "Athletisme");
+    EvenementCeremonie* premiereCeremonie = new EvenementCeremonie("Remise medailles 400m Femme",
+                                                                   "Aujourd'hui - 14h",
+                                                                   "Tour Eiffel",
+                                                                   "Annonce du podium",
+                                                                   "", "Ceremonie");
+    EvenementCeremonie* deuxiemeCeremonie = new EvenementCeremonie("Remise medailles 100m Femme",
+                                                                   "Aujourd'hui - 14h30",
+                                                                   "Tour Eiffel",
+                                                                   "Annonce du podium",
+                                                                   "", "Ceremonie");
+
+
     // ajouter les evenements a la liste
-    listEvenements.push_back(premierDirect);
-    listEvenements.push_back(deuxiemeDirect);
+    listEvenementsEnCours.push_back(premierDirect);
+    listEvenementsEnCours.push_back(deuxiemeDirect);
+    listEvenementsEnCours.push_back(premiereCeremonie);
+    listEvenementsEnCours.push_back(deuxiemeCeremonie);
     sf::Font font;
     if (!font.loadFromFile("../fonts/SF-Compact-Display-Black.ttf")) {
         std::cerr << "Error while loading font" << std::endl;
@@ -58,7 +73,7 @@ void pageEvenements(){
 
     sf::Text textDirect;
     textDirect.setFont(font); // font is a sf::Font
-    textDirect.setString(listEvenements[0]->afficherEvenements(listEvenements));
+    textDirect.setString(listEvenementsEnCours[0]->afficherEvenements(listEvenementsEnCours));
     textDirect.setCharacterSize(18);
     textDirect.setFillColor(sf::Color(88, 88, 88));
     textDirect.setPosition(

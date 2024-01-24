@@ -75,7 +75,9 @@
 				11,
 				12,
 				13,
-				15
+				15,
+				16,
+				17
 			]
 		}
 	],
@@ -144,7 +146,9 @@
 				11,
 				12,
 				13,
-				15
+				15,
+				16,
+				17
 			]
 		}
 	],
@@ -234,6 +238,18 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "evenementSportif.cc",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "utilisateurVIP.cc",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "utilisateurAdmin.cc",
 			"sourceGroupIndex" : 1
 		}
 	],

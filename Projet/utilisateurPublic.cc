@@ -26,13 +26,6 @@ UtilisateurPublic::UtilisateurPublic(std::string nom, std::string prenom, std::s
     this->type = type;
 }
 
-void UtilisateurPublic::consulterListeTickets() {
-    std::cout << "Liste des tickets : " << std::endl;
-    for (int i = 0; i < listeTickets.size(); i++) {
-        std::cout << listeTickets[i].getNom() << "\n" << listeTickets[i].getDate() << "\n" << listeTickets[i].getLieu()
-                  << "\n" << listeTickets[i].getDescription() << "\n" << listeTickets[i].getType() << std::endl;
-    }
-}
 void UtilisateurPublic::acheterTicket(Evenement evenement){
     if (evenement.getType() == "VIP"){
         std::cout << "Vous ne pouvez pas acheter de ticket pour un evenement VIP" << std::endl;
@@ -44,3 +37,36 @@ void UtilisateurPublic::acheterTicket(Evenement evenement){
         return;
     }
 }
+
+void UtilisateurPublic::annulerTicket(Evenement evenement){
+    for (int i = 0; i < listeTickets.size(); i++){
+        if (listeTickets[i].getNom() == evenement.getNom()){
+            listeTickets.erase(listeTickets.begin()+i);
+        }
+    }
+}
+
+void UtilisateurPublic::consulterTicket(Evenement evenement) {
+    std::cout << "Nom : " << evenement.getNom() << "\n" << "Date : " << evenement.getDate() << "\n" << "Lieu : "
+              << evenement.getLieu() << "\n" << "Description : " << evenement.getDescription() << "\n" << "Type : "
+              << evenement.getType() << std::endl;
+}
+
+void UtilisateurPublic::consulterListeTickets() {
+    std::cout << "Liste des tickets : " << std::endl;
+    for (int i = 0; i < listeTickets.size(); i++) {
+        std::cout << listeTickets[i].getNom() << "\n" << listeTickets[i].getDate() << "\n" << listeTickets[i].getLieu()
+                  << "\n" << listeTickets[i].getDescription() << "\n" << listeTickets[i].getType() << std::endl;
+    }
+}
+/*void UtilisateurPublic::acheterTicket(Evenement evenement){
+    if (evenement.getType() == "VIP"){
+        std::cout << "Vous ne pouvez pas acheter de ticket pour un evenement VIP" << std::endl;
+        return;
+    }
+    else{
+        listeTickets.push_back(evenement);
+        std::cout << "Ticket achete" << std::endl;
+        return;
+    }
+}*/

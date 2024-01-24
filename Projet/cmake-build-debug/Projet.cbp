@@ -120,6 +120,9 @@
 		<Unit filename="/mnt/c/Users/Lucas/OneDrive - etu.sorbonne-universite.fr/EI-SE/Semesre 7/C++/PROJET/Projet/Cpp-project/Projet/utilisateur.hh">
 			<Option target="Projet"/>
 		</Unit>
+		<Unit filename="/mnt/c/Users/Lucas/OneDrive - etu.sorbonne-universite.fr/EI-SE/Semesre 7/C++/PROJET/Projet/Cpp-project/Projet/utilisateurAdmin.cc">
+			<Option target="Projet"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/Lucas/OneDrive - etu.sorbonne-universite.fr/EI-SE/Semesre 7/C++/PROJET/Projet/Cpp-project/Projet/utilisateurAdmin.hh">
 			<Option target="Projet"/>
 		</Unit>
@@ -127,6 +130,9 @@
 			<Option target="Projet"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/Lucas/OneDrive - etu.sorbonne-universite.fr/EI-SE/Semesre 7/C++/PROJET/Projet/Cpp-project/Projet/utilisateurPublic.hh">
+			<Option target="Projet"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Lucas/OneDrive - etu.sorbonne-universite.fr/EI-SE/Semesre 7/C++/PROJET/Projet/Cpp-project/Projet/utilisateurVIP.cc">
 			<Option target="Projet"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/Lucas/OneDrive - etu.sorbonne-universite.fr/EI-SE/Semesre 7/C++/PROJET/Projet/Cpp-project/Projet/utilisateurVIP.hh">
