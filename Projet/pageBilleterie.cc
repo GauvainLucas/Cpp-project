@@ -5,56 +5,9 @@
 #include "evenementSportif.hh"
 #include "evenementCeremonie.hh"
 
-// Define a structure to represent the data for each row
-struct ChartData {
-    std::string evenement;
-    std::string date;
-    std::string lieux;
-    std::string type;
-    std ::string acces;
-    std::string reserver;
-};
-
-//std::vector<Evenement *> listEvenementsAReserver;
-EvenementSportif *premier = new EvenementSportif("Finale 400m Homme",
-                                                       "Aujourd'hui - 14h",
-                                                       "Stade Charlety",
-                                                       "Places disponibles : 43",
-                                                       "Public", "Athletisme");
-EvenementSportif *deuxieme = new EvenementSportif("Finale 100m Homme",
-                                                        "Aujourd'hui - 14h30",
-                                                        "Stade Montreuil",
-                                                        "Aller Daviiiiiid !",
-                                                        "Public", "Athletisme");
-EvenementCeremonie *troisieme = new EvenementCeremonie("Remise prix 400m Femme",
-                                                             "Aujourd'hui - 14h",
-                                                             "Tour Eiffel",
-                                                             "Annonce du podium",
-                                                             "VIP", "Ceremonie");
-EvenementCeremonie *quatrieme = new EvenementCeremonie("Remise prix 100m Femme",
-                                                             "Aujourd'hui - 14h30",
-                                                             "Tour Eiffel",
-                                                             "Annonce du podium",
-                                                             "VIP", "Ceremonie");
-
-// Sample data
-std::vector<ChartData> data = {
-        {premier->getNom(), premier->getDate(), premier->getLieu(),
-         premier->getSport(), premier->getType(), "Reserver"},
-
-        {deuxieme->getNom(), deuxieme->getDate(), deuxieme->getLieu(),
-         deuxieme->getSport(), deuxieme->getType(), "Reserver"},
-
-        {troisieme->getNom(), troisieme->getDate(), troisieme->getLieu(),
-         troisieme->getSport(), troisieme->getType(), "Reserver"},
-
-        {quatrieme->getNom(), quatrieme->getDate(), quatrieme->getLieu(),
-         quatrieme->getSport(), quatrieme->getType(), "Reserver"}
-};
-
-std::string truncateText(const std::string& text, std::size_t maxLength) {
-    if (text.length() > maxLength) {
-        return text.substr(0, maxLength - 3) + "...";
+std::string reduiretexte(const std::string &text, std::size_t tailleMax) {
+    if (text.length() > tailleMax) {
+        return text.substr(0, tailleMax - 3) + "...";
     }
     return text;
 }
@@ -89,11 +42,50 @@ void pageBilleterie() {
     imagePageBilleterie.setPosition(pageBilletterie.getSize().x / 1.8, 100);
     imagePageBilleterie.setScale(0.8, 0.8);
 
-    // Create a table to hold the data
-    // Set up the column headers
+    std::vector<Evenement *> listEvenementsAReserver;
+    EvenementSportif *premier = new EvenementSportif("Finale 400m Homme",
+                                                     "Aujourd'hui - 14h",
+                                                     "Stade Charlety",
+                                                     "Places disponibles : 43",
+                                                     "Public", "Athletisme");
+    EvenementSportif *deuxieme = new EvenementSportif("Finale 100m Homme",
+                                                      "Aujourd'hui - 14h30",
+                                                      "Stade Montreuil",
+                                                      "Aller Daviiiiiid !",
+                                                      "Public", "Athletisme");
+    EvenementCeremonie *troisieme = new EvenementCeremonie("Remise prix 400m Femme",
+                                                           "Aujourd'hui - 14h",
+                                                           "Tour Eiffel",
+                                                           "Annonce du podium",
+                                                           "VIP", "Ceremonie");
+    EvenementCeremonie *quatrieme = new EvenementCeremonie("Remise prix 100m Femme",
+                                                           "Aujourd'hui - 14h30",
+                                                           "Tour Eiffel",
+                                                           "Annonce du podium",
+                                                           "VIP", "Ceremonie");
+
+    listEvenementsAReserver.push_back(premier);
+    listEvenementsAReserver.push_back(deuxieme);
+    listEvenementsAReserver.push_back(troisieme);
+    listEvenementsAReserver.push_back(quatrieme);
+
+    // Les donnees a afficher dans le tableau
+    std::vector<ChartData> data;
+    for (auto evenement: listEvenementsAReserver) {
+        ChartData dataElement;
+        dataElement.evenement = evenement->getNom();
+        dataElement.date = evenement->getDate();
+        dataElement.lieux = evenement->getLieu();
+        dataElement.type = evenement->getType();
+        dataElement.acces = evenement->getSport();
+        dataElement.reserver = "Reserver";
+        data.push_back(dataElement);
+    }
+
+    // Les differentes colonnes du tableau
     std::vector<std::string> columnHeaders = {"Evenement", "Date", "Lieux", "Type", "Acces", "Reserver"};
 
-    // Set up the text objects for column headers
+    // Mise en place des headers dans le tableau
     std::vector<sf::Text> headerTexts;
     for (const auto &header: columnHeaders) {
         sf::Text text;
@@ -104,7 +96,7 @@ void pageBilleterie() {
         headerTexts.push_back(text);
     }
 
-    // Set up the text objects for data
+    // Mise en place des evenements dans le tableau
     std::vector<std::vector<sf::Text>> dataTexts(data.size(), std::vector<sf::Text>(columnHeaders.size()));
     std::vector<std::vector<std::string>> fullTexts(data.size(), std::vector<std::string>(columnHeaders.size()));
 
@@ -112,8 +104,6 @@ void pageBilleterie() {
         for (size_t j = 0; j < columnHeaders.size(); ++j) {
             sf::Text text;
             text.setFont(font);
-
-            // Fill in the text based on the column
             std::string originalText;
             switch (j) {
                 case 0:
@@ -132,12 +122,12 @@ void pageBilleterie() {
                     originalText = data[i].acces;
                     break;
                 case 5:
-                    originalText = "Reserve Data"; // Replace with actual reserve data
+                    originalText = "Reserver";
                     break;
             }
 
-            fullTexts[i][j] = originalText;  // Store the full text
-            text.setString(truncateText(originalText, 50)); // Truncate the text if it exceeds 15 characters
+            fullTexts[i][j] = originalText;  // Enregistrer le texte complet
+            text.setString(reduiretexte(originalText, 25)); // Tronquer le texte si trop long
 
             text.setCharacterSize(12);
             text.setFillColor(sf::Color(88, 88, 88));
@@ -145,15 +135,11 @@ void pageBilleterie() {
         }
     }
 
-
-// Calculate the center position of the table
-    float tableWidth = static_cast<float>(columnHeaders.size()) * 150.0f; // Adjust the column width as needed
-    float tableHeight = static_cast<float>(data.size() + 1) * 30.0f; // Including header row
+    // Centrer la table
+    float tableWidth = static_cast<float>(columnHeaders.size()) * 150.0f;
+    float tableHeight = static_cast<float>(data.size() + 1) * 30.0f;
     float tableX = (pageBilletterie.getSize().x - tableWidth) / 3.0f;
     float tableY = (pageBilletterie.getSize().y - tableHeight) / 2.0f;
-
-
-
 
     while (pageBilletterie.isOpen()) {
         sf::Event event;
@@ -161,27 +147,20 @@ void pageBilleterie() {
             if (event.type == sf::Event::Closed) pageBilletterie.close();
         }
         pageBilletterie.clear(sf::Color(250, 250, 250));
-        //affichage des elements
+        // Affichage des elements
         pageBilletterie.draw(imagePageBilleterie);
-        // Draw column headers
-        float columnWidth = 170.0f; // Default column width
+        // Affichage du tableau
+        float columnWidth = 170.0f; // Taille des colonnes
         for (size_t i = 0; i < headerTexts.size(); ++i) {
             headerTexts[i].setPosition(tableX + columnWidth * i, tableY);
             pageBilletterie.draw(headerTexts[i]);
         }
-
-        // Draw data
         for (size_t i = 0; i < dataTexts.size(); ++i) {
             for (size_t j = 0; j < dataTexts[i].size(); ++j) {
                 dataTexts[i][j].setPosition(tableX + columnWidth * j, tableY + (i + 1) * 30);
                 pageBilletterie.draw(dataTexts[i][j]);
             }
         }
-        // untruncate text
-
-
-
         pageBilletterie.display();
     }
-
 }
