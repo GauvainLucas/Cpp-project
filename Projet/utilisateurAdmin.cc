@@ -9,23 +9,23 @@ void UtilisateurAdmin::vendreTicket(Evenement evenement){
     
 }
 
-void UtilisateurAdmin::modifierTicketNom(Evenement evenement, std::string nom){
+void UtilisateurAdmin::modifierTicketNom(Evenement &evenement, std::string nom){
     evenement.modifierNom(nom);
 }
 
-void UtilisateurAdmin::modifierTicketDate(Evenement evenement, std::string date){
+void UtilisateurAdmin::modifierTicketDate(Evenement &evenement, std::string date){
     evenement.modifierDate(date);
 }
 
-void UtilisateurAdmin::modifierTicketLieu(Evenement evenement, std::string lieu){
+void UtilisateurAdmin::modifierTicketLieu(Evenement &evenement, std::string lieu){
     evenement.modifierLieu(lieu);
 }
 
-void UtilisateurAdmin::modifierTicketDescription(Evenement evenement, std::string description){
+void UtilisateurAdmin::modifierTicketDescription(Evenement &evenement, std::string description){
     evenement.modifierDescription(description);
 }
 
-void UtilisateurAdmin::modifierTicketType(Evenement evenement, std::string type){
+void UtilisateurAdmin::modifierTicketType(Evenement &evenement, std::string type){
     evenement.modifierType(type);
 }
 

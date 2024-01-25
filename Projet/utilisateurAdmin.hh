@@ -11,11 +11,11 @@ class UtilisateurAdmin : public UtilisateurVIP{
         UtilisateurAdmin(std::string nom, std::string prenom, std::string mail, std::string telephone, std::string login, std::string mdp, std::string type):UtilisateurVIP(nom, prenom, mail, telephone, login, mdp, type){};
 
         void vendreTicket(Evenement evenement);
-        void modifierTicketNom(Evenement evenement, std::string nom);
-        void modifierTicketDate(Evenement evenement, std::string date);
-        void modifierTicketLieu(Evenement evenement, std::string lieu);
-        void modifierTicketDescription(Evenement evenement, std::string description);
-        void modifierTicketType(Evenement evenement, std::string type);
+        void modifierTicketNom(Evenement &evenement, std::string nom);
+        void modifierTicketDate(Evenement &evenement, std::string date);
+        void modifierTicketLieu(Evenement &evenement, std::string lieu);
+        void modifierTicketDescription(Evenement &evenement, std::string description);
+        void modifierTicketType(Evenement &evenement, std::string type);
 
         void modifierNomAutre(std::string nom, Utilisateur &user);
         void modifierPrenomAutre(std::string prenom, Utilisateur &user);
