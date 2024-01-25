@@ -151,7 +151,7 @@ void pageBilleterie() {
     // texte reserver pour chaque evenement
     sf::Text textReserver;
     textReserver.setFont(font);
-    textReserver.setString("Remplacer ce texte par succes ou echec");
+    textReserver.setString("Appuyez sur 'Reserver' pour acheter un ticket");
     textReserver.setCharacterSize(18);
     textReserver.setFillColor(sf::Color(88, 88, 88));
     textReserver.setPosition(pageBilletterie.getSize().x / 2. - textReserver.getGlobalBounds().width / 2.,
