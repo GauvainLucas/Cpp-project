@@ -40,13 +40,13 @@ void pageBilleterie() {
     imagePageBilleterie.setScale(0.8, 0.8);
 
     std::vector<Evenement *> listEvenementsAReserver;
-    EvenementSportif *premier = new EvenementSportif("Finale - FRA vs USA",
+    EvenementSportif *premier = new EvenementSportif("Finale FRA vs USA",
                                                      "Demain - 9h",
                                                      "Saint-Denis",
                                                      "Places disponibles : 1",
                                                      "Public", "Basketball");
 
-    EvenementSportif *deuxieme = new EvenementSportif("1/2finale - DEU vs SPA",
+    EvenementSportif *deuxieme = new EvenementSportif("1/2finale DEU vs SPA",
                                                       "Demain - 10h30",
                                                       "Parc des Princes",
                                                       "Places disponibles : 97",
@@ -83,7 +83,7 @@ void pageBilleterie() {
     }
 
     // Les differentes colonnes du tableau
-    std::vector<std::string> columnHeaders = {"Evenement", "Date", "Lieux", "Type", "Acces", "Reserver"};
+    std::vector<std::string> columnHeaders = {"Evenement", "Date", "Lieux", "Acces", "Categorie", "Reserver"};
 
     // Mise en place des headers dans le tableau
     std::vector<sf::Text> headerTexts;
@@ -169,7 +169,8 @@ void pageBilleterie() {
                         if (boutonsReserver[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
                             boutonsReserver[i].setFillColor(sf::Color::White);
                             if (utilisateurCourant->acheterTicket(*listEvenementsAReserver[i])) {
-                                textReserver.setString("Billet '" + listEvenementsAReserver[i]->getNom() +
+                                textReserver.setString("Billet '" + listEvenementsAReserver[i]->getSport() + " - " +
+                                                       listEvenementsAReserver[i]->getNom() +
                                                        "' achete avec succes");
                                 textReserver.setPosition(
                                         pageBilletterie.getSize().x / 2. - textReserver.getGlobalBounds().width / 2.,
