@@ -168,11 +168,19 @@ void pageBilleterie() {
                     for (size_t i = 0; i < boutonsReserver.size(); ++i) {
                         if (boutonsReserver[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
                             boutonsReserver[i].setFillColor(sf::Color::White);
-                            johnDoe.acheterTicket(*listEvenementsAReserver[i]);
-                            textReserver.setString("Evenement '" + listEvenementsAReserver[i]->getNom() + "' reserve avec succes!");
-                            // centrer le texte reserver
-                            textReserver.setPosition(pageBilletterie.getSize().x / 2. - textReserver.getGlobalBounds().width / 2.,
-                                                     tableY + (data.size() + 1) * 30 + 50);
+                            if (utilisateurCourant->acheterTicket(*listEvenementsAReserver[i])) {
+                                textReserver.setString("Billet '" + listEvenementsAReserver[i]->getNom() +
+                                                       "' achete avec succes");
+                                textReserver.setPosition(
+                                        pageBilletterie.getSize().x / 2. - textReserver.getGlobalBounds().width / 2.,
+                                        tableY + (data.size() + 1) * 30 + 50);
+                            } else {
+                                textReserver.setString("Vous ne pouvez pas acheter de ticket pour un evenement VIP");
+                                textReserver.setPosition(
+                                        pageBilletterie.getSize().x / 2. - textReserver.getGlobalBounds().width / 2.,
+                                        tableY + (data.size() + 1) * 30 + 50);
+                            };
+
                         }
                     }
                 }

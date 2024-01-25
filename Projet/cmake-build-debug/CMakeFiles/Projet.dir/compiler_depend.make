@@ -296,7 +296,9 @@ CMakeFiles/Projet.dir/applicationJO.cc.o: /mnt/c/Users/Lucas/OneDrive\ -\ etu.so
   /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/evenementSportif.hh \
   /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/evenementCeremonie.hh \
   /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/utilisateur.hh \
+  /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/utilisateurAdmin.hh \
   /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/utilisateurVIP.hh \
+  /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/utilisateurPublic.hh \
   /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/IBilleterie.hh \
   /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/pageEvenements.hpp \
   /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/pageBilleterie.hpp
@@ -977,7 +979,9 @@ CMakeFiles/Projet.dir/pageBilleterie.cc.o: /mnt/c/Users/Lucas/OneDrive\ -\ etu.s
   /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/evenementCeremonie.hh \
   /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/applicationJO.hh \
   /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/utilisateur.hh \
+  /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/utilisateurAdmin.hh \
   /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/utilisateurVIP.hh \
+  /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/utilisateurPublic.hh \
   /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/IBilleterie.hh
 
 CMakeFiles/Projet.dir/pageEvenements.cc.o: /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/pageEvenements.cc \
@@ -2040,8 +2044,6 @@ CMakeFiles/Projet.dir/utilisateurVIP.cc.o: /mnt/c/Users/Lucas/OneDrive\ -\ etu.s
   /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/evenement.hh
 
 
-/mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/utilisateurPublic.hh:
-
 /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/utilisateurAdmin.cc:
 
 /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/utilisateur.cc:
@@ -2055,6 +2057,8 @@ CMakeFiles/Projet.dir/utilisateurVIP.cc.o: /mnt/c/Users/Lucas/OneDrive\ -\ etu.s
 /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/evenement.cc:
 
 /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/pageBilleterie.hpp:
+
+/mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/utilisateurPublic.hh:
 
 /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/evenementSportif.hh:
 

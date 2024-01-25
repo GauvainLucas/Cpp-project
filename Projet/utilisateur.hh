@@ -13,6 +13,7 @@ class Utilisateur{
         Utilisateur(std::string nom, std::string prenom, std::string mail,
                     std::string telephone, std::string login, std::string mdp, std::string type);
 
+        Utilisateur(const Utilisateur &user);
         // getters
         std::string getNom(){return nom;};
         std::string getPrenom(){return prenom;};
@@ -22,7 +23,7 @@ class Utilisateur{
         std::string getMdp(){return mdp;};
         std::string getType(){return type;};
 
-        virtual void acheterTicket(Evenement evenement) = 0;
+        virtual int acheterTicket(Evenement evenement) = 0;
         void annulerTicket(Evenement evenement);
         void consulterTicket(Evenement evenement);
         void consulterListeTickets();

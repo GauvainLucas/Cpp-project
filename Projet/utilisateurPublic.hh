@@ -14,7 +14,7 @@ class UtilisateurPublic : public Utilisateur{
         // getters
         std::string getNom(){return nom;};
         std::string getPrenom(){return prenom;};
-        void acheterTicket(Evenement evenement);
+        int acheterTicket(Evenement evenement);
         void annulerTicket(Evenement evenement);
         void consulterTicket(Evenement evenement);
         void consulterListeTickets();

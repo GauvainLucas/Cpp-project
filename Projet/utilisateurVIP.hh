@@ -14,7 +14,7 @@ class UtilisateurVIP : public Utilisateur{
 
     std::string getNom(){return nom;};
     std::string getPrenom(){return prenom;};
-    void acheterTicket(Evenement evenement);
+    int acheterTicket(Evenement evenement);
     void consulterListeTicketsVIP();
 
     /*void annulerTicket(Evenement evenement) override {

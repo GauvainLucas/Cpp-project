@@ -5,16 +5,16 @@
 #include <fstream>
 #include "utilisateurVIP.hh"
 
-void UtilisateurVIP::acheterTicket(Evenement evenement){
+int UtilisateurVIP::acheterTicket(Evenement evenement){
     if (evenement.getType() == "VIP"){
         listeTicketsVIP.push_back(evenement);
         std::cout << "Ticket VIP achete" << std::endl;
-        return;
+        return 1;
     }
     else{
         listeTickets.push_back(evenement);
         std::cout << "Ticket achete" << std::endl;
-        return;
+        return 2;
     }
 }
 

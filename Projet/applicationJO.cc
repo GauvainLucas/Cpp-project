@@ -5,9 +5,10 @@
 #include "pageBilleterie.hpp"
 
 
-// Create user John Doe VIP
-UtilisateurVIP johnDoe("Doe", "John", "", "", "jdoe", "1234", "VIP");
 
+UtilisateurVIP johnDoe("Doe", "John", "", "", "jdoe", "1234", "VIP");
+UtilisateurPublic janeDoe("Doe", "Jane", "", "", "jane", "1234", "Public");
+Utilisateur *utilisateurCourant = &janeDoe;
 int main() {
 
     sf::RenderWindow mainWindow(sf::VideoMode(1000, 800), "Application JO");
@@ -48,7 +49,7 @@ int main() {
 
     // set the string to display
     textBienvenue.setString("Bienvenue sur l'application des JO de Paris 2024 !");
-    textUtilisateur.setString(johnDoe.getPrenom() + " " + johnDoe.getNom() + "\n" + johnDoe.getType());
+    textUtilisateur.setString(utilisateurCourant->getPrenom() + " " + utilisateurCourant->getNom() + "\n" + utilisateurCourant->getType());
     textVoirEvenements.setString("Voir les evenements");
     textAcheterTicket.setString("Acceder a la billeterie");
     textVoirActualites.setString("Dernieres actualites");

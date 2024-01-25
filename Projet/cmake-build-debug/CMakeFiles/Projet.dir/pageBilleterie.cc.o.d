@@ -239,5 +239,7 @@ CMakeFiles/Projet.dir/pageBilleterie.cc.o: \
  /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/evenementCeremonie.hh \
  /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/applicationJO.hh \
  /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/utilisateur.hh \
+ /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/utilisateurAdmin.hh \
  /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/utilisateurVIP.hh \
+ /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/utilisateurPublic.hh \
  /mnt/c/Users/Lucas/OneDrive\ -\ etu.sorbonne-universite.fr/EI-SE/Semesre\ 7/C++/PROJET/Projet/Cpp-project/Projet/IBilleterie.hh
