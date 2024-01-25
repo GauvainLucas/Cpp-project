@@ -4,6 +4,7 @@
 #include "evenement.hh"
 #include "evenementSportif.hh"
 #include "evenementCeremonie.hh"
+#include "applicationJO.hh"
 
 std::string reduiretexte(const std::string &text, std::size_t tailleMax) {
     if (text.length() > tailleMax) {
@@ -22,10 +23,6 @@ void pageBilleterie() {
         exit(-1);
     }
 
-    sf::RenderWindow tooltip(sf::VideoMode(200, 50), "Tooltip");
-    tooltip.setVisible(false);
-    sf::Text tooltipText("", font, 16);
-    tooltipText.setFillColor(sf::Color(88, 88, 88));
     // image
     sf::Texture texture;
     if (!texture.loadFromFile("../images/billeterie.png")) {
@@ -43,27 +40,30 @@ void pageBilleterie() {
     imagePageBilleterie.setScale(0.8, 0.8);
 
     std::vector<Evenement *> listEvenementsAReserver;
-    EvenementSportif *premier = new EvenementSportif("Finale 400m Homme",
-                                                     "Aujourd'hui - 14h",
-                                                     "Stade Charlety",
-                                                     "Places disponibles : 43",
-                                                     "Public", "Athletisme");
-    EvenementSportif *deuxieme = new EvenementSportif("Finale 100m Homme",
-                                                      "Aujourd'hui - 14h30",
-                                                      "Stade Montreuil",
-                                                      "Aller Daviiiiiid !",
-                                                      "Public", "Athletisme");
-    EvenementCeremonie *troisieme = new EvenementCeremonie("Remise prix 400m Femme",
-                                                           "Aujourd'hui - 14h",
-                                                           "Tour Eiffel",
-                                                           "Annonce du podium",
-                                                           "VIP", "Ceremonie");
-    EvenementCeremonie *quatrieme = new EvenementCeremonie("Remise prix 100m Femme",
-                                                           "Aujourd'hui - 14h30",
+    EvenementSportif *premier = new EvenementSportif("Finale - FRA vs USA",
+                                                     "Demain - 9h",
+                                                     "Saint-Denis",
+                                                     "Places disponibles : 1",
+                                                     "Public", "Basketball");
+
+    EvenementSportif *deuxieme = new EvenementSportif("1/2finale - DEU vs SPA",
+                                                      "Demain - 10h30",
+                                                      "Parc des Princes",
+                                                      "Places disponibles : 97",
+                                                      "Public", "Football");
+
+    EvenementCeremonie *troisieme = new EvenementCeremonie("Remise prix 400m Homme",
+                                                           "Demain - 14h",
                                                            "Tour Eiffel",
                                                            "Annonce du podium",
                                                            "VIP", "Ceremonie");
 
+    EvenementCeremonie *quatrieme = new EvenementCeremonie("Remise prix 100m Homme",
+                                                           "Demain - 15h",
+                                                           "Arc de Triomphe",
+                                                           "Annonce du podium",
+                                                           "VIP", "Ceremonie");
+    // Ajout des evenements a la liste
     listEvenementsAReserver.push_back(premier);
     listEvenementsAReserver.push_back(deuxieme);
     listEvenementsAReserver.push_back(troisieme);
@@ -100,38 +100,38 @@ void pageBilleterie() {
     std::vector<std::vector<sf::Text>> dataTexts(data.size(), std::vector<sf::Text>(columnHeaders.size()));
     std::vector<std::vector<std::string>> fullTexts(data.size(), std::vector<std::string>(columnHeaders.size()));
 
-    for (size_t i = 0; i < data.size(); ++i) {
-        for (size_t j = 0; j < columnHeaders.size(); ++j) {
+    for (size_t ligne = 0; ligne < data.size(); ++ligne) {
+        for (size_t colonne = 0; colonne < columnHeaders.size(); ++colonne) {
             sf::Text text;
             text.setFont(font);
             std::string originalText;
-            switch (j) {
+            switch (colonne) {
                 case 0:
-                    originalText = data[i].evenement;
+                    originalText = data[ligne].evenement;
                     break;
                 case 1:
-                    originalText = data[i].date;
+                    originalText = data[ligne].date;
                     break;
                 case 2:
-                    originalText = data[i].lieux;
+                    originalText = data[ligne].lieux;
                     break;
                 case 3:
-                    originalText = data[i].type;
+                    originalText = data[ligne].type;
                     break;
                 case 4:
-                    originalText = data[i].acces;
+                    originalText = data[ligne].acces;
                     break;
                 case 5:
                     originalText = "Reserver";
                     break;
             }
 
-            fullTexts[i][j] = originalText;  // Enregistrer le texte complet
+            fullTexts[ligne][colonne] = originalText;  // Enregistrer le texte complet
             text.setString(reduiretexte(originalText, 25)); // Tronquer le texte si trop long
 
             text.setCharacterSize(12);
             text.setFillColor(sf::Color(88, 88, 88));
-            dataTexts[i][j] = text;
+            dataTexts[ligne][colonne] = text;
         }
     }
 
@@ -141,14 +141,57 @@ void pageBilleterie() {
     float tableX = (pageBilletterie.getSize().x - tableWidth) / 3.0f;
     float tableY = (pageBilletterie.getSize().y - tableHeight) / 2.0f;
 
+    // Bouton au dessus du texte reserver pour chaque evenement
+    std::vector<sf::RectangleShape> boutonsReserver(data.size());
+    for (size_t i = 0; i < boutonsReserver.size(); ++i) {
+        boutonsReserver[i].setSize(sf::Vector2f(100, 20));
+        boutonsReserver[i].setFillColor(sf::Color(250, 250, 250));
+        boutonsReserver[i].setPosition(tableX + 5.5 * 150, tableY + (i + 1) * 30);
+    }
+    // texte reserver pour chaque evenement
+    sf::Text textReserver;
+    textReserver.setFont(font);
+    textReserver.setString("Remplacer ce texte par succes ou echec");
+    textReserver.setCharacterSize(18);
+    textReserver.setFillColor(sf::Color(88, 88, 88));
+    textReserver.setPosition(pageBilletterie.getSize().x / 2. - textReserver.getGlobalBounds().width / 2.,
+                             tableY + (data.size() + 1) * 30 + 50);
+
+
     while (pageBilletterie.isOpen()) {
         sf::Event event;
         while (pageBilletterie.pollEvent(event)) {
             if (event.type == sf::Event::Closed) pageBilletterie.close();
+            if (event.type == sf::Event::MouseButtonPressed) {
+                if (event.mouseButton.button == sf::Mouse::Left) {
+                    // Si on clique sur un bouton reserver
+                    for (size_t i = 0; i < boutonsReserver.size(); ++i) {
+                        if (boutonsReserver[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
+                            boutonsReserver[i].setFillColor(sf::Color::White);
+                            johnDoe.acheterTicket(*listEvenementsAReserver[i]);
+                            textReserver.setString("Evenement '" + listEvenementsAReserver[i]->getNom() + "' reserve avec succes!");
+                            // centrer le texte reserver
+                            textReserver.setPosition(pageBilletterie.getSize().x / 2. - textReserver.getGlobalBounds().width / 2.,
+                                                     tableY + (data.size() + 1) * 30 + 50);
+                        }
+                    }
+                }
+            }
+            if (event.type == sf::Event::MouseButtonReleased) {
+                if (event.mouseButton.button == sf::Mouse::Left) {
+                    for (size_t i = 0; i < boutonsReserver.size(); ++i) {
+                        boutonsReserver[i].setFillColor(sf::Color(250, 250, 250));
+                    }
+                }
+            }
         }
         pageBilletterie.clear(sf::Color(250, 250, 250));
         // Affichage des elements
         pageBilletterie.draw(imagePageBilleterie);
+        // Affichage des boutons reserver
+        for (size_t i = 0; i < boutonsReserver.size(); ++i) {
+            pageBilletterie.draw(boutonsReserver[i]);
+        }
         // Affichage du tableau
         float columnWidth = 170.0f; // Taille des colonnes
         for (size_t i = 0; i < headerTexts.size(); ++i) {
@@ -161,6 +204,8 @@ void pageBilleterie() {
                 pageBilletterie.draw(dataTexts[i][j]);
             }
         }
+        // Affichage du texte reserver
+        pageBilletterie.draw(textReserver);
         pageBilletterie.display();
     }
 }

@@ -1,15 +1,15 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include "utilisateur.hh"
-#include "utilisateurPublic.hh"
-#include "utilisateurVIP.hh"
+#include "applicationJO.hh"
 #include "pageEvenements.hpp"
 #include "pageBilleterie.hpp"
 
 
+// Create user John Doe VIP
+UtilisateurVIP johnDoe("Doe", "John", "", "", "jdoe", "1234", "VIP");
+
 int main() {
-    // Create user John Doe VIP
-    UtilisateurVIP johnDoe("Doe", "John", "", "", "jdoe", "1234", "VIP");
+
     sf::RenderWindow mainWindow(sf::VideoMode(1000, 800), "Application JO");
     mainWindow.setPosition(sf::Vector2i(500, 100));
     // Create texture from PNG file

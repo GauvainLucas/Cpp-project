@@ -8,7 +8,12 @@
 #include "evenementSportif.hh"
 #include "evenementCeremonie.hh"
 #include "utilisateur.hh"
+#include "utilisateurVIP.hh"
 #include "IBilleterie.hh"
+
+// Create user John Doe VIP
+extern UtilisateurVIP johnDoe;
+
 
 class ApplicationJO {
     public:
