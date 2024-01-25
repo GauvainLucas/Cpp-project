@@ -15,8 +15,9 @@ class UtilisateurVIP : public Utilisateur{
     std::string getNom(){return nom;};
     std::string getPrenom(){return prenom;};
     void acheterTicket(Evenement evenement);
+    void consulterListeTicketsVIP();
 
-    void annulerTicket(Evenement evenement) override {
+    /*void annulerTicket(Evenement evenement) override {
         // Implementation for annulerTicket goes here
     }
 
@@ -27,8 +28,6 @@ class UtilisateurVIP : public Utilisateur{
     void consulterListeTickets() override {
         // Implementation for consulterListeTickets goes here
     }
-
-    void consulterListeTicketsVIP();
 
     void consulterListeTicketsEvenement(std::string nomEvenement) override {
         // Implementation for consulterListeTicketsEvenement goes here
@@ -46,7 +45,7 @@ class UtilisateurVIP : public Utilisateur{
         // Implementation for consulterListeTicketsType goes here
     }
 
-    /*void modifierNom(std::string nom) override {
+    void modifierNom(std::string nom) override {
         // Implementation for modifierNom goes here
     }
 

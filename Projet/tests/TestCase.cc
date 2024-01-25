@@ -9,7 +9,7 @@
 #include "utilisateurPublic.hh"
 #include <SFML/Graphics.hpp>
 #include "applicationJO.hh"
-/*
+
 TEST_CASE("Test de utilisateurPublic.hh")
 {
     UtilisateurPublic test1("nom1", "prenom1", "mail1", "telephone1", "login1", "mdp1", "type1");
@@ -28,7 +28,7 @@ TEST_CASE("Test de utilisateurPublic.hh")
     test1.consulterListeTickets();
     test1.annulerTicket(event1);
     test1.consulterListeTickets();
-}*/
+}
 
 TEST_CASE("Test de utilisateurVIP.hh")
 {

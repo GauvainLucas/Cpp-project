@@ -23,13 +23,13 @@ class Utilisateur{
         std::string getType(){return type;};
 
         virtual void acheterTicket(Evenement evenement) = 0;
-        virtual void annulerTicket(Evenement evenement) = 0;
-        virtual void consulterTicket(Evenement evenement) = 0;
-        virtual void consulterListeTickets() = 0;
-        virtual void consulterListeTicketsEvenement(std::string nomEvenement) = 0;
-        virtual void consulterListeTicketsDate(std::string dateEvenement) = 0;
-        virtual void consulterListeTicketsLieu(std::string lieuEvenement) = 0;
-        virtual void consulterListeTicketsType(std::string typeEvenement) = 0;
+        void annulerTicket(Evenement evenement);
+        void consulterTicket(Evenement evenement);
+        void consulterListeTickets();
+        void consulterListeTicketsEvenement(std::string nomEvenement);
+        void consulterListeTicketsDate(std::string dateEvenement);
+        void consulterListeTicketsLieu(std::string lieuEvenement);
+        void consulterListeTicketsType(std::string typeEvenement);
         
         void modifierNom(std::string nom);
         void modifierPrenom(std::string prenom);
