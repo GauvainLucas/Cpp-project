@@ -249,6 +249,30 @@ pageEvenements.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/pageEvenements.cc.s
 .PHONY : pageEvenements.cc.s
 
+pageProfil.o: pageProfil.cc.o
+.PHONY : pageProfil.o
+
+# target to build an object file
+pageProfil.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/pageProfil.cc.o
+.PHONY : pageProfil.cc.o
+
+pageProfil.i: pageProfil.cc.i
+.PHONY : pageProfil.i
+
+# target to preprocess a source file
+pageProfil.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/pageProfil.cc.i
+.PHONY : pageProfil.cc.i
+
+pageProfil.s: pageProfil.cc.s
+.PHONY : pageProfil.s
+
+# target to generate assembly for a file
+pageProfil.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/pageProfil.cc.s
+.PHONY : pageProfil.cc.s
+
 utilisateur.o: utilisateur.cc.o
 .PHONY : utilisateur.o
 
@@ -369,6 +393,9 @@ help:
 	@echo "... pageEvenements.o"
 	@echo "... pageEvenements.i"
 	@echo "... pageEvenements.s"
+	@echo "... pageProfil.o"
+	@echo "... pageProfil.i"
+	@echo "... pageProfil.s"
 	@echo "... utilisateur.o"
 	@echo "... utilisateur.i"
 	@echo "... utilisateur.s"

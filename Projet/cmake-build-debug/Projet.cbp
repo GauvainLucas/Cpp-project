@@ -120,6 +120,12 @@
 		<Unit filename="/mnt/c/Users/Lucas/OneDrive - etu.sorbonne-universite.fr/EI-SE/Semesre 7/C++/PROJET/Projet/Cpp-project/Projet/pageEvenements.hpp">
 			<Option target="Projet"/>
 		</Unit>
+		<Unit filename="/mnt/c/Users/Lucas/OneDrive - etu.sorbonne-universite.fr/EI-SE/Semesre 7/C++/PROJET/Projet/Cpp-project/Projet/pageProfil.cc">
+			<Option target="Projet"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Lucas/OneDrive - etu.sorbonne-universite.fr/EI-SE/Semesre 7/C++/PROJET/Projet/Cpp-project/Projet/pageProfil.hpp">
+			<Option target="Projet"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/Lucas/OneDrive - etu.sorbonne-universite.fr/EI-SE/Semesre 7/C++/PROJET/Projet/Cpp-project/Projet/utilisateur.cc">
 			<Option target="Projet"/>
 		</Unit>

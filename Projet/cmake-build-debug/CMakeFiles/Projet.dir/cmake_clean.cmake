@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Projet.dir/pageBilleterie.cc.o.d"
   "CMakeFiles/Projet.dir/pageEvenements.cc.o"
   "CMakeFiles/Projet.dir/pageEvenements.cc.o.d"
+  "CMakeFiles/Projet.dir/pageProfil.cc.o"
+  "CMakeFiles/Projet.dir/pageProfil.cc.o.d"
   "CMakeFiles/Projet.dir/utilisateur.cc.o"
   "CMakeFiles/Projet.dir/utilisateur.cc.o.d"
   "CMakeFiles/Projet.dir/utilisateurAdmin.cc.o"
