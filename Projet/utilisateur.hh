@@ -22,6 +22,7 @@ class Utilisateur{
         std::string getLogin(){return login;};
         std::string getMdp(){return mdp;};
         std::string getType(){return type;};
+        std::vector<Evenement> getListeTickets(){return listeTickets;};
 
         virtual int acheterTicket(Evenement evenement) = 0;
         void annulerTicket(Evenement evenement);

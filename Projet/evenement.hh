@@ -56,4 +56,5 @@ protected:
     std::string lieu;
     std::string description;
     std::string type;
+    std::string sport;
 };

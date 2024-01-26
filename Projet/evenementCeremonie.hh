@@ -15,7 +15,7 @@ class EvenementCeremonie : public Evenement{
         };
         ~EvenementCeremonie();
 
-        std::string getSport(){return ceremonie;};
+        std::string getSport() override {return ceremonie;};
         void afficherEvenement();
 protected:
         std::string ceremonie;

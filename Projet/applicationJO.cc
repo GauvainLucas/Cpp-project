@@ -6,8 +6,8 @@
 #include "pageProfil.hpp"
 
 // Déclaration des utilisateurs
-UtilisateurVIP johnDoe("Doe", "John", "", "", "jdoe", "1234", "VIP");
-UtilisateurPublic janeDoe("Doe", "Jane", "", "", "jane", "1234", "Public");
+UtilisateurVIP johnDoe("Doe", "John", "johndoe@example.com", "06 07 06 07 06", "jdoe", "1234", "VIP");
+UtilisateurPublic janeDoe("Doe", "Jane", "janedoe@example.com", "07 06 07 06 07", "jane", "1234", "Public");
 Utilisateur *utilisateurCourant = &johnDoe;
 
 int main() {
@@ -107,8 +107,8 @@ int main() {
             sf::Vector2f(mainWindow.getSize().x / 2. - textVoirActualites.getGlobalBounds().width / 2. - 10,
                          mainWindow.getSize().y / 2. + textBienvenue.getGlobalBounds().height + 140));
 
-    sf:: RectangleShape buttonVotreCompte(sf::Vector2f(textUtilisateur.getGlobalBounds().width + 20,
-                                                       textUtilisateur.getGlobalBounds().height + 20));
+    sf::RectangleShape buttonVotreCompte(sf::Vector2f(textUtilisateur.getGlobalBounds().width + 20,
+                                                      textUtilisateur.getGlobalBounds().height + 20));
     buttonVotreCompte.setFillColor(sf::Color(250, 250, 250));
     buttonVotreCompte.setPosition(textUtilisateur.getPosition().x - 10, textUtilisateur.getPosition().y);
     while (mainWindow.isOpen()) {
