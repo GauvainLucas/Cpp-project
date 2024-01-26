@@ -1,26 +1,49 @@
 #pragma once
+
 #include <cstdlib>
 #include <iostream>
 #include <string>
 #include <fstream>
 #include "utilisateurVIP.hh"
 
-int UtilisateurVIP::acheterTicket(Evenement evenement){
-    if (evenement.getType() == "VIP"){
+int UtilisateurVIP::acheterTicket(Evenement evenement) {
+    if (evenement.getType() == "VIP") {
         listeTicketsVIP.push_back(evenement);
         std::cout << "Ticket VIP achete" << std::endl;
         return 1;
-    }
-    else{
+    } else {
         listeTickets.push_back(evenement);
         std::cout << "Ticket achete" << std::endl;
         return 2;
     }
 }
 
-void UtilisateurVIP::consulterListeTicketsVIP(){
+void UtilisateurVIP::consulterListeTicketsVIP() {
     std::cout << "Liste de vos tickets VIP : " << std::endl;
-    for (int i = 0; i < listeTicketsVIP.size(); i++){
-        std::cout << listeTicketsVIP[i].getNom() << "\n" << listeTicketsVIP[i].getDate() << "\n" << listeTicketsVIP[i].getLieu() << "\n" << listeTicketsVIP[i].getDescription() << "\n" << listeTicketsVIP[i].getType() << "\n------------------------------" << std::endl;
+    for (int i = 0; i < listeTicketsVIP.size(); i++) {
+        std::cout << listeTicketsVIP[i].getNom() << "\n" << listeTicketsVIP[i].getDate() << "\n"
+                  << listeTicketsVIP[i].getLieu() << "\n" << listeTicketsVIP[i].getDescription() << "\n"
+                  << listeTicketsVIP[i].getType() << "\n------------------------------" << std::endl;
     }
+}
+
+bool UtilisateurVIP::operator==(const UtilisateurVIP &other) const {
+    return nom == other.nom &&
+           prenom == other.prenom &&
+           mail == other.mail &&
+           telephone == other.telephone &&
+           login == other.login &&
+           mdp == other.mdp &&
+           type == other.type;
+}
+
+std::ostream &operator<<(std::ostream &os, const UtilisateurVIP &user) {
+    os << "Nom : " << user.nom << "\n"
+       << "Prenom : " << user.prenom << "\n"
+       << "Mail : " << user.mail << "\n"
+       << "Telephone : " << user.telephone << "\n"
+       << "Login : " << user.login << "\n"
+       << "Mot de passe : " << user.mdp<< "\n"
+       << "Type : " << user.type << std::endl;
+    return os;
 }

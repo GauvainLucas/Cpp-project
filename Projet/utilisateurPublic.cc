@@ -1,4 +1,5 @@
 #pragma once
+
 #include <cstdlib>
 #include <iostream>
 #include <string>
@@ -6,7 +7,7 @@
 #include "utilisateurPublic.hh"
 #include "utilisateur.hh"
 
-UtilisateurPublic::UtilisateurPublic(){
+UtilisateurPublic::UtilisateurPublic() {
     nom = "";
     prenom = "";
     mail = "";
@@ -26,22 +27,21 @@ UtilisateurPublic::UtilisateurPublic(){
     this->type = type;
 }*/
 
-int UtilisateurPublic::acheterTicket(Evenement evenement){
-    if (evenement.getType() == "VIP"){
+int UtilisateurPublic::acheterTicket(Evenement evenement) {
+    if (evenement.getType() == "VIP") {
         std::cout << "Vous ne pouvez pas acheter de ticket pour un evenement VIP" << std::endl;
         return 0;
-    }
-    else{
+    } else {
         listeTickets.push_back(evenement);
         std::cout << "Ticket achete" << std::endl;
         return 1;
     }
 }
 
-void UtilisateurPublic::annulerTicket(Evenement evenement){
-    for (int i = 0; i < listeTickets.size(); i++){
-        if (listeTickets[i].getNom() == evenement.getNom()){
-            listeTickets.erase(listeTickets.begin()+i);
+void UtilisateurPublic::annulerTicket(Evenement evenement) {
+    for (int i = 0; i < listeTickets.size(); i++) {
+        if (listeTickets[i].getNom() == evenement.getNom()) {
+            listeTickets.erase(listeTickets.begin() + i);
         }
     }
 }
@@ -59,14 +59,24 @@ void UtilisateurPublic::consulterListeTickets() {
                   << "\n" << listeTickets[i].getDescription() << "\n" << listeTickets[i].getType() << std::endl;
     }
 }
-/*void UtilisateurPublic::acheterTicket(Evenement evenement){
-    if (evenement.getType() == "VIP"){
-        std::cout << "Vous ne pouvez pas acheter de ticket pour un evenement VIP" << std::endl;
-        return;
-    }
-    else{
-        listeTickets.push_back(evenement);
-        std::cout << "Ticket achete" << std::endl;
-        return;
-    }
-}*/
+
+bool UtilisateurPublic::operator==(const UtilisateurPublic &other) const {
+    return nom == other.nom &&
+           prenom == other.prenom &&
+           mail == other.mail &&
+           telephone == other.telephone &&
+           login == other.login &&
+           mdp == other.mdp &&
+           type == other.type;
+}
+
+std::ostream &operator<<(std::ostream &os, const UtilisateurPublic &user) {
+    os << "Nom: " << user.nom << "\n"
+       << "Prenom: " << user.prenom << "\n"
+       << "Mail: " << user.mail << "\n"
+       << "Telephone: " << user.telephone << "\n"
+       << "Login: " << user.login << "\n"
+       << "Mdp: " << user.mdp << "\n"
+       << "Type: " << user.type;
+    return os;
+}

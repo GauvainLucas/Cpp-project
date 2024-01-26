@@ -17,7 +17,8 @@ class UtilisateurVIP : public Utilisateur{
     std::vector<Evenement> getListeTicketsVIP(){return listeTicketsVIP;};
     int acheterTicket(Evenement evenement);
     void consulterListeTicketsVIP();
-
+    bool operator==(const UtilisateurVIP& other) const;
+    friend std::ostream& operator<<(std::ostream& os, const UtilisateurVIP& user);
     /*void annulerTicket(Evenement evenement) override {
         // Implementation for annulerTicket goes here
     }

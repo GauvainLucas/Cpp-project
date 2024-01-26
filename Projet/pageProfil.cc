@@ -1,10 +1,7 @@
 #include "pageProfil.hpp"
 #include <SFML/Graphics.hpp>
 #include "ApplicationJO.hh"
-#include "utilisateur.hh"
 #include "evenement.hh"
-#include "evenementSportif.hh"
-#include "evenementCeremonie.hh"
 #include <iostream>
 
 void pageProfil() {
@@ -114,20 +111,20 @@ void pageProfil() {
         while (pageProfil.pollEvent(event)) {
             if (event.type == sf::Event::Closed) {
                 pageProfil.close();
-            }else if (event.type == sf::Event::MouseWheelScrolled) {
+            } else if (event.type == sf::Event::MouseWheelScrolled) {
                 if (event.mouseWheelScroll.wheel == sf::Mouse::VerticalWheel) {
                     if (event.mouseWheelScroll.delta > 0) {
                         // le texte se déplace vers le haut
-                        for (auto &textTicketAchete : ticketsTexts) {
+                        for (auto &textTicketAchete: ticketsTexts) {
                             textTicketAchete.move(0, -10);
                             if (textTicketAchete.getPosition().y < ligneDeSeparation.getPosition().y + 100) {
                                 // monter mais ne pas afficher les tickets au dessus de la ligne de séparation
                                 textTicketAchete.move(0, 1000);
                             }
                         }
-                        if (utilisateurCourant->getType() == "VIP"){
-                           // textTicketVIPAchete.move(0, -10);
-                            for (auto &ListTicketsVIPachete : ticketsVIPTexts) {
+                        if (utilisateurCourant->getType() == "VIP") {
+                            // textTicketVIPAchete.move(0, -10);
+                            for (auto &ListTicketsVIPachete: ticketsVIPTexts) {
                                 ListTicketsVIPachete.move(0, -10);
                                 if (ListTicketsVIPachete.getPosition().y < ligneDeSeparation.getPosition().y + 100) {
                                     // monter mais ne pas afficher les tickets au dessus de la ligne de séparation
@@ -136,18 +133,18 @@ void pageProfil() {
                             }
                         }
                     } else if (event.mouseWheelScroll.delta < 0) {
-                        for (auto &textTicketAchete : ticketsTexts) {
+                        for (auto &textTicketAchete: ticketsTexts) {
                             textTicketAchete.move(0, 10);
-                            if(textTicketAchete.getPosition().y > pageProfil.getSize().y - 100){
+                            if (textTicketAchete.getPosition().y > pageProfil.getSize().y - 100) {
                                 // descendre mais ne pas afficher les tickets en dessous du footer
                                 textTicketAchete.move(0, -1000);
                             }
                         }
-                        if (utilisateurCourant->getType() == "VIP"){
-                           // textTicketVIPAchete.move(0, 10);
-                            for (auto &ListTicketsVIPachete : ticketsVIPTexts) {
+                        if (utilisateurCourant->getType() == "VIP") {
+                            // textTicketVIPAchete.move(0, 10);
+                            for (auto &ListTicketsVIPachete: ticketsVIPTexts) {
                                 ListTicketsVIPachete.move(0, 10);
-                                if(ListTicketsVIPachete.getPosition().y > pageProfil.getSize().y - 100){
+                                if (ListTicketsVIPachete.getPosition().y > pageProfil.getSize().y - 100) {
                                     // descendre mais ne pas afficher les tickets en dessous du footer
                                     ListTicketsVIPachete.move(0, -1000);
                                 }
@@ -164,12 +161,12 @@ void pageProfil() {
         pageProfil.draw(textPresentation);
         pageProfil.draw(ligneDeSeparation);
         pageProfil.draw(textTicketPublicAchete);
-        for (auto &textTicketAchete : ticketsTexts) {
+        for (auto &textTicketAchete: ticketsTexts) {
             pageProfil.draw(textTicketAchete);
         }
-        if (utilisateurCourant->getType() == "VIP"){
+        if (utilisateurCourant->getType() == "VIP") {
             pageProfil.draw(textTicketVIPAchete);
-            for (auto &textTicketVIPAchete : ticketsVIPTexts) {
+            for (auto &textTicketVIPAchete: ticketsVIPTexts) {
                 pageProfil.draw(textTicketVIPAchete);
             }
         }
