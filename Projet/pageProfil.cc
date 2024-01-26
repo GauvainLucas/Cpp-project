@@ -70,7 +70,6 @@ void pageProfil() {
         textTicketAchete.setCharacterSize(18);
         textTicketAchete.setFillColor(sf::Color(88, 88, 88));
         textTicketAchete.setString(utilisateurCourant->getListeTickets()[i].getNom() + "\n" +
-                                   utilisateurCourant->getListeTickets()[i].getSport() + "\n" +
                                    utilisateurCourant->getListeTickets()[i].getDate() + "\n" +
                                    utilisateurCourant->getListeTickets()[i].getLieu() + "\n" +
                                    "-------------------------");
@@ -80,7 +79,34 @@ void pageProfil() {
         ticketsTexts.push_back(textTicketAchete);
     }
 
-// ...
+    sf::Text textTicketVIPAchete;
+    std::vector<sf::Text> ticketsVIPTexts;
+    if (utilisateurCourant->getType() == "VIP") {
+        // text ticket VIP acheté
+        textTicketVIPAchete.setFont(font);
+        textTicketVIPAchete.setString("Tickets VIP achetes :\n");
+        textTicketVIPAchete.setCharacterSize(22);
+        textTicketVIPAchete.setFillColor(sf::Color(88, 88, 88));
+        textTicketVIPAchete.setPosition(
+                sf::Vector2f(pageProfil.getSize().x / 1.5 - textTicketVIPAchete.getGlobalBounds().width / 2.,
+                             pageProfil.getSize().y / 2.5));
+
+        // affichage des tickets VIP achetés
+        for (int i = 0; i < utilisateurCourant->getListeTicketsVIP().size(); i++) {
+            sf::Text ListTicketsVIPachete;
+            ListTicketsVIPachete.setFont(font);
+            ListTicketsVIPachete.setCharacterSize(18);
+            ListTicketsVIPachete.setFillColor(sf::Color(88, 88, 88));
+            ListTicketsVIPachete.setString(utilisateurCourant->getListeTicketsVIP()[i].getNom() + "\n" +
+                                           utilisateurCourant->getListeTicketsVIP()[i].getDate() + "\n" +
+                                           utilisateurCourant->getListeTicketsVIP()[i].getLieu() + "\n" +
+                                           "-------------------------");
+            ListTicketsVIPachete.setPosition(
+                    sf::Vector2f(pageProfil.getSize().x / 1.5 - ListTicketsVIPachete.getGlobalBounds().width / 2.,
+                                 pageProfil.getSize().y / 2.5 + 50 + i * 100));
+            ticketsVIPTexts.push_back(ListTicketsVIPachete);
+        }
+    }
 
 
     while (pageProfil.isOpen()) {
@@ -88,6 +114,49 @@ void pageProfil() {
         while (pageProfil.pollEvent(event)) {
             if (event.type == sf::Event::Closed) {
                 pageProfil.close();
+            }else if (event.type == sf::Event::MouseWheelScrolled) {
+                if (event.mouseWheelScroll.wheel == sf::Mouse::VerticalWheel) {
+                    if (event.mouseWheelScroll.delta > 0) {
+                        // le texte se déplace vers le haut
+                        for (auto &textTicketAchete : ticketsTexts) {
+                            textTicketAchete.move(0, -10);
+                            if (textTicketAchete.getPosition().y < ligneDeSeparation.getPosition().y + 100) {
+                                // monter mais ne pas afficher les tickets au dessus de la ligne de séparation
+                                textTicketAchete.move(0, 1000);
+                            }
+                        }
+                        if (utilisateurCourant->getType() == "VIP"){
+                           // textTicketVIPAchete.move(0, -10);
+                            for (auto &ListTicketsVIPachete : ticketsVIPTexts) {
+                                ListTicketsVIPachete.move(0, -10);
+                                if (ListTicketsVIPachete.getPosition().y < ligneDeSeparation.getPosition().y + 100) {
+                                    // monter mais ne pas afficher les tickets au dessus de la ligne de séparation
+                                    ListTicketsVIPachete.move(0, 1000);
+                                }
+                            }
+                        }
+                    } else if (event.mouseWheelScroll.delta < 0) {
+                        for (auto &textTicketAchete : ticketsTexts) {
+                            textTicketAchete.move(0, 10);
+                            if(textTicketAchete.getPosition().y > pageProfil.getSize().y - 100){
+                                // descendre mais ne pas afficher les tickets en dessous du footer
+                                textTicketAchete.move(0, -1000);
+                            }
+                        }
+                        if (utilisateurCourant->getType() == "VIP"){
+                           // textTicketVIPAchete.move(0, 10);
+                            for (auto &ListTicketsVIPachete : ticketsVIPTexts) {
+                                ListTicketsVIPachete.move(0, 10);
+                                if(ListTicketsVIPachete.getPosition().y > pageProfil.getSize().y - 100){
+                                    // descendre mais ne pas afficher les tickets en dessous du footer
+                                    ListTicketsVIPachete.move(0, -1000);
+                                }
+                            }
+                        }
+                    }
+
+
+                }
             }
         }
         pageProfil.clear(sf::Color(250, 250, 250));
@@ -97,6 +166,12 @@ void pageProfil() {
         pageProfil.draw(textTicketPublicAchete);
         for (auto &textTicketAchete : ticketsTexts) {
             pageProfil.draw(textTicketAchete);
+        }
+        if (utilisateurCourant->getType() == "VIP"){
+            pageProfil.draw(textTicketVIPAchete);
+            for (auto &textTicketVIPAchete : ticketsVIPTexts) {
+                pageProfil.draw(textTicketVIPAchete);
+            }
         }
         pageProfil.display();
     }

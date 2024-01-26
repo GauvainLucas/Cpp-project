@@ -14,6 +14,7 @@ class UtilisateurVIP : public Utilisateur{
 
     std::string getNom(){return nom;};
     std::string getPrenom(){return prenom;};
+    std::vector<Evenement> getListeTicketsVIP(){return listeTicketsVIP;};
     int acheterTicket(Evenement evenement);
     void consulterListeTicketsVIP();
 
