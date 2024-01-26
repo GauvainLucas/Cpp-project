@@ -14,6 +14,7 @@ TEST_CASE("Test de utilisateurPublic.hh")
 {
     std::cout << "------------------------------\nTest de utilisateurPublic.hh" << std::endl;
     UtilisateurPublic test1("nom1", "prenom1", "mail1", "telephone1", "login1", "mdp1", "type1");
+    UtilisateurPublic test1bis("nom1", "prenom1", "mail1", "telephone1", "login1", "mdp1", "type1");
     CHECK(test1.getNom() == "nom1");
     CHECK(test1.getPrenom() == "prenom1");
     CHECK(test1.getMail() == "mail1");
@@ -21,6 +22,8 @@ TEST_CASE("Test de utilisateurPublic.hh")
     CHECK(test1.getLogin() == "login1");
     CHECK(test1.getMdp() == "mdp1");
     CHECK(test1.getType() == "type1");
+    CHECK(test1 == test1bis);
+    std::cout << test1 << std::endl;
     Evenement event1("Enom1", "Edate1", "Elieu1", "Edescription1", "Etype1");
     Evenement event2("Enom2", "Edate2", "Elieu2", "Edesciption2", "VIP");
     test1.acheterTicket(event1);
@@ -35,6 +38,7 @@ TEST_CASE("Test de utilisateurVIP.hh")
 {
     std::cout << "------------------------------\nTest de utilisateurVIP.hh" << std::endl;
     UtilisateurVIP test2("nom2", "prenom2", "mail2", "telephone2", "login2", "mdp2", "type2");
+    UtilisateurVIP test2bis("nom2", "prenom2", "mail2", "telephone2", "login2", "mdp2", "type2");
     CHECK(test2.getNom() == "nom2");
     CHECK(test2.getPrenom() == "prenom2");
     CHECK(test2.getMail() == "mail2");
@@ -42,6 +46,8 @@ TEST_CASE("Test de utilisateurVIP.hh")
     CHECK(test2.getLogin() == "login2");
     CHECK(test2.getMdp() == "mdp2");
     CHECK(test2.getType() == "type2");
+    CHECK(test2 == test2bis);
+    std::cout << test2 << std::endl;
     Evenement event1("Enom1", "Edate1", "Elieu1", "Edescription1", "Etype1");
     Evenement event2("Enom2", "Edate2", "Elieu2", "Edesciption2", "VIP");
     test2.acheterTicket(event1);
@@ -57,6 +63,7 @@ TEST_CASE("Test de utilisateurAdmin.hh")
 {
     std::cout << "------------------------------\nTest de utilisateurAdmin.hh" << std::endl;
     UtilisateurAdmin test3("nom3", "prenom3", "mail3", "telephone3", "login3", "mdp3", "type3");
+    UtilisateurAdmin test3bis("nom3", "prenom3", "mail3", "telephone3", "login3", "mdp3", "type3");
     CHECK(test3.getNom() == "nom3");
     CHECK(test3.getPrenom() == "prenom3");
     CHECK(test3.getMail() == "mail3");
@@ -64,6 +71,8 @@ TEST_CASE("Test de utilisateurAdmin.hh")
     CHECK(test3.getLogin() == "login3");
     CHECK(test3.getMdp() == "mdp3");
     CHECK(test3.getType() == "type3");
+    CHECK(test3 == test3bis);
+    std::cout << test3 << std::endl;
     Evenement event1("Enom1", "Edate1", "Elieu1", "Edescription1", "Etype1");
     Evenement event2("Enom2", "Edate2", "Elieu2", "Edesciption2", "VIP");
     test3.acheterTicket(event1);
