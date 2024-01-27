@@ -16,7 +16,7 @@ add_executable(Projet
         utilisateur.hh
         utilisateurAdmin.hh
         utilisateurPublic.hh
-        utilisateurVIP.hh evenement.cc evenement.cc utilisateur.cc utilisateur.cc applicationJO.cc utilisateurPublic.cc pageEvenements.cc pageEvenements.hpp evenementSportif.cc evenementSportif.cc utilisateurVIP.cc utilisateurVIP.cc utilisateurAdmin.cc pageBilleterie.cc pageBilleterie.hpp pageBilleterie.cc pageProfil.cc pageProfil.hpp)
+        utilisateurVIP.hh evenement.cc evenement.cc utilisateur.cc utilisateur.cc applicationJO.cc utilisateurPublic.cc pageEvenements.cc pageEvenements.hpp evenementSportif.cc evenementSportif.cc utilisateurVIP.cc utilisateurVIP.cc utilisateurAdmin.cc pageBilleterie.cc pageBilleterie.hpp pageBilleterie.cc pageProfil.cc pageProfil.hpp pageActualites.cc pageActualites.hpp)
 
 # Lier les bibliothèques SFML à votre exécutable
 target_link_libraries(Projet PRIVATE sfml-graphics sfml-window sfml-system)

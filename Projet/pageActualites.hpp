@@ -1,0 +1,7 @@
+
+#ifndef PROJET_PAGEACTUALITES_HPP
+#define PROJET_PAGEACTUALITES_HPP
+
+void pageActualites();
+
+#endif //PROJET_PAGEACTUALITES_HPP

@@ -1,4 +1,4 @@
 C:\WINDOWS\system32\wsl.exe --distribution Ubuntu-22.04 --exec /bin/bash -c "export CMAKE_COLOR_DIAGNOSTICS=ON && export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd '/mnt/c/Users/Lucas/OneDrive - etu.sorbonne-universite.fr/EI-SE/Semesre 7/C++/PROJET/Projet/Cpp-project/Projet/cmake-build-debug' && /opt/cmake-3.26.4-linux-x86_64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/usr/bin/gcc '-DCMAKE_CXX_COMPILER=/usr/bin/g++' -G 'CodeBlocks - Unix Makefiles' -S '/mnt/c/Users/Lucas/OneDrive - etu.sorbonne-universite.fr/EI-SE/Semesre 7/C++/PROJET/Projet/Cpp-project/Projet' -B '/mnt/c/Users/Lucas/OneDrive - etu.sorbonne-universite.fr/EI-SE/Semesre 7/C++/PROJET/Projet/Cpp-project/Projet/cmake-build-debug'"
 -- Configuring done (0.3s)
--- Generating done (0.3s)
+-- Generating done (0.2s)
 -- Build files have been written to: /mnt/c/Users/Lucas/OneDrive - etu.sorbonne-universite.fr/EI-SE/Semesre 7/C++/PROJET/Projet/Cpp-project/Projet/cmake-build-debug

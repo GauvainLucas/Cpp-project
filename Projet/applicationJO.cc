@@ -4,6 +4,7 @@
 #include "pageEvenements.hpp"
 #include "pageBilleterie.hpp"
 #include "pageProfil.hpp"
+#include "pageActualites.hpp"
 
 // Déclaration des utilisateurs
 UtilisateurVIP johnDoe("Doe", "John", "johndoe@example.com", "06 07 06 07 06", "jdoe", "1234", "VIP");
@@ -150,6 +151,7 @@ int main() {
                         pageBilleterie();
                     } else if (buttonVoirActualites.getGlobalBounds().contains(mousePos)) {
                         buttonVoirActualites.setFillColor(sf::Color::White);
+                        pageActualites();
                     } else if (buttonVotreCompte.getGlobalBounds().contains(mousePos)) {
                         buttonVotreCompte.setFillColor(sf::Color::White);
                         pageProfil();
