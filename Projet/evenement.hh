@@ -5,6 +5,7 @@
 #include <string>
 #include <fstream>
 #include <vector>
+#include <map>
 
 class Evenement {
 public:
@@ -21,9 +22,10 @@ public:
     ~Evenement() {};
 
 
-    std::string afficherEvenements(const std::vector<Evenement *> &evenements) {
+    std::string afficherEvenements(const std::map<std::string, Evenement*>& evenements) {
         std::string affichage = "";
-        for (auto evenement: evenements) {
+        for (const auto& pair : evenements) {
+            Evenement* evenement = pair.second;
             affichage += evenement->getNom() + "\n";
             affichage += evenement->getDate() + "\n";
             affichage += evenement->getLieu() + "\n";

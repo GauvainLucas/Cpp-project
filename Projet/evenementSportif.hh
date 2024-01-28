@@ -19,7 +19,6 @@ class EvenementSportif : public Evenement{
         };
         ~EvenementSportif();
 
-        std::string afficherEvenements(const std::vector<Evenement*>& evenements);
         // get sport
         std::string getSport() override { return sport; };
 protected:

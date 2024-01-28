@@ -5,6 +5,7 @@
 #include "evenementSportif.hh"
 #include "evenementCeremonie.hh"
 #include <vector>
+#include <map>
 
 void pageEvenements() {
 
@@ -32,9 +33,9 @@ void pageEvenements() {
 
 
 
-    // Evenements
-    std::vector<Evenement *> listEvenementsEnCours;
-    std::vector<Evenement *> listEvenementsFuturs;
+    // maps d'evenements
+    std::map<std::string, Evenement*> mapEvenementsEnCours;
+    std::map<std::string, Evenement*> mapEvenementsFuturs;
     EvenementSportif *premierDirect = new EvenementSportif("Finale Saut en longueur Homme",
                                                            "Aujourd'hui - 14h",
                                                            "Stade Charlety",
@@ -81,15 +82,17 @@ void pageEvenements() {
                                                                 "VIP", "Ceremonie");
 
 
-    // ajouter les evenements a la liste
-    listEvenementsEnCours.push_back(premierDirect);
-    listEvenementsEnCours.push_back(deuxiemeDirect);
-    listEvenementsEnCours.push_back(troisiemeDirect);
-    listEvenementsEnCours.push_back(quatriemeDirect);
-    listEvenementsFuturs.push_back(premierFutur);
-    listEvenementsFuturs.push_back(deuxiemeFutur);
-    listEvenementsFuturs.push_back(troisiemeFutur);
-    listEvenementsFuturs.push_back(quatriemeFutur);
+    // ajouter les evenements aux maps
+    mapEvenementsEnCours.insert(std::pair<std::string, Evenement*>("Finale Saut en longueur Homme", premierDirect));
+    mapEvenementsEnCours.insert(std::pair<std::string, Evenement*>("Finale 100m Homme", deuxiemeDirect));
+    mapEvenementsEnCours.insert(std::pair<std::string, Evenement*>("Remise medailles 400m Femme", troisiemeDirect));
+    mapEvenementsEnCours.insert(std::pair<std::string, Evenement*>("Remise medailles 100m Femme", quatriemeDirect));
+
+    mapEvenementsFuturs.insert(std::pair<std::string, Evenement*>("Quart de finale - France vs USA", premierFutur));
+    mapEvenementsFuturs.insert(std::pair<std::string, Evenement*>("Demi finale - Allemagne vs Espagne", deuxiemeFutur));
+    mapEvenementsFuturs.insert(std::pair<std::string, Evenement*>("Remise medailles 400m Homme", troisiemeFutur));
+    mapEvenementsFuturs.insert(std::pair<std::string, Evenement*>("Remise medailles 100m Homme", quatriemeFutur));
+
     sf::Font font;
     if (!font.loadFromFile("fonts/SF-Compact-Display-Black.ttf")) {
         std::cerr << "Error while loading font" << std::endl;
@@ -123,7 +126,7 @@ void pageEvenements() {
 
     sf::Text textDirect;
     textDirect.setFont(font);
-    textDirect.setString(listEvenementsEnCours[0]->afficherEvenements(listEvenementsEnCours));
+    textDirect.setString(mapEvenementsEnCours.begin()->second->afficherEvenements(mapEvenementsEnCours));
     textDirect.setCharacterSize(18);
     textDirect.setFillColor(sf::Color(88, 88, 88));
     textDirect.setPosition(
@@ -131,7 +134,7 @@ void pageEvenements() {
 
     sf::Text textFutur;
     textFutur.setFont(font);
-    textFutur.setString(listEvenementsFuturs[0]->afficherEvenements(listEvenementsFuturs));
+    textFutur.setString(mapEvenementsFuturs.begin()->second->afficherEvenements(mapEvenementsFuturs));
     textFutur.setCharacterSize(18);
     textFutur.setFillColor(sf::Color(88, 88, 88));
     textFutur.setPosition(
