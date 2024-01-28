@@ -32,13 +32,15 @@ Utilisateur::Utilisateur(const Utilisateur &user){
     type = user.type;
 }
 
-void Utilisateur::annulerTicket(Evenement evenement){
+/*int Utilisateur::annulerTicket(Evenement evenement){
     for (int i = 0; i < listeTickets.size(); i++){
         if (listeTickets[i].getNom() == evenement.getNom()){
             listeTickets.erase(listeTickets.begin() + i);
+            return 1;
         }
     }
-}
+    return 0;
+}*/
 
 
 void Utilisateur::consulterTicket(Evenement evenement) {
@@ -87,6 +89,16 @@ void Utilisateur::consulterListeTicketsType(std::string typeEvenement){
             std::cout << listeTickets[i].getNom() << "\n" << listeTickets[i].getDate() << "\n" << listeTickets[i].getLieu() << "\n" << listeTickets[i].getDescription() << "\n------------------------------" << std::endl;
         }
     }
+}
+
+int Utilisateur::annulerTicket(Evenement evenement) {
+    for (int i = 0; i < listeTickets.size(); i++) {
+        if (listeTickets[i].getNom() == evenement.getNom()) {
+            listeTickets.erase(listeTickets.begin() + i);
+            return 1;
+        }
+    }
+    return 0;
 }
 
 void Utilisateur::modifierNom(std::string nom){

@@ -18,6 +18,25 @@ int UtilisateurVIP::acheterTicket(Evenement evenement) {
     }
 }
 
+int UtilisateurVIP::annulerTicket(Evenement evenement) {
+    if (evenement.getType() == "VIP") {
+        for (int i = 0; i < listeTicketsVIP.size(); i++) {
+            if (listeTicketsVIP[i].getNom() == evenement.getNom()) {
+                listeTicketsVIP.erase(listeTicketsVIP.begin() + i);
+                return 1;
+            }
+        }
+    } else {
+        for (int i = 0; i < listeTickets.size(); i++) {
+            if (listeTickets[i].getNom() == evenement.getNom()) {
+                listeTickets.erase(listeTickets.begin() + i);
+                return 2;
+            }
+        }
+    }
+    return 0;
+}
+
 void UtilisateurVIP::consulterListeTicketsVIP() {
     std::cout << "Liste de vos tickets VIP : " << std::endl;
     for (int i = 0; i < listeTicketsVIP.size(); i++) {
@@ -43,7 +62,7 @@ std::ostream &operator<<(std::ostream &os, const UtilisateurVIP &user) {
        << "Mail : " << user.mail << "\n"
        << "Telephone : " << user.telephone << "\n"
        << "Login : " << user.login << "\n"
-       << "Mot de passe : " << user.mdp<< "\n"
+       << "Mot de passe : " << user.mdp << "\n"
        << "Type : " << user.type << std::endl;
     return os;
 }

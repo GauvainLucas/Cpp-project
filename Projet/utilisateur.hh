@@ -25,7 +25,7 @@ class Utilisateur{
         std::vector<Evenement> getListeTickets(){return listeTickets;};
         virtual std::vector<Evenement> getListeTicketsVIP(){"";};
         virtual int acheterTicket(Evenement evenement) = 0;
-        void annulerTicket(Evenement evenement);
+        virtual int annulerTicket(Evenement evenement);
         static void consulterTicket(Evenement evenement);
         void consulterListeTickets();
         void consulterListeTicketsEvenement(std::string nomEvenement);

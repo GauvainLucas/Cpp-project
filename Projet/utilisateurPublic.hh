@@ -21,7 +21,7 @@ public:
 
     int acheterTicket(Evenement evenement);
 
-    void annulerTicket(Evenement evenement);
+    int annulerTicket(Evenement evenement);
 
     void consulterTicket(Evenement evenement);
 

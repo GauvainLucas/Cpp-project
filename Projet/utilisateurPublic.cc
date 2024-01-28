@@ -38,12 +38,14 @@ int UtilisateurPublic::acheterTicket(Evenement evenement) {
     }
 }
 
-void UtilisateurPublic::annulerTicket(Evenement evenement) {
+int UtilisateurPublic::annulerTicket(Evenement evenement) {
     for (int i = 0; i < listeTickets.size(); i++) {
         if (listeTickets[i].getNom() == evenement.getNom()) {
             listeTickets.erase(listeTickets.begin() + i);
+            return 1;
         }
     }
+    return 0;
 }
 
 void UtilisateurPublic::consulterTicket(Evenement evenement) {
