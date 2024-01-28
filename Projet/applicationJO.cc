@@ -116,7 +116,6 @@ int main() {
         sf::Event event;
         while (mainWindow.pollEvent(event)) {
             if (event.type == sf::Event::Closed) mainWindow.close();
-            // Mouse hover effect - underline text
             if (event.type == sf::Event::MouseMoved) {
                 sf::Vector2f mousePos = mainWindow.mapPixelToCoords(sf::Mouse::getPosition(mainWindow));
                 if (buttonVoirEvenements.getGlobalBounds().contains(mousePos)) {

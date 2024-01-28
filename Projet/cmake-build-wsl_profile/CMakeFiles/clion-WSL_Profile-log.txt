@@ -1,0 +1,16 @@
+C:\WINDOWS\system32\wsl.exe --distribution Ubuntu-22.04 --exec /bin/bash -c "export CMAKE_COLOR_DIAGNOSTICS=ON && export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd '/mnt/c/Users/Lucas/OneDrive - etu.sorbonne-universite.fr/EI-SE/Semesre 7/C++/PROJET/Projet/Cpp-project/Projet/cmake-build-wsl_profile' && /opt/cmake-3.26.4-linux-x86_64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/usr/bin/gcc '-DCMAKE_CXX_COMPILER=/usr/bin/g++' -G 'CodeBlocks - Unix Makefiles' -S '/mnt/c/Users/Lucas/OneDrive - etu.sorbonne-universite.fr/EI-SE/Semesre 7/C++/PROJET/Projet/Cpp-project/Projet' -B '/mnt/c/Users/Lucas/OneDrive - etu.sorbonne-universite.fr/EI-SE/Semesre 7/C++/PROJET/Projet/Cpp-project/Projet/cmake-build-wsl_profile'"
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (4.6s)
+-- Generating done (0.2s)
+-- Build files have been written to: /mnt/c/Users/Lucas/OneDrive - etu.sorbonne-universite.fr/EI-SE/Semesre 7/C++/PROJET/Projet/Cpp-project/Projet/cmake-build-wsl_profile

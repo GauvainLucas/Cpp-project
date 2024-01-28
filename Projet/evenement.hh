@@ -20,7 +20,6 @@ public:
 
     ~Evenement() {};
 
-    //virtual std::string afficherEvenement(Evenement *evenement);
 
     std::string afficherEvenements(const std::vector<Evenement *> &evenements) {
         std::string affichage = "";

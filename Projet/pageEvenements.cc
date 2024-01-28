@@ -24,8 +24,8 @@ void pageEvenements() {
     sf::Color couleur = imagePageEvenement.getColor();
     couleur.a = 128; // 50% transparent
     imagePageEvenement.setColor(couleur);
-    // centre l'image
 
+    // centrer l'image
     imagePageEvenement.setOrigin(static_cast<float>(spriteSize.width / 2.), static_cast<float>(spriteSize.height / 2.));
     imagePageEvenement.setPosition(pageEvenements.getSize().x / 2, pageEvenements.getSize().y / 2);
     imagePageEvenement.setScale(0.2, 0.2);
@@ -96,9 +96,9 @@ void pageEvenements() {
         exit(-1);
     }
 
-    // Text
+    // Texte
     sf::Text textTitre;
-    textTitre.setFont(font); // font is a sf::Font
+    textTitre.setFont(font);
     textTitre.setString("PARIS 2024 - LES EVENEMENTS");
     textTitre.setCharacterSize(25);
     textTitre.setFillColor(sf::Color(88, 88, 88));
@@ -106,7 +106,7 @@ void pageEvenements() {
             pageEvenements.getSize().x / 2 - textTitre.getGlobalBounds().width / 2, 0);
 
     sf::Text textEvenementsEnCours;
-    textEvenementsEnCours.setFont(font); // font is a sf::Font
+    textEvenementsEnCours.setFont(font);
     textEvenementsEnCours.setString("Evenements en cours");
     textEvenementsEnCours.setCharacterSize(20);
     textEvenementsEnCours.setFillColor(sf::Color(88, 88, 88));
@@ -114,7 +114,7 @@ void pageEvenements() {
             pageEvenements.getSize().x / 6 - textEvenementsEnCours.getGlobalBounds().width / 2, 100);
 
     sf::Text textEvenementsFuturs;
-    textEvenementsFuturs.setFont(font); // font is a sf::Font
+    textEvenementsFuturs.setFont(font);
     textEvenementsFuturs.setString("Evenements a venir");
     textEvenementsFuturs.setCharacterSize(20);
     textEvenementsFuturs.setFillColor(sf::Color(88, 88, 88));
@@ -122,7 +122,7 @@ void pageEvenements() {
             pageEvenements.getSize().x / 2 + 2 * textEvenementsFuturs.getGlobalBounds().width / 2, 100);
 
     sf::Text textDirect;
-    textDirect.setFont(font); // font is a sf::Font
+    textDirect.setFont(font);
     textDirect.setString(listEvenementsEnCours[0]->afficherEvenements(listEvenementsEnCours));
     textDirect.setCharacterSize(18);
     textDirect.setFillColor(sf::Color(88, 88, 88));
@@ -130,7 +130,7 @@ void pageEvenements() {
             pageEvenements.getSize().x / 6 - textDirect.getGlobalBounds().width / 2, 150);
 
     sf::Text textFutur;
-    textFutur.setFont(font); // font is a sf::Font
+    textFutur.setFont(font);
     textFutur.setString(listEvenementsFuturs[0]->afficherEvenements(listEvenementsFuturs));
     textFutur.setCharacterSize(18);
     textFutur.setFillColor(sf::Color(88, 88, 88));

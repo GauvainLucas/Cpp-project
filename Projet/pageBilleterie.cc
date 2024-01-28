@@ -180,16 +180,15 @@ void pageBilleterie() {
                                 textReserver.setPosition(
                                         pageBilletterie.getSize().x / 2. - textReserver.getGlobalBounds().width / 2.,
                                         tableY + (data.size() + 1) * 30 + 50);
-                            };
-
+                            }
                         }
                     }
                 }
             }
             if (event.type == sf::Event::MouseButtonReleased) {
                 if (event.mouseButton.button == sf::Mouse::Left) {
-                    for (size_t i = 0; i < boutonsReserver.size(); ++i) {
-                        boutonsReserver[i].setFillColor(sf::Color(250, 250, 250));
+                    for (auto & i : boutonsReserver) {
+                        i.setFillColor(sf::Color(250, 250, 250));
                     }
                 }
             }
@@ -198,8 +197,8 @@ void pageBilleterie() {
         // Affichage des elements
         pageBilletterie.draw(imagePageBilleterie);
         // Affichage des boutons reserver
-        for (size_t i = 0; i < boutonsReserver.size(); ++i) {
-            pageBilletterie.draw(boutonsReserver[i]);
+        for (const auto & i : boutonsReserver) {
+            pageBilletterie.draw(i);
         }
         // Affichage du tableau
         float columnWidth = 170.0f; // Taille des colonnes

@@ -1,0 +1,3 @@
+/mnt/c/Users/Lucas/OneDrive - etu.sorbonne-universite.fr/EI-SE/Semesre 7/C++/PROJET/Projet/Cpp-project/Projet/cmake-build-wsl_profile/CMakeFiles/Projet.dir
+/mnt/c/Users/Lucas/OneDrive - etu.sorbonne-universite.fr/EI-SE/Semesre 7/C++/PROJET/Projet/Cpp-project/Projet/cmake-build-wsl_profile/CMakeFiles/edit_cache.dir
+/mnt/c/Users/Lucas/OneDrive - etu.sorbonne-universite.fr/EI-SE/Semesre 7/C++/PROJET/Projet/Cpp-project/Projet/cmake-build-wsl_profile/CMakeFiles/rebuild_cache.dir
