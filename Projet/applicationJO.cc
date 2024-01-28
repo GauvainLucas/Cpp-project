@@ -17,7 +17,7 @@ int main() {
     mainWindow.setPosition(sf::Vector2i(500, 100));
 
     sf::Texture texture;
-    if (!texture.loadFromFile("../images/logoJO.png")) {
+    if (!texture.loadFromFile("images/logoJO.png")) {
         std::cerr << "Error while loading texture" << std::endl;
         exit(-1);
     }
@@ -35,7 +35,7 @@ int main() {
     sf::Text textVoirActualites;
     sf::Text textFooter;
     sf::Font font;
-    if (!font.loadFromFile("../fonts/SF-Compact-Display-Black.ttf")) {
+    if (!font.loadFromFile("fonts/SF-Compact-Display-Black.ttf")) {
         std::cerr << "Error while loading font" << std::endl;
         exit(-1);
     }

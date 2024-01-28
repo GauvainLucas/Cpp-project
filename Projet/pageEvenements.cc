@@ -13,7 +13,7 @@ void pageEvenements() {
 
     // image
     sf::Texture texture;
-    if (!texture.loadFromFile("../images/imagePageEvenement.png")) {
+    if (!texture.loadFromFile("images/imagePageEvenement.png")) {
         std::cerr << "Error while loading texture" << std::endl;
         exit(-1);
     }
@@ -91,7 +91,7 @@ void pageEvenements() {
     listEvenementsFuturs.push_back(troisiemeFutur);
     listEvenementsFuturs.push_back(quatriemeFutur);
     sf::Font font;
-    if (!font.loadFromFile("../fonts/SF-Compact-Display-Black.ttf")) {
+    if (!font.loadFromFile("fonts/SF-Compact-Display-Black.ttf")) {
         std::cerr << "Error while loading font" << std::endl;
         exit(-1);
     }

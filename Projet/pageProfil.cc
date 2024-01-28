@@ -8,13 +8,13 @@ void pageProfil() {
     sf::RenderWindow pageProfil(sf::VideoMode(1000, 800), "Espace personnel");
     pageProfil.setPosition(sf::Vector2i(500, 100));
     sf::Font font;
-    if (!font.loadFromFile("../fonts/SF-Compact-Display-Black.ttf")) {
+    if (!font.loadFromFile("fonts/SF-Compact-Display-Black.ttf")) {
         std::cerr << "Error while loading font" << std::endl;
         exit(-1);
     }
     // image
     sf::Texture textureAnneauJO;
-    if (!textureAnneauJO.loadFromFile("../images/anneauJO.png")) {
+    if (!textureAnneauJO.loadFromFile("images/anneauJO.png")) {
         std::cerr << "Error while loading textureAnneauJO" << std::endl;
         exit(-1);
     }
@@ -29,7 +29,7 @@ void pageProfil() {
 
     // image
     sf::Texture texture;
-    if (!texture.loadFromFile("../images/user.png")) {
+    if (!texture.loadFromFile("images/user.png")) {
         std::cerr << "Error while loading texture" << std::endl;
         exit(-1);
     }
@@ -56,12 +56,10 @@ void pageProfil() {
             sf::Vector2f(pageProfil.getSize().x / 1.8 - textPresentation.getGlobalBounds().width / 2.,
                          70));
 
-
     // ligne de séparation
     sf::RectangleShape ligneDeSeparation(sf::Vector2f(pageProfil.getSize().x, 2.f));
     ligneDeSeparation.setFillColor(sf::Color(88, 88, 88));
     ligneDeSeparation.setPosition(0, pageProfil.getSize().y / 3.);
-
 
     // text ticket acheté
     sf::Text textTicketPublicAchete;
@@ -73,10 +71,11 @@ void pageProfil() {
             sf::Vector2f(pageProfil.getSize().x / 6. - textTicketPublicAchete.getGlobalBounds().width / 2.,
                          pageProfil.getSize().y / 2.5));
 
-    // affichage des tickets achetés
+    // affichage des tickets achetés et du bouton annuler
     std::vector<sf::Text> ticketsTexts;
     for (int i = 0; i < utilisateurCourant->getListeTickets().size(); i++) {
         sf::Text textTicketAchete;
+        sf::Text texteBoutonAnnuler;
         textTicketAchete.setFont(font);
         textTicketAchete.setCharacterSize(18);
         textTicketAchete.setFillColor(sf::Color(88, 88, 88));
@@ -87,6 +86,7 @@ void pageProfil() {
         textTicketAchete.setPosition(
                 sf::Vector2f(pageProfil.getSize().x / 6. - textTicketAchete.getGlobalBounds().width / 2.,
                              pageProfil.getSize().y / 2.5 + 50 + i * 100));
+
         ticketsTexts.push_back(textTicketAchete);
     }
 

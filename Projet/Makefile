@@ -3,19 +3,14 @@ CCFLAGS= -Wall -std=c++11 -g
 LIBFLAGS= 
 SRC= $(wildcard *.cc)
 OBJ= $(SRC:.cc=.o)
-EXEC= eco.out
+EXEC= applicationJO.out
 
-
-testcase:
-	cd tests ; make
-test : testcase
-	./tests/testcase.out
 
 all: $(EXEC)
 
 
 $(EXEC): $(OBJ)
-	$(CC) $(LIBFLAGS) $^ -o $@  
+	$(CC) $(LIBFLAGS) $^ -o $@ -lsfml-graphics -lsfml-window -lsfml-system
 
 %.o: %.cc
 	$(CC) $(CCFLAGS) -o $@ -c $<
@@ -28,5 +23,5 @@ depends:
 clean:
 	rm -f $(OBJ) $(EXEC) *.*~
 distclean :
-	cd tests; make clean
+	make clean
 	rm -f $(OBJ) $(EXEC) *.*~	

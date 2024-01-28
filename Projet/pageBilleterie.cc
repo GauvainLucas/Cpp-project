@@ -18,14 +18,14 @@ void pageBilleterie() {
     pageBilletterie.setPosition(sf::Vector2i(500, 100));
 
     sf::Font font;
-    if (!font.loadFromFile("../fonts/SF-Compact-Display-Black.ttf")) {
+    if (!font.loadFromFile("fonts/SF-Compact-Display-Black.ttf")) {
         std::cerr << "Error while loading font" << std::endl;
         exit(-1);
     }
 
     // image
     sf::Texture texture;
-    if (!texture.loadFromFile("../images/billeterie.png")) {
+    if (!texture.loadFromFile("images/billeterie.png")) {
         std::cerr << "Error while loading texture" << std::endl;
         exit(-1);
     }

@@ -30,14 +30,14 @@ void pageActualites() {
     sf::RenderWindow pageActualites(sf::VideoMode(1000, 800), "Les actualites");
     pageActualites.setPosition(sf::Vector2i(500, 100));
     sf::Font font;
-    if (!font.loadFromFile("../fonts/SF-Compact-Display-Black.ttf")) {
+    if (!font.loadFromFile("fonts/SF-Compact-Display-Black.ttf")) {
         std::cerr << "Error while loading font" << std::endl;
         exit(-1);
     }
 
     // image
     sf::Texture textureAnneauJO;
-    if (!textureAnneauJO.loadFromFile("../images/anneauJO.png")) {
+    if (!textureAnneauJO.loadFromFile("images/anneauJO.png")) {
         std::cerr << "Error while loading textureAnneauJO" << std::endl;
         exit(-1);
     }
@@ -87,7 +87,7 @@ void pageActualites() {
 
     // images des actualités
     sf::Texture textureActualite1;
-    if (!textureActualite1.loadFromFile("../images/david.jpg")) {
+    if (!textureActualite1.loadFromFile("images/david.jpg")) {
         std::cerr << "Error while loading textureActualite1" << std::endl;
         exit(-1);
     }
@@ -100,7 +100,7 @@ void pageActualites() {
     imageActualite1.setPosition(pageActualites.getSize().x / 5.8, pageActualites.getSize().y / 2.1);
 
     sf::Texture textureActualite2;
-    if (!textureActualite2.loadFromFile("../images/davidVSmohamed.jpg")) {
+    if (!textureActualite2.loadFromFile("images/davidVSmohamed.jpg")) {
         std::cerr << "Error while loading textureActualite2" << std::endl;
         exit(-1);
     }
