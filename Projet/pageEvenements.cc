@@ -35,7 +35,7 @@ void pageEvenements() {
     // Evenements
     std::vector<Evenement *> listEvenementsEnCours;
     std::vector<Evenement *> listEvenementsFuturs;
-    EvenementSportif *premierDirect = new EvenementSportif("Finale 400m Homme",
+    EvenementSportif *premierDirect = new EvenementSportif("Finale Saut en longueur Homme",
                                                            "Aujourd'hui - 14h",
                                                            "Stade Charlety",
                                                            "Places disponibles : 43",

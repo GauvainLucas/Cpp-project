@@ -12,6 +12,20 @@ void pageProfil() {
         std::cerr << "Error while loading font" << std::endl;
         exit(-1);
     }
+    // image
+    sf::Texture textureAnneauJO;
+    if (!textureAnneauJO.loadFromFile("../images/anneauJO.png")) {
+        std::cerr << "Error while loading textureAnneauJO" << std::endl;
+        exit(-1);
+    }
+    textureAnneauJO.setSmooth(true);
+    sf::Sprite imageAnneauJO;
+    imageAnneauJO.setTexture(textureAnneauJO);
+    sf::FloatRect spriteAnneauJO = imageAnneauJO.getGlobalBounds();
+    imageAnneauJO.setOrigin(static_cast<float>(spriteAnneauJO.width / 2.),
+                            static_cast<float>(spriteAnneauJO.height / 2.));
+    imageAnneauJO.setScale(0.4, 0.4);
+    imageAnneauJO.setPosition(pageProfil.getSize().x / 5.5, pageProfil.getSize().y / 6.4);
 
     // image
     sf::Texture texture;
@@ -22,8 +36,8 @@ void pageProfil() {
     texture.setSmooth(true);
     sf::Sprite photoDeProfil;
     photoDeProfil.setTexture(texture);
-    sf::FloatRect spriteSize = photoDeProfil.getGlobalBounds();
-    photoDeProfil.setOrigin(static_cast<float>(spriteSize.width / 2.), static_cast<float>(spriteSize.height / 2.));
+    sf::FloatRect spriteUser = photoDeProfil.getGlobalBounds();
+    photoDeProfil.setOrigin(static_cast<float>(spriteUser.width / 2.), static_cast<float>(spriteUser.height / 2.));
     photoDeProfil.setScale(0.5, 0.5);
     photoDeProfil.setPosition(pageProfil.getSize().x / 1.2, pageProfil.getSize().y / 6.2);
 
@@ -157,6 +171,7 @@ void pageProfil() {
             }
         }
         pageProfil.clear(sf::Color(250, 250, 250));
+        pageProfil.draw(imageAnneauJO);
         pageProfil.draw(photoDeProfil);
         pageProfil.draw(textPresentation);
         pageProfil.draw(ligneDeSeparation);

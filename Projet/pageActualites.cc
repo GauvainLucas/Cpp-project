@@ -73,12 +73,12 @@ void pageActualites() {
                                                                "Sa victoire, combinee a la conquete d'un record aussi prestigieux, a solidifie sa place en tant que jeune prodige du monde de l'athletisme, laissant presager un avenir encore plus brillant pour cet athlete exceptionnel.",
                                                                "VIP", "Ceremonie");
 
-    EvenementCeremonie *rivaliteDavidVSMomo = new EvenementCeremonie("UNE RIVALITE LAMOOT VS GAIBOUCHE AU MAXIMUM !",
+    EvenementCeremonie *rivaliteDavidVSMomo = new EvenementCeremonie("UNE RIVALITE LAMOOT VS GHAIBOUCHE AU MAXIMUM !",
                                                                      "HIER A 16H",
                                                                      "STADE OLYMPIQUE DE PARIS",
-                                                                     "La rivalite olympique atteint son apogee avec la confrontation entre David Lamoot, le champion inconteste du 100m, et Mohammed Gaibouche, le maitre du saut a la perche. "
+                                                                     "La rivalite olympique atteint son apogee avec la confrontation entre David Lamoot, le champion inconteste du 100m, et Mohammed Ghaibouche, le maitre du saut a la perche. "
                                                                      "Dans un defi inedit et audacieux, Mohammed propose un bras de fer chinois pour determiner qui est le veritable champion toutes disciplines confondues."
-                                                                     "Cette rencontre promet d'etre epique, melant la vitesse foudroyante de Lamoot a l'agilite exceptionnelle de Gaibouche. Ces deux athletes d'exception, chacun dominant dans sa discipline, sont prets a repousser les limites et a transcender les frontieres du sport."
+                                                                     "Cette rencontre promet d'etre epique, melant la vitesse foudroyante de Lamoot a l'agilite exceptionnelle de Ghaibouche. Ces deux athletes d'exception, chacun dominant dans sa discipline, sont prets a repousser les limites et a transcender les frontieres du sport."
                                                                      "La tension monte alors que le monde attend avec impatience de decouvrir qui sortira victorieux de cette confrontation extraordinaire, qui restera sans aucun doute gravee dans l'histoire du sport olympique.",
                                                                      "VIP", "Ceremonie");
 
