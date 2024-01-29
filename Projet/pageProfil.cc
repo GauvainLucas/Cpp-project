@@ -4,6 +4,28 @@
 #include "evenement.hh"
 #include <iostream>
 
+
+template<typename T>
+void deplacerVersLeBas(std::vector<T> &ADeplacer, sf::RectangleShape &ligneDeSeparation) {
+    for (auto &objet: ADeplacer) {
+        objet.move(0, -10);
+        if (objet.getPosition().y < ligneDeSeparation.getPosition().y + 100) {
+            objet.move(0, 1000);
+        }
+    }
+}
+template<typename T>
+void deplacerVersLeHaut(std::vector<T> &ADeplacer, sf::RectangleShape &ligneDeSeparation) {
+    for (auto &objet: ADeplacer) {
+        objet.move(0, 10);
+        if (objet.getPosition().y > ligneDeSeparation.getPosition().y + 1100) {
+            objet.move(0, -1000);
+        }
+    }
+}
+
+
+
 void pageProfil() {
     sf::RenderWindow pageProfil(sf::VideoMode(1000, 800), "Espace personnel");
     pageProfil.setPosition(sf::Vector2i(500, 100));
@@ -197,98 +219,22 @@ void pageProfil() {
             } else if (event.type == sf::Event::MouseWheelScrolled) {
                 if (event.mouseWheelScroll.wheel == sf::Mouse::VerticalWheel) {
                     if (event.mouseWheelScroll.delta > 0) {
-                        // le texte se déplace vers le haut
-                        for (auto &textTicketAchete: ticketsTexts) {
-                            textTicketAchete.move(0, -10);
-                            if (textTicketAchete.getPosition().y < ligneDeSeparation.getPosition().y + 100) {
-                                // monter mais ne pas afficher les tickets au dessus de la ligne de séparation
-                                textTicketAchete.move(0, 1000);
-                            }
-                        }
-                        // le bouton annuler se déplace vers le haut
-                        for (auto &boutonAnnuler: boutonsAnnulerTickets) {
-                            boutonAnnuler.move(0, -10);
-                            if (boutonAnnuler.getPosition().y < ligneDeSeparation.getPosition().y + 100) {
-                                // monter mais ne pas afficher les tickets au dessus de la ligne de séparation
-                                boutonAnnuler.move(0, 1000);
-                            }
-                        }
-                        // le texte du bouton annuler se déplace vers le haut
-                        for (auto &texteBoutonAnnuler: textesBoutonAnnuler) {
-                            texteBoutonAnnuler.move(0, -10);
-                            if (texteBoutonAnnuler.getPosition().y < ligneDeSeparation.getPosition().y + 100) {
-                                // monter mais ne pas afficher les tickets au dessus de la ligne de séparation
-                                texteBoutonAnnuler.move(0, 1000);
-                            }
-                        }
+                        deplacerVersLeHaut(ticketsTexts, ligneDeSeparation);
+                        deplacerVersLeHaut(boutonsAnnulerTickets, ligneDeSeparation);
+                        deplacerVersLeHaut(textesBoutonAnnuler, ligneDeSeparation);
                         if (utilisateurCourant->getType() == "VIP") {
-                            // textTicketVIPAchete.move(0, -10);
-                            for (auto &ListTicketsVIPachete: ticketsVIPTexts) {
-                                ListTicketsVIPachete.move(0, -10);
-                                if (ListTicketsVIPachete.getPosition().y < ligneDeSeparation.getPosition().y + 100) {
-                                    // monter mais ne pas afficher les tickets au dessus de la ligne de séparation
-                                    ListTicketsVIPachete.move(0, 1000);
-                                }
-                            }
-                            for (auto &boutonAnnulerVIP: boutonsAnnulerTicketsVIP) {
-                                boutonAnnulerVIP.move(0, -10);
-                                if (boutonAnnulerVIP.getPosition().y < ligneDeSeparation.getPosition().y + 100) {
-                                    // monter mais ne pas afficher les tickets au dessus de la ligne de séparation
-                                    boutonAnnulerVIP.move(0, 1000);
-                                }
-                            }
-                            for (auto &texteBoutonAnnulerVIP: textesBoutonAnnulerVIP) {
-                                texteBoutonAnnulerVIP.move(0, -10);
-                                if (texteBoutonAnnulerVIP.getPosition().y < ligneDeSeparation.getPosition().y + 100) {
-                                    // monter mais ne pas afficher les tickets au dessus de la ligne de séparation
-                                    texteBoutonAnnulerVIP.move(0, 1000);
-                                }
-                            }
+                            deplacerVersLeHaut(ticketsVIPTexts, ligneDeSeparation);
+                            deplacerVersLeHaut(boutonsAnnulerTicketsVIP, ligneDeSeparation);
+                            deplacerVersLeHaut(textesBoutonAnnulerVIP, ligneDeSeparation);
                         }
                     } else if (event.mouseWheelScroll.delta < 0) {
-                        for (auto &textTicketAchete: ticketsTexts) {
-                            textTicketAchete.move(0, 10);
-                            if (textTicketAchete.getPosition().y > pageProfil.getSize().y - 100) {
-                                // descendre mais ne pas afficher les tickets en dessous du footer
-                                textTicketAchete.move(0, -1000);
-                            }
-                        }
-                        for (auto &boutonAnnuler: boutonsAnnulerTickets) {
-                            boutonAnnuler.move(0, 10);
-                            if (boutonAnnuler.getPosition().y > pageProfil.getSize().y - 100) {
-                                // descendre mais ne pas afficher les tickets en dessous du footer
-                                boutonAnnuler.move(0, -1000);
-                            }
-                        }
-                        for (auto &texteBoutonAnnuler: textesBoutonAnnuler) {
-                            texteBoutonAnnuler.move(0, 10);
-                            if (texteBoutonAnnuler.getPosition().y > pageProfil.getSize().y - 100) {
-                                // descendre mais ne pas afficher les tickets en dessous du footer
-                                texteBoutonAnnuler.move(0, -1000);
-                            }
-                        }
+                        deplacerVersLeBas(ticketsTexts, ligneDeSeparation);
+                        deplacerVersLeBas(boutonsAnnulerTickets, ligneDeSeparation);
+                        deplacerVersLeBas(textesBoutonAnnuler, ligneDeSeparation);
                         if (utilisateurCourant->getType() == "VIP") {
-                            for (auto &ListTicketsVIPachete: ticketsVIPTexts) {
-                                ListTicketsVIPachete.move(0, 10);
-                                if (ListTicketsVIPachete.getPosition().y > pageProfil.getSize().y - 100) {
-                                    // descendre mais ne pas afficher les tickets en dessous du footer
-                                    ListTicketsVIPachete.move(0, -1000);
-                                }
-                            }
-                            for (auto &boutonAnnulerVIP: boutonsAnnulerTicketsVIP) {
-                                boutonAnnulerVIP.move(0, 10);
-                                if (boutonAnnulerVIP.getPosition().y > pageProfil.getSize().y - 100) {
-                                    // descendre mais ne pas afficher les tickets en dessous du footer
-                                    boutonAnnulerVIP.move(0, -1000);
-                                }
-                            }
-                            for (auto &texteBoutonAnnulerVIP: textesBoutonAnnulerVIP) {
-                                texteBoutonAnnulerVIP.move(0, 10);
-                                if (texteBoutonAnnulerVIP.getPosition().y > pageProfil.getSize().y - 100) {
-                                    // descendre mais ne pas afficher les tickets en dessous du footer
-                                    texteBoutonAnnulerVIP.move(0, -1000);
-                                }
-                            }
+                            deplacerVersLeBas(ticketsVIPTexts, ligneDeSeparation);
+                            deplacerVersLeBas(boutonsAnnulerTicketsVIP, ligneDeSeparation);
+                            deplacerVersLeBas(textesBoutonAnnulerVIP, ligneDeSeparation);
                         }
                     }
                 }
