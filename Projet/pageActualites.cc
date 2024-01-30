@@ -67,7 +67,7 @@ void pageActualites() {
                                                                "HIER A 16H",
                                                                "STADE OLYMPIQUE DE PARIS",
 
-                                                               "Au sommet de sa jeunesse, David Lamoot a ebloui les Jeux Olympiques de Paris en remportant la medaille d'or au 60m, mais ce n'est pas tout :"
+                                                               "Au sommet de sa jeunesse, David Lamoot a ebloui les Jeux Olympiques de Paris en remportant la medaille d'or au 100m, mais ce n'est pas tout :"
                                                                "il a egalement etabli un nouveau record mondial remarquable. A seulement 21 ans, Lamoot a surpasse la legende du sprint, Usain Bolt, en franchissant la ligne d'arrivee en un temps stupefiant de 9s55."
                                                                "Cette performance extraordinaire a propulse Lamoot au-dela des frontieres de l'excellence athletique, ecrivant ainsi un nouveau chapitre dans l'histoire du sprint mondial."
                                                                "Sa victoire, combinee a la conquete d'un record aussi prestigieux, a solidifie sa place en tant que jeune prodige du monde de l'athletisme, laissant presager un avenir encore plus brillant pour cet athlete exceptionnel.",
@@ -116,7 +116,7 @@ void pageActualites() {
     std::vector<sf::Text> titreActualitesVec(listActualites.size(), sf::Text());
     std::vector<sf::Text> descriptionActualitesVec(listActualites.size(), sf::Text());
 
-    for (int i = 0; i < listActualites.size(); i++) {
+    for (u_int i = 0; i < listActualites.size(); i++) {
         titreActualitesVec[i].setFont(font);
         titreActualitesVec[i].setString(listActualites[i]->getNom());
         titreActualitesVec[i].setCharacterSize(28);
@@ -146,7 +146,7 @@ void pageActualites() {
         pageActualites.clear(sf::Color(250, 250, 250));
         pageActualites.draw(imageAnneauJO);
         pageActualites.draw(textTitrePage);
-        for (int i = 0; i < listActualites.size(); i++) {
+        for (u_int i = 0; i < listActualites.size(); i++) {
             pageActualites.draw(titreActualitesVec[i]);
             pageActualites.draw(descriptionActualitesVec[i]);
         }

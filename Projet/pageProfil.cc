@@ -95,7 +95,7 @@ void pageProfil() {
 
     // affichage des tickets achetés
     std::vector<sf::Text> ticketsTexts;
-    for (int i = 0; i < utilisateurCourant->getListeTickets().size(); i++) {
+    for (u_int i = 0; i < utilisateurCourant->getListeTickets().size(); i++) {
         sf::Text textTicketAchete;
         sf::Text texteBoutonAnnuler;
         textTicketAchete.setFont(font);
@@ -113,7 +113,7 @@ void pageProfil() {
     }
     std::vector<sf::RectangleShape> boutonsAnnulerTickets;
     std::vector<sf::Text> textesBoutonAnnuler;
-    for (int i = 0; i < utilisateurCourant->getListeTickets().size(); i++) {
+    for (u_int i = 0; i < utilisateurCourant->getListeTickets().size(); i++) {
         sf::RectangleShape boutonAnnuler(sf::Vector2f(100, 50));
         sf::Text texteBoutonAnnuler;
         texteBoutonAnnuler.setFont(font);
@@ -125,12 +125,12 @@ void pageProfil() {
         textesBoutonAnnuler.push_back(texteBoutonAnnuler);
     }
 
-    for (int i = 0; i < ticketsTexts.size(); i++) {
+    for (u_int i = 0; i < ticketsTexts.size(); i++) {
         boutonsAnnulerTickets[i].setPosition(
                 ticketsTexts[i].getPosition().x + ticketsTexts[i].getGlobalBounds().width + 10,
                 ticketsTexts[i].getPosition().y);
     }
-    for (int i = 0; i < textesBoutonAnnuler.size(); i++) {
+    for (u_int i = 0; i < textesBoutonAnnuler.size(); i++) {
         textesBoutonAnnuler[i].setPosition(boutonsAnnulerTickets[i].getPosition().x + 10,
                                            boutonsAnnulerTickets[i].getPosition().y + 10);
     }
@@ -150,7 +150,7 @@ void pageProfil() {
                              pageProfil.getSize().y / 2.5));
 
         // affichage des tickets VIP achetés
-        for (int i = 0; i < utilisateurCourant->getListeTicketsVIP().size(); i++) {
+        for (u_int i = 0; i < utilisateurCourant->getListeTicketsVIP().size(); i++) {
             sf::Text ListTicketsVIPachete;
             ListTicketsVIPachete.setFont(font);
             ListTicketsVIPachete.setCharacterSize(18);
@@ -165,7 +165,7 @@ void pageProfil() {
             ticketsVIPTexts.push_back(ListTicketsVIPachete);
         }
         // boutons annuler tickets VIP
-        for (int i = 0; i < utilisateurCourant->getListeTicketsVIP().size(); i++) {
+        for (u_int i = 0; i < utilisateurCourant->getListeTicketsVIP().size(); i++) {
             sf::RectangleShape boutonAnnulerVIP(sf::Vector2f(100, 50));
             sf::Text texteBoutonAnnulerVIP;
             texteBoutonAnnulerVIP.setFont(font);
@@ -176,12 +176,12 @@ void pageProfil() {
             boutonsAnnulerTicketsVIP.push_back(boutonAnnulerVIP);
             textesBoutonAnnulerVIP.push_back(texteBoutonAnnulerVIP);
         }
-        for (int i = 0; i < ticketsVIPTexts.size(); i++) {
+        for (u_int i = 0; i < ticketsVIPTexts.size(); i++) {
             boutonsAnnulerTicketsVIP[i].setPosition(
                     ticketsVIPTexts[i].getPosition().x + ticketsVIPTexts[i].getGlobalBounds().width + 10,
                     ticketsVIPTexts[i].getPosition().y);
         }
-        for (int i = 0; i < textesBoutonAnnulerVIP.size(); i++) {
+        for (u_int i = 0; i < textesBoutonAnnulerVIP.size(); i++) {
             textesBoutonAnnulerVIP[i].setPosition(boutonsAnnulerTicketsVIP[i].getPosition().x + 10,
                                                   boutonsAnnulerTicketsVIP[i].getPosition().y + 10);
         }
@@ -193,7 +193,7 @@ void pageProfil() {
         while (pageProfil.pollEvent(event)) {
             if (event.mouseButton.button == sf::Mouse::Left) {
                 sf::Vector2i mousePos = sf::Mouse::getPosition(pageProfil);
-                for (int i = 0; i < boutonsAnnulerTickets.size(); i++) {
+                for (u_int i = 0; i < boutonsAnnulerTickets.size(); i++) {
                     if (boutonsAnnulerTickets[i].getGlobalBounds().contains(mousePos.x, mousePos.y)) {
                         if (utilisateurCourant->annulerTicket(utilisateurCourant->getListeTickets()[i])) {
                             ticketsTexts.erase(ticketsTexts.begin() + i);
@@ -202,7 +202,7 @@ void pageProfil() {
                     }
                 }
                 if (utilisateurCourant->getType() == "VIP") {
-                    for (int i = 0; i < boutonsAnnulerTicketsVIP.size(); i++) {
+                    for (u_int i = 0; i < boutonsAnnulerTicketsVIP.size(); i++) {
                         if (boutonsAnnulerTicketsVIP[i].getGlobalBounds().contains(mousePos.x, mousePos.y)) {
                             std::cout << "bouton annuler ticket VIP" << std::endl;
                             if (utilisateurCourant->annulerTicket(utilisateurCourant->getListeTicketsVIP()[i])) {

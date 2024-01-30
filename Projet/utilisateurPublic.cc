@@ -37,7 +37,7 @@ int UtilisateurPublic::acheterTicket(Evenement evenement) {
 }
 
 int UtilisateurPublic::annulerTicket(Evenement evenement) {
-    for (int i = 0; i < listeTickets.size(); i++) {
+    for (u_int i = 0; i < listeTickets.size(); i++) {
         if (listeTickets[i].getNom() == evenement.getNom()) {
             listeTickets.erase(listeTickets.begin() + i);
             return 1;
@@ -54,7 +54,7 @@ void UtilisateurPublic::consulterTicket(Evenement evenement) {
 
 void UtilisateurPublic::consulterListeTickets() {
     std::cout << "Liste des tickets : " << std::endl;
-    for (int i = 0; i < listeTickets.size(); i++) {
+    for (u_int i = 0; i < listeTickets.size(); i++) {
         std::cout << listeTickets[i].getNom() << "\n" << listeTickets[i].getDate() << "\n" << listeTickets[i].getLieu()
                   << "\n" << listeTickets[i].getDescription() << "\n" << listeTickets[i].getType() << std::endl;
     }

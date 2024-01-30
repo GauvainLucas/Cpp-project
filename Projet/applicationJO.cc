@@ -5,6 +5,8 @@
 #include "pageBilleterie.hpp"
 #include "pageProfil.hpp"
 #include "pageActualites.hpp"
+#include "utilisateurVIP.hh"
+#include "utilisateurPublic.hh"
 
 // Déclaration des utilisateurs
 UtilisateurVIP johnDoe("Doe", "John", "johndoe@example.com", "06 07 06 07 06", "jdoe", "1234", "VIP");

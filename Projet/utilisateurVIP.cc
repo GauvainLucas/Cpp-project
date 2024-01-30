@@ -18,14 +18,14 @@ int UtilisateurVIP::acheterTicket(Evenement evenement) {
 
 int UtilisateurVIP::annulerTicket(Evenement evenement) {
     if (evenement.getType() == "VIP") {
-        for (int i = 0; i < listeTicketsVIP.size(); i++) {
+        for (u_int i = 0; i < listeTicketsVIP.size(); i++) {
             if (listeTicketsVIP[i].getNom() == evenement.getNom()) {
                 listeTicketsVIP.erase(listeTicketsVIP.begin() + i);
                 return 1;
             }
         }
     } else {
-        for (int i = 0; i < listeTickets.size(); i++) {
+        for (u_int i = 0; i < listeTickets.size(); i++) {
             if (listeTickets[i].getNom() == evenement.getNom()) {
                 listeTickets.erase(listeTickets.begin() + i);
                 return 2;
@@ -37,7 +37,7 @@ int UtilisateurVIP::annulerTicket(Evenement evenement) {
 
 void UtilisateurVIP::consulterListeTicketsVIP() {
     std::cout << "Liste de vos tickets VIP : " << std::endl;
-    for (int i = 0; i < listeTicketsVIP.size(); i++) {
+    for (u_int i = 0; i < listeTicketsVIP.size(); i++) {
         std::cout << listeTicketsVIP[i].getNom() << "\n" << listeTicketsVIP[i].getDate() << "\n"
                   << listeTicketsVIP[i].getLieu() << "\n" << listeTicketsVIP[i].getDescription() << "\n"
                   << listeTicketsVIP[i].getType() << "\n------------------------------" << std::endl;

@@ -19,6 +19,7 @@ public:
 
     std::string getPrenom() { return prenom; };
 
+    std::vector<Evenement> getListeTicketsVIP() { return std::vector<Evenement>();}
     int acheterTicket(Evenement evenement);
 
     int annulerTicket(Evenement evenement);
