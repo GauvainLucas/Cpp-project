@@ -1,8 +1,8 @@
 #include "pageActualites.hpp"
 #include <SFML/Graphics.hpp>
-#include "Evenement.hh"
-#include "EvenementSportif.hh"
-#include "EvenementCeremonie.hh"
+#include "evenement.hh"
+#include "evenementSportif.hh"
+#include "evenementCeremonie.hh"
 #include <iostream>
 #include <sstream>
 

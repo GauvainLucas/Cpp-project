@@ -23,9 +23,9 @@ class Utilisateur{
         std::string getMdp(){return mdp;};
         std::string getType(){return type;};
         std::vector<Evenement> getListeTickets(){return listeTickets;};
-        virtual std::vector<Evenement> getListeTicketsVIP(){"";};
+        virtual std::vector<Evenement> getListeTicketsVIP() = 0;
         virtual int acheterTicket(Evenement evenement) = 0;
-        virtual int annulerTicket(Evenement evenement);
+        virtual int annulerTicket(Evenement evenement) = 0;
         static void consulterTicket(Evenement evenement);
         void consulterListeTickets();
         void consulterListeTicketsEvenement(std::string nomEvenement);
