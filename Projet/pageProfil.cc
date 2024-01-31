@@ -198,6 +198,7 @@ void pageProfil() {
                         if (utilisateurCourant->annulerTicket(utilisateurCourant->getListeTickets()[i])) {
                             ticketsTexts.erase(ticketsTexts.begin() + i);
                             boutonsAnnulerTickets.erase(boutonsAnnulerTickets.begin() + i);
+                            textesBoutonAnnuler.erase(textesBoutonAnnuler.begin() + i);
                         }
                     }
                 }
