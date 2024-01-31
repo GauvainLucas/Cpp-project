@@ -4,14 +4,12 @@
 
 Cette application a été réalisée par [Jacky CHUI](https://github.com/Chui-Jacky) et [Lucas GAUVAIN](https://github.com/GauvainLucas), étudiants ingénieurs en 4ème année d'Electronique et Informatique - Systèmes Embarqués (EI-SE) à Polytech Sorbonne. 
 
-Notre application est une interface servant de billetterie pour les Jeux Olympiques. Elle offre toutes les fonctionnalités d'une billetterie, permettant aux utilisateurs de :
+Notre application est une plateforme de billetterie dédiée aux Jeux Olympiques, dans laquelle se trouvent différentes fonctionnalités. Les utilisateurs peuvent facilement consulter les événements actuels et à venir, acheter des billets, et annuler leurs achats si nécessaire. Les événements disponibles à la réservation sont des compétitions sportives ainsi que des cérémonies.
 
-- Consulter les événements en cours et les événements futurs.
-- Acheter des billets et éventuellement les annuler.
-- Les utilisateurs bénéficiant de privilèges VIP peuvent participer à des événements privés.
-- Des administrateurs sont présents pour aider les clients à modifier leur compte ou bien à modifier des informations concernant les événements.
+Certains utilisateurs bénéficient de privilèges VIP, qui leur donnent accès à des événements exclusifs. De plus, des administrateurs sont disponibles pour assister les clients, que ce soit pour la modification de leur compte ou pour ajuster certains évènements.
 
-De plus, l'application offre la possibilité aux utilisateurs de suivre les actualités concernant les Jeux Olympiques.
+L'application offre également une fonctionnalité de suivi des actualités, permettant aux utilisateurs de rester informés sur les derniers résultats en direct. Ainsi, notre application vise à simplifier l'expérience de billetterie tout en offrant des fonctionnalités pour suivre les actualités des Jeux Olympiques de Paris 2024.
+
 
 ## Informations pratiques
 
