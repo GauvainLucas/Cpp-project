@@ -17,3 +17,24 @@ Pour installer les librairies SFML sous Linux, exécutez la commande suivante :
 
 ```bash
 sudo apt-get install libsfml-dev
+```
+Pour compiler le projet, un makefile a été fait. Dans le dossier projet ou se trouve tous les fichiers sources entrez la commande :
+```bash
+make
+```
+La commande va ensuite générer l'exécutable applicationJO.out que l’on peut exécuter en faisant :
+```bash
+./applicationJO.out
+```
+
+Pour effectuer les tests, il faut se rendre dans le dossier tests. A l’intérieur de ce dossier se trouve un autre makefile. Compilez en exécutant la commande :
+```bash
+make
+```
+Lancez les tests en exécutant l'exécutable testcase.out :
+```bash
+/testcase.out
+```
+
+
+
