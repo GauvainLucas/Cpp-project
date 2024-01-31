@@ -13,11 +13,14 @@ L'application offre également une fonctionnalité de suivi des actualités, per
 
 ## Informations pratiques
 
+### Installation des librairies
 Pour installer les librairies SFML sous Linux, exécutez la commande suivante :
 
 ```bash
 sudo apt-get install libsfml-dev
 ```
+
+### Compilation
 Pour compiler le projet, un makefile a été fait. Dans le dossier projet ou se trouve tous les fichiers sources entrez la commande :
 ```bash
 make
