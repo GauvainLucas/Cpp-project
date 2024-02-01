@@ -3,7 +3,6 @@
 #include <string>
 #include <fstream>
 #include "evenement.hh"
-#include "IBilleterie.hh"
 /*
 Evenement::Evenement(){
     nom = "";

@@ -11,7 +11,7 @@
 #include "utilisateurAdmin.hh"
 #include "utilisateurPublic.hh"
 #include "utilisateurVIP.hh"
-#include "IBilleterie.hh"
+
 
 // Create user John Doe VIP
 extern UtilisateurVIP johnDoe;

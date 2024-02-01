@@ -210,6 +210,7 @@ void pageProfil() {
                                 std::cout << "Ticket VIP annule" << std::endl;
                                 ticketsVIPTexts.erase(ticketsVIPTexts.begin() + i);
                                 boutonsAnnulerTicketsVIP.erase(boutonsAnnulerTicketsVIP.begin() + i);
+                                textesBoutonAnnulerVIP.erase(textesBoutonAnnulerVIP.begin() + i);
                             }
                         }
                     }
